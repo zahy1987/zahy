@@ -6,20 +6,20 @@
   justify-content: center; /* centrează meniul */
 }
 .menubar li {
-  margin: 0 15px;      /* spațiu între iteme */
-  font-size: 18px;
+  margin: 0 15%;      /* spațiu între iteme */
+  font-size: 18%;
   font-weight: bold;
 }
 .menubar a {
   text-decoration: none;   /* scoate linia sub text */
   color: rgb(171, 131, 245);            /* culoarea textului */
-  padding: 10px 15px;      /* spațiu în jur */
+  padding: 10% 15%;      /* spațiu în jur */
   transition: 0.3s;
 }
 
 .menubar a:hover {
   background-color: rgba(255,255,255,0.2); /* efect hover */
-  border-radius: 5px;
+  border-radius: 5%;
 }
  /* buton meniu */
  .menubar ul {
@@ -29,11 +29,11 @@
   display: flex;      
   justify-content: center; 
   background-color: rgb(33, 188, 212); /* fundal bara */
-  padding: 15px 0;
+  padding: 15% 0;
 }
 
 .menubar li {
-  margin: 0 10px;     
+  margin: 0 10%;     
 }
 
 .menubar a {
@@ -171,3 +171,4 @@
     width: 100%;
   }
 }
+
