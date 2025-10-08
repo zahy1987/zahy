@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boos</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    <!--banner-->
+  <header class="banner">
+    <img src="banner.jpg" alt="Banner site" />
+  </header>
+
+  <div>
+    <nav class="menubar">
+     <ul>
+  <li><a href="#" target="_blank">Home</a></li>
+  <li><a href="https://alison.com/" target="_blank" rel="noopener noreferrer">Skills</a></li>
+  <li><a href="https://www.freegames.com/t/Fun?source=BING-486317479&msclkid=f1bc18fef5b81cbf6bc5701b7e883a33" target="_blank" rel="noopener noreferrer">Game</a></li>
+  <li><a href="https://ro.wikipedia.org/wiki/Creativitate" target="_blank" rel="noopener noreferrer">Creativity</a></li>
+  <li><a href="#" target="_blank">About</a></li>
+  <li><a href="https://www.youtube.com/watch?v=DeJ782CR41A" target="_blank" rel="noopener noreferrer">Fun</a></li>
+</ul>
+
+
+    </nav>
+  </div>
+
+<!-- Widget vreme Nottingham, fundal transparent -->
+<div style="position:absolute; top:495px; left:10px;">
+  <iframe 
+    src="https://www.meteoblue.com/en/weather/widget/three/nottingham_united-kingdom_2641170?geoloc=fixed&nocurrent=0&noforecast=0&days=3&tempunit=CELSIUS&windunit=MILE_PER_HOUR&layout=bright&transparent=1"
+    frameborder="0" 
+    scrolling="NO" 
+    allowtransparency="true"
+    style="width: 370%; height: 570px; border: none; border-radius: 10px; background: transparent;">
+  </iframe>
+</div>
+
+  <!--Hero section--> 
+  <!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Welcome to My Website</h1>
+    <p>Explore my skills, creativity and fun projects!</p>
+    <!-- sau folosește href="javascript:void(0)" -->
+<a href="#" class="hero-btn" onclick="showHeart(event)">Get Started</a>
+<div id=."heartContainer"></div>
+<img id="heartContainer" src="banner.jpg" alt="Banner site" />
+  </div>
+
+<!-- Popup container -->
+<div id="funnyPopup" class="popup">
+  <span class="close" onclick="closePopup()">&times;</span>
+  <img src="./123.jpg" alt="Funny" />
+</div>
+
+
+</section>
+
+<script src="script.js"></script>
+
+<div id="datetime-container"></div>
+<script src="./index.js" type="text/javascript"></script>
+<div id="weather-container" ></div>
+
+
+</body>
+</html>

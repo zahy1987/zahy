@@ -1,0 +1,164 @@
+.menubar ul {
+  list-style: none;   /* scoate bulinele */
+  margin: 0;          /* scoate spațiile default */
+  padding: 0;         /* scoate spațiile default */
+  display: flex;      /* face elementele pe un rând */
+  justify-content: center; /* centrează meniul */
+}
+.menubar li {
+  margin: 0 15px;      /* spațiu între iteme */
+  font-size: 18px;
+  font-weight: bold;
+}
+.menubar a {
+  text-decoration: none;   /* scoate linia sub text */
+  color: rgb(171, 131, 245);            /* culoarea textului */
+  padding: 10px 15px;      /* spațiu în jur */
+  transition: 0.3s;
+}
+
+.menubar a:hover {
+  background-color: rgba(255,255,255,0.2); /* efect hover */
+  border-radius: 5px;
+}
+ /* buton meniu */
+ .menubar ul {
+  list-style: none;   
+  margin: 0;          
+  padding: 0;         
+  display: flex;      
+  justify-content: center; 
+  background-color: rgb(33, 188, 212); /* fundal bara */
+  padding: 15px 0;
+}
+
+.menubar li {
+  margin: 0 10px;     
+}
+
+.menubar a {
+  text-decoration: none;  
+  color: white;           
+  background-color: rgb(0, 123, 255); /* culoarea butonului */
+  padding: 10px 20px;     
+  border-radius: 20px;    /* face colțuri rotunde */
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.menubar a:hover {
+  background-color: rgb(0, 90, 200); /* culoare hover */
+  transform: scale(10.05);            /* efect de mărire ușoară */
+}
+
+/* baner  */
+
+/* Banner */
+.banner img {
+  width: 100%;          /* ocupă toată lățimea paginii */
+  height: 400;        /* înălțime fixă pentru banner */
+  object-fit: cover;    /* taie/umple imaginea frumos */
+  display: block;
+}
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+              url('bannerr.jpg') no-repeat center center/cover;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 0.3em;
+}
+
+.hero p {
+  font-size: 1.3em;
+  margin-bottom: 1em;
+}
+
+.hero-btn {
+  background: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.hero-btn:hover {
+  background: #0056b3;
+}
+#heartContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 240px;
+  color: red;
+  text-align: center;
+  display: contents; /* ascuns la început */
+  background-color: red;
+}
+
+/* container date end time */header {
+  position: relative;
+}
+
+#datetime-container {
+  position: absolute;
+  top: 500px;
+  right: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 6px 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+#weather-container{
+  left:20px
+}
+#weather-container{
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 6px 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+.popup {
+  display: none; /* ascuns inițial */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7); /* fundal semi-transparent */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.popup .close {
+  position: absolute;
+  top: 20px; right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
