@@ -226,7 +226,7 @@
     flex-direction: column;
     background-color: rgb(33, 188, 212);
     position: absolute;
-    top: 55px;
+    top: 50px;
     left: 0;
     width: 100%;
     text-align: center;
@@ -241,5 +241,6 @@
     margin: 10px 0;
   }
 }
+
 
 
