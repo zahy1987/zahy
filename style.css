@@ -248,7 +248,6 @@ img, .banner img {
     height: 45vh;
   }
 }
-
 body {
   background-image: url('banner.jpg');
   background-size: cover;
@@ -256,3 +255,20 @@ body {
   background-position: center;
 }
 
+/* Widget vreme */
+.widget-vreme {
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.widget-vreme iframe {
+  width: 100%;
+  min-height: 350px;
+  height: 60vh;
+  border: none;
+  border-radius: 10px;
+  background: transparent; /* important! */
+  display: block;
+}
