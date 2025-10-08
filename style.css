@@ -240,3 +240,34 @@ img, .banner img {
   height: auto;
   display: block;
 }
+
+@media (max-width: 600px) {
+  /* Weather container mai vizibil pe mobil */
+  #weather-container {
+    position: static;
+    top: auto;
+    left: auto;
+    right: auto;
+    margin: 15px 0 0 0;
+    width: 95vw;
+    font-size: 15px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.18);
+    background: rgba(255,255,255,0.88);
+  }
+
+  /* Popup image mai mare pe mobil */
+  .popup img {
+    max-width: 95%;
+    max-height: 70vh;
+  }
+
+  /* Close button mai mare și mai accesibil pe mobil */
+  .popup .close {
+    top: 10px;
+    right: 15px;
+    font-size: 48px;
+    padding: 10px;
+  }
+}
