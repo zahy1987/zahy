@@ -124,7 +124,7 @@
   box-shadow: 0 0 6px rgba(0,0,0,0.2);
 }
 #weather-container{
-  left:20px
+  left:20%
 }
 #weather-container{
   position: absolute;
@@ -214,6 +214,7 @@
   background-color: rgb(0, 90, 200);
   transform: scale(1.05);
 }
+
 
 
 
