@@ -225,5 +225,28 @@ img, .banner img {
     padding: 10px;
   }
 }
+.widget-vreme {
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.widget-vreme iframe {
+  width: 100%;
+  min-height: 350px;
+  height: 60vh; /* Se adaptează după înălțimea ecranului */
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .widget-vreme iframe {
+    min-height: 300px;
+    height: 45vh;
+  }
+}
 
 
