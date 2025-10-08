@@ -5,146 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boos</title>
   <link rel="stylesheet" href="style.css">
-  
 </head>
 <body>
-    <!--banner-->
+  <!--banner-->
   <header class="banner">
     <img src="banner.jpg" alt="Banner site" />
   </header>
-<!-- ✅ Meniu principal responsiv -->
-<nav class="menubar">
-  <div class="menu-toggle" id="menu-toggle">☰</div>
-  <ul id="menu-list">
-    <li><a href="#" target="_blank">Home</a></li>
-    <li><a href="https://alison.com/" target="_blank" rel="noopener noreferrer">Skills</a></li>
-    <li><a href="https://www.freegames.com/t/Fun?source=BING-486317479" target="_blank" rel="noopener noreferrer">Game</a></li>
-    <li><a href="https://ro.wikipedia.org/wiki/Creativitate" target="_blank" rel="noopener noreferrer">Creativity</a></li>
-    <li><a href="#" target="_blank">About</a></li>
-    <li><a href="https://www.youtube.com/watch?v=DeJ782CR41A" target="_blank" rel="noopener noreferrer">Fun</a></li>
-  </ul>
-</nav>
+  <!-- ✅ Meniu principal responsiv -->
+  <nav class="menubar">
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <ul id="menu-list">
+      <li><a href="#" target="_blank">Home</a></li>
+      <li><a href="https://alison.com/" target="_blank" rel="noopener noreferrer">Skills</a></li>
+      <li><a href="https://www.freegames.com/t/Fun?source=BING-486317479" target="_blank" rel="noopener noreferrer">Game</a></li>
+      <li><a href="https://ro.wikipedia.org/wiki/Creativitate" target="_blank" rel="noopener noreferrer">Creativity</a></li>
+      <li><a href="#" target="_blank">About</a></li>
+      <li><a href="https://www.youtube.com/watch?v=DeJ782CR41A" target="_blank" rel="noopener noreferrer">Fun</a></li>
+    </ul>
+  </nav>
 
-<style>
-.menubar {
-  background: #333;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  position: relative;
-}
+  <!-- Widget vreme Nottingham, fundal transparent -->
+  <div class="widget-vreme">
+    <iframe
+      src="https://www.meteoblue.com/en/weather/widget/three/nottingham_united-kingdom_2641170?geoloc=fixed&nocurrent=0&noforecast=0&days=3&tempunit=CELSIUS&windunit=MILE_PER_HOUR&layout=bright&transparent=1"
+      frameborder="0"
+      scrolling="NO"
+      allowtransparency="true">
+    </iframe>
+  </div>
 
-.menu-toggle {
-  display: none;
-  font-size: 2em;
-  cursor: pointer;
-  padding: 0.5em 1em;
-}
-
-#menu-list {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-#menu-list li {
-  margin: 0;
-}
-
-#menu-list li a {
-  display: block;
-  padding: 1em;
-  color: #fff;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-
-#menu-list li a:hover {
-  background: #444;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-  #menu-list {
-    flex-direction: column;
-    display: none;
-    background: #333;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 999;
-  }
-  #menu-list.show {
-    display: flex;
-  }
-  #menu-list li a {
-    padding: 1em 2em;
-    border-bottom: 1px solid #444;
-  }
-}
-</style>
-
-<script>
-const menuToggle = document.getElementById('menu-toggle');
-const menuList = document.getElementById('menu-list');
-
-menuToggle.addEventListener('click', () => {
-  menuList.classList.toggle('show');
-});
-</script>
-<!-- Widget vreme Nottingham, fundal transparent -->
-<style>
-  .widget-vreme {
-    max-width: 400px;
-    margin: auto;
-  }
-  .widget-vreme iframe {
-    width: 100%;
-    height: 570px;
-    border: none;
-    border-radius: 10px;
-    background: 0000;
-  }
-  @media (max-width: 600px) {
-    .widget-vreme iframe {
-      height: 350px;
-    }
-  }
-</style>
-
-<div class="widget-vreme">
-  <iframe
-    src="https://www.meteoblue.com/en/weather/widget/three/nottingham_united-kingdom_2641170?geoloc=fixed&nocurrent=0&noforecast=0&days=3&tempunit=CELSIUS&windunit=MILE_PER_HOUR&layout=bright&transparent=1"
-    frameborder="0"
-    scrolling="NO"
-    allowtransparency="true">
-  </iframe>
-</div>
-  <!--Hero section--> 
   <!-- HERO SECTION -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Welcome to My Website</h1>
-    <p>Explore my skills, creativity and fun projects!</p>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to My Website</h1>
+      <p>Explore my skills, creativity and fun projects!</p>
+    </div>
+  </section>
 
-
-</section>
-
-<script src="script.js"></script>
-
-<div id="datetime-container"></div>
-<script src="./index.js" type="text/javascript"></script>
-<div id="weather-container" ></div>
-
-<script src="script.js"></script>
-
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuList = document.getElementById('menu-list');
+    menuToggle.addEventListener('click', () => {
+      menuList.classList.toggle('show');
+    });
+  </script>
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
