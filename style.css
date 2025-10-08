@@ -217,22 +217,6 @@ header {
   .hero p {
     font-size: 1em;
   }
-  #datetime-container, #weather-container {
-    font-size: 13px;
-    padding: 4px 7px;
-    top: 10px;
-    left: auto;
-    right: 10px;
-  }
-  #weather-container {
-    top: 40px;
-    left: 10px;
-    right: auto;
-  }
-  #heartContainer {
-    font-size: 70px;
-  }
-}
 
 /* Asigură imagini responsive */
 img, .banner img {
@@ -271,3 +255,4 @@ img, .banner img {
     padding: 10px;
   }
 }
+
