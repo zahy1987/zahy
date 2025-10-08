@@ -213,7 +213,7 @@ img, .banner img {
 
   /* Popup image mai mare pe mobil */
   .popup img {
-    max-width: 95%;
+    max-width: 100%;
     max-height: 70vh;
   }
 
@@ -249,4 +249,10 @@ img, .banner img {
   }
 }
 
+body {
+  background-image: url('banner.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
