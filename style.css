@@ -95,40 +95,10 @@
   background: #0056b3;
 }
 
-#heartContainer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 120px;
-  color: red;
-  text-align: center;
-  display: contents;
-  background-color: red;
-}
-
-/* container date end time */
-header {
-  position: relative;
-}
-
-#datetime-container {
-  position: absolute;
-  top: 20px;
-  right: 10px;
-  font-family: Arial, sans-serif;
-  font-size: 15px;
-  color: #333;
-  background: rgba(255, 255, 255, 0.7);
-  padding: 5px 10px;
-  border-radius: 8px;
-  box-shadow: 0 0 6px rgba(0,0,0,0.2);
-}
-
 #weather-container {
-  position: absolute;
-  top: 50px;
-  left: 10px;
+  position: fixed;
+  top: 30px;
+  left: 0px;
   font-family: Arial, sans-serif;
   font-size: 15px;
   color: #333;
@@ -255,4 +225,5 @@ img, .banner img {
     padding: 10px;
   }
 }
+
 
