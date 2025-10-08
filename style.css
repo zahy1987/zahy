@@ -215,32 +215,6 @@
   transform: scale(1.05);
 }
 
-/* ✅ versiune mobilă */
-@media (max-width: 700px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .menubar ul {
-    display: none;
-    flex-direction: column;
-    background-color: rgb(33, 188, 212);
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    padding: 15px 0;
-  }
-
-  .menubar ul.show {
-    display: flex;
-  }
-
-  .menubar li {
-    margin: 10px 0;
-  }
-}
 
 
 
