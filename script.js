@@ -9,7 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
       slides[index].classList.remove("active");
       index = (index + 1) % slides.length;
       slides[index].classList.add("active");
-    }, 3000);
+    }, 5000);
   }
 });
+const slides = document.querySelectorAll('.item:nth-child(3) .slide');
+let index = 0;
 
+setInterval(() => {
+  slides[index].classList.remove('active');
+  index = (index + 1) % slides.length;
+  slides[index].classList.add('active');
+}, 2000);
