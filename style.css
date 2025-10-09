@@ -1,3 +1,9 @@
+@media (max-width: 600px) {
+  .item {
+    width: 100%;
+    margin: 0;
+  }
+}
 
 .container {
   display: grid;
@@ -56,4 +62,5 @@ height: 50rem;
 
 .item:nth-child(5) {
   background-color: rgb(242, 20, 246);
+
 }
