@@ -19,17 +19,25 @@
 .item:nth-child(5) {
   grid-column: 1 / 4;
 }
-.item:nth-child(1){
-  background-image: url(banner.jpg) ;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 20rem;
-  margin-top: 0px;
-  margin-left: 0%;
-  margin-right: 0%;
-  width: 100vw;
-  height: 40vh;
+.item:nth-child(1){.item:nth-child(1) {
+  background-image: url('banner.jpg');
+  background-size: cover;          /* acoperă complet containerul */
+  background-position: center;     /* centru imagine */
+  background-repeat: no-repeat;    /* fără repetare */
+  
+  width: 100vw;                    /* lățimea ecranului */
+  height: 40vh;                    /* 40% din înălțimea ferestrei */
+  
+  margin: 0;                        /* elimină orice margini */
+}
+
+/* optional: ajustează pentru ecrane mici */
+@media (max-width: 600px) {
+  .item:nth-child(1) {
+    height: 30vh;                   /* mai mic pe telefon */
+  }
+}
+
 }
 
 }
@@ -68,6 +76,7 @@ height: 50rem;
   background-color: rgb(242, 20, 246);
 
 }
+
 
 
 
