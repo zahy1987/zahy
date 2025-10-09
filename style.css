@@ -3,7 +3,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   gap: 10px;
-  background-color: rgb(232, 235, 235);
+  background-color: blueviolet;
 }
 
 .item:nth-child(1) {
@@ -71,4 +71,5 @@
     grid-column: 3 / 4;
     height: 50rem;
   }
+
 }
