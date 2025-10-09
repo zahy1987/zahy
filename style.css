@@ -19,9 +19,9 @@
 .item:nth-child(5) {
   grid-column: 1 / 4;
 }
-.item:nth-child(1){.item:nth-child(1) {
+.item:nth-child(1){
   background-image: url('banner.jpg');
-  background-size: cover;          /* acoperă complet containerul */
+  background-size: contain;          /* acoperă complet containerul */
   background-position: center;     /* centru imagine */
   background-repeat: no-repeat;    /* fără repetare */
   
@@ -76,6 +76,7 @@ height: 50rem;
   background-color: rgb(242, 20, 246);
 
 }
+
 
 
 
