@@ -2,18 +2,12 @@
 .item:nth-child(1) {
   grid-column: 1 / -1;
   background-image: url(bannerr.jpg);
-  background-size: cover;
+  background-size: calc(100%);
   background-position: center;
   background-repeat: no-repeat;
   background-color: black;
   height: 20rem;
   margin: 0;
-.banner {
-  height: 40vh;
-  background-image: url('banner.jpg');
-  background-size: cover;
-  background-position: center;
-}
 }
 
 .item:nth-child(2),
@@ -71,6 +65,7 @@
     height: 50rem;
   }
 }
+
 
 
 
