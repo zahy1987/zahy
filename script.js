@@ -9,14 +9,19 @@ document.addEventListener("DOMContentLoaded", () => {
       slides[index].classList.remove("active");
       index = (index + 1) % slides.length;
       slides[index].classList.add("active");
-    }, 5000);
+    }, 3000);
   }
 });
-const slides = document.querySelectorAll('.item:nth-child(3) .slide');
-let index = 0;
+document.querySelectorAll('.item').forEach(item => {
+  const slides = item.querySelectorAll('.slide');
+  if (slides.length <= 1) return; // dacă nu are slideshow
 
-setInterval(() => {
-  slides[index].classList.remove('active');
-  index = (index + 1) % slides.length;
+  let index = 0;
   slides[index].classList.add('active');
-}, 2000);
+
+  setInterval(() => {
+    slides[index].classList.remove('active');
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
+  }, 3000);
+});
