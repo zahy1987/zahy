@@ -1,9 +1,3 @@
-@media (max-width: 600px) {
-  .item {
-    width: 100%;
-    margin: 0;
-  }
-}
 
 .container {
   display: grid;
@@ -20,44 +14,33 @@
   grid-column: 1 / 4;
 }
 .item:nth-child(1){
-  background-image: url('banner.jpg');
-  background-size: contain;          /* acoperă complet containerul */
-  background-position: center;     /* centru imagine */
-  background-repeat: no-repeat;    /* fără repetare */
+  background-image: url(banner.jpg) ;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: black; /* sau orice culoare de fundal */
+  height: 20rem;
+  margin: 0;
+}
+
   
-  width: 100vw;                    /* lățimea ecranului */
-  height: 40vh;                    /* 40% din înălțimea ferestrei */
-  
-  margin: 0;                        /* elimină orice margini */
-}
-
-/* optional: ajustează pentru ecrane mici */
-@media (max-width: 600px) {
-  .item:nth-child(1) {
-    height: 30vh;                   /* mai mic pe telefon */
-  }
-}
-
-}
-
 }
 .item:nth-child(2){
 position: fixed;
   background-color: rgb(56, 120, 230);
+  margin-top: 20rem;
   margin-right: 50%;
+  width: 50rem;
   height: 50rem;
   left: 0;
-  width: 90%;
-margin-top: 5rem;
-
 }
 
 .item:nth-child(3) {
   background-color: rgb(114, 237, 26);
-  margin-top: 5rem;
+  margin-top: 13rem;
   margin-left: 50%;
 right: 0;
-width: 90%;
+width: 50rem;
 height: 50rem;
 
 }
@@ -74,11 +57,4 @@ height: 50rem;
 
 .item:nth-child(5) {
   background-color: rgb(242, 20, 246);
-
 }
-
-
-
-
-
-
