@@ -1,12 +1,13 @@
 
 .item:nth-child(1) {
-  width: 100%;       /* se întinde pe tot containerul */
-  height: 40vh;      /* 40% din înălțimea ecranului */
-  background-image: url('123.jpg');
+  grid-column: 1 / -1;
+  background-image: url(bannerr.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
+  background-color: black;
+  height: 20rem;
+  margin: 0;
 
 }
 
@@ -65,6 +66,7 @@
     height: 50rem;
   }
 }
+
 
 
 
