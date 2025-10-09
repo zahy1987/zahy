@@ -1,256 +1,59 @@
-/* 🔷 Meniu principal responsive */
-.menubar {
-  background-color: rgb(33, 188, 212);
-  padding: 10px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+
+.container {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  grid-template-rows: 100px 1fr 100px;
+  gap: 10px 10px;
+  background-color: rgb(232, 235, 235);
+  
+
 }
 
-/* ☰ iconiță hamburger */
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
-  position: absolute;
-  left: 20px;
-  z-index: 100;
+.item:nth-child(1),
+.item:nth-child(5) {
+  grid-column: 1 / 4;
 }
-
-/* lista principală */
-.menubar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 20px;
-}
-
-.menubar li {
-  margin: 0;
-}
-
-.menubar a {
-  text-decoration: none;
-  color: white;
-  background-color: rgb(0, 123, 255);
-  padding: 10px 18px;
-  border-radius: 20px;
-  font-size: 18px;
-  font-weight: bold;
-  transition: 0.3s;
-  display: inline-block;
-}
-
-.menubar a:hover {
-  background-color: rgb(0, 90, 200);
-  transform: scale(1.05);
-}
-
-/* Banner */
-.banner img {
-  width: 100%;
-  height: 200px;
-  max-height: 40vh;
-  object-fit: cover;
-  display: block;
-}
-
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-              url('bannerr.jpg') no-repeat center center/cover;
-  min-height: 40vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  padding: 30px 10px;
-}
-
-.hero h1 {
-  font-size: 2.5em;
-  margin-bottom: 0.3em;
-}
-
-.hero p {
-  font-size: 1.1em;
-  margin-bottom: 1em;
-}
-
-.hero-btn {
-  background: #007bff;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-.hero-btn:hover {
-  background: #0056b3;
-}
-
-#weather-container {
-  position: fixed;
-  top: 30px;
-  left: 0px;
-  font-family: Arial, sans-serif;
-  font-size: 15px;
-  color: #333;
-  background: rgba(255, 255, 255, 0.7);
-  padding: 5px 10px;
-  border-radius: 8px;
-  box-shadow: 0 0 6px rgba(0,0,0,0.2);
-}
-
-.popup {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.7);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.popup img {
-  max-width: 80%;
-  max-height: 80%;
-  border-radius: 10px;
-}
-
-.popup .close {
-  position: absolute;
-  top: 20px; right: 30px;
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
-}
-
-/* RESPONSIVE: mobil */
-@media (max-width: 600px) {
-  .menubar {
-    padding: 8px 0;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .menubar ul {
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100vw;
-    gap: 0;
-    background: rgb(33, 188, 212);
-    display: none;
-  }
-  .menubar ul.open {
-    display: flex;
-  }
-  .menubar li {
-    margin: 0;
-    width: 100%;
-    text-align: left;
-  }
-  .menubar a {
-    font-size: 16px;
-    width: 100%;
-    border-radius: 0;
-    padding: 12px 20px;
-    background: none;
-    color: rgb(0, 123, 255);
-    border-bottom: 1px solid #cde;
-  }
-  .menubar a:hover {
-    background: #e3f0fa;
-    color: rgb(0, 90, 200);
-    transform: none;
-  }
-  .banner img {
-    height: 120px;
-    max-height: 25vh;
-  }
-  .hero h1 {
-    font-size: 1.5em;
-  }
-  .hero p {
-    font-size: 1em;
-  }
-
-/* Asigură imagini responsive */
-img, .banner img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-@media (max-width: 600px) {
-  /* Weather container mai vizibil pe mobil */
-  #weather-container {
-    position: static;
-    top: auto;
-    left: auto;
-    right: auto;
-    margin: 15px 0 0 0;
-    width: 95vw;
-    font-size: 15px;
-    padding: 8px 12px;
-    border-radius: 10px;
-    box-shadow: 0 0 6px rgba(0,0,0,0.18);
-    background: rgba(255,255,255,0.88);
-  }
-
-  /* Popup image mai mare pe mobil */
-  .popup img {
-    max-width: 100%;
-    max-height: 70vh;
-  }
-
-  /* Close button mai mare și mai accesibil pe mobil */
-  .popup .close {
-    top: 10px;
-    right: 15px;
-    font-size: 48px;
-    padding: 10px;
-  }
-}
-.widget-vreme {
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
-  padding: 10px 0;
-}
-
-.widget-vreme iframe {
-  width: 100%;
-  min-height: 350px;
-  height: 60vh; /* Se adaptează după înălțimea ecranului */
-  border: none;
-  border-radius: 10px;
-  background: transparent;
-  display: block;
-}
-
-@media (max-width: 600px) {
-  .widget-vreme iframe {
-    min-height: 300px;
-    height: 45vh;
-  }
-}
-body {
-  background-image: url('banner.jpg');
+.item:nth-child(1){
+  background-image: url(banner.jpg) ;
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
+  height: 20rem;
+  margin-top: 0px;
+  margin-left: 0;
+  margin-right: 0;
+  
+}
+.item:nth-child(2){
+position: fixed;
+  background-color: rgb(56, 120, 230);
+  margin-top: 20rem;
+  margin-right: 50%;
+  width: 50rem;
+  height: 50rem;
+  left: 0;
+}
+
+.item:nth-child(3) {
+  background-color: rgb(114, 237, 26);
+  margin-top: 13rem;
+  margin-left: 50%;
+right: 0;
+width: 50rem;
+height: 50rem;
+
+}
+
+.item:nth-child(4) {
+  position: absolute;
+  background-color: rgb(241, 48, 14);
+  margin-top: 70rem;
+  margin-left: 0px;
+  width: 50rem;
+  height: 50rem;
+  left: 0;
+}
+
+.item:nth-child(5) {
+  background-color: rgb(242, 20, 246);
 }
