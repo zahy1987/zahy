@@ -1,3 +1,10 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+  background-color: rgb(232, 235, 235);
+}
 
 .item:nth-child(1) {
   grid-column: 1 / -1;
@@ -65,12 +72,3 @@
     height: 50rem;
   }
 }
-
-
-
-
-
-
-
-
-
