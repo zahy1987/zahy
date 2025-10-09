@@ -26,8 +26,8 @@
   background-repeat: no-repeat;
   height: 20rem;
   margin-top: 0px;
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: 0%;
+  margin-right: 0%;
   
 }
 .item:nth-child(2){
@@ -65,4 +65,5 @@ height: 50rem;
   background-color: rgb(242, 20, 246);
 
 }
+
 
