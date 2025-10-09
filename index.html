@@ -5,50 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boos</title>
   <link rel="stylesheet" href="style.css">
+  
 </head>
 <body>
-  <!--banner-->
-  <header class="banner">
-    <img src="banner.jpg" alt="Banner site" />
-  </header>
-  <!-- ✅ Meniu principal responsiv -->
-  <nav class="menubar">
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-    <ul id="menu-list">
-      <li><a href="#" target="_blank">Home</a></li>
-      <li><a href="https://alison.com/" target="_blank" rel="noopener noreferrer">Skills</a></li>
-      <li><a href="https://www.freegames.com/t/Fun?source=BING-486317479" target="_blank" rel="noopener noreferrer">Game</a></li>
-      <li><a href="https://ro.wikipedia.org/wiki/Creativitate" target="_blank" rel="noopener noreferrer">Creativity</a></li>
-      <li><a href="#" target="_blank">About</a></li>
-      <li><a href="https://www.youtube.com/watch?v=DeJ782CR41A" target="_blank" rel="noopener noreferrer">Fun</a></li>
-    </ul>
-  </nav>
 
-  <!-- Widget vreme Nottingham, fundal transparent -->
-  <div class="widget-vreme">
-  <iframe
-    src="https://www.meteoblue.com/en/weather/widget/three/nottingham_united-kingdom_2641170?geoloc=fixed&nocurrent=0&noforecast=0&days=3&tempunit=CELSIUS&windunit=MILE_PER_HOUR&layout=dark&transparent=1"
-    frameborder="0"
-    scrolling="NO"
-    allowtransparency="true">
-  </iframe>
+<script src="script.js"></script>
+<div class="container">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+  <div class="item">4</div>
+  <div class="item">5</div>
 </div>
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Welcome to My Website</h1>
-      <p>Explore my skills, creativity and fun projects!</p>
-    </div>
-  </section>
-
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuList = document.getElementById('menu-list');
-    menuToggle.addEventListener('click', () => {
-      menuList.classList.toggle('show');
-    });
-  </script>
-  <script src="script.js"></script>
 </body>
 </html>
-
