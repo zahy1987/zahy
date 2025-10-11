@@ -1,110 +1,30 @@
+/* Layout principal */
 .container {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
   background-color: rgb(232, 235, 235);
+  padding: 10px;
 }
 
-.item:nth-child(1) {
+/* Banner sus */
+.banner {
+  display: grid;
   grid-column: 1 / -1;
-  background-image: url(bannerr.jpg);
-  background-size: calc(100%);
+  background-image: url('bannerr.jpg');
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: blueviolet;
-  height: 20rem;
-  margin: 0;
+  height: 40rem;
+  border-radius: 10px;
 }
 
-.item:nth-child(2),
-.item:nth-child(3),
-.item:nth-child(4),
-.item:nth-child(5) {
-  grid-column: 1 / -1;
-  width: 100%;
-  margin: 0 auto;
-  position: static;
-  height: 20rem;
-}
-
-.item:nth-child(2) {
-  background-color: rgb(56, 120, 230);
-  
-
-}
-.item:nth-child(2) {
-  background-color: rgb(56, 120, 230);
-   width: 50%;
-  height: 50%;
-  border: 0px;
-  left: 0;
-  top: 50px;
-}
-
-
-/* imaginile din al doilea item */
-.item:nth-child(2) img {
-   position: absolute;
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease;
-  margin-top: 300px;
-}
-
-/* imaginea vizibilă */
-.item:nth-child(2) img.active {
-  opacity: 1;
-}
-
-
-.item:nth-child(3) {
-  background-color: rgb(114, 237, 26);
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
-  position: absolute;
-  overflow: hidden;
-}
-
-.item:nth-child(4) {
-  position: absolute;
-  background-color: rgb(241, 48, 14);
-  width: 50%;
-  height: 50%;
-  overflow: hidden;
-left: 0;
-}
-
-.item:nth-child(5) {
-  background-color: rgb(242, 20, 246);
-}
-
-/* Responsive pentru mobil */
-@media (min-width: 768px) {
-  .container {
-    grid-template-columns: 100px 1fr 100px;
-    grid-template-rows: 100px 1fr 100px;
-    gap: 10px 10px;
-  }
-
-  .item:nth-child(1),
-  .item:nth-child(5) {
-    grid-column: 1 / 4;
-  }
-
-  .item:nth-child(2) {
-    grid-column: 1 / 2;
-    height: 50rem;
-  }
-
-}
-/*div 3*/
+/* Itemele cu slideshow */
 .item {
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
+  height: 15rem;
 }
 
 .item img {
@@ -121,15 +41,13 @@ left: 0;
 .item img.active {
   opacity: 1;
 }
-.container5 {
-  left: 50%;
-  position: absolute;
-  background-color: rgb(241, 48, 14);
-  width: 50%;
-  height: 50%;
-  overflow: hidden;
-  object-fit: cover;
-  
-  
 
+/* Responsive pe telefon */
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .item {
+    height: 18rem;
+  }
 }
