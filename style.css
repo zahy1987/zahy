@@ -8,19 +8,10 @@
 }
 
 /* Banner sus */
-.banner {
-  display: grid;
-  grid-column: 1 / -1;
-  background-image: url('bannerr.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 40rem;
-  border-radius: 10px;
-}
 
 /* Itemele cu slideshow */
 .item {
+
   position: relative;
   overflow: hidden;
   border-radius: 10px;
@@ -85,6 +76,17 @@
   0, 0, 0, 1
 );
 
+.link-item {
+  display: block;          /* face linkul să ocupe toată suprafața */
+  text-decoration: none;   /* scoate sublinierea */
+  color: inherit;          /* păstrează culoarea normală */
+}
+
+.link-item {
+  display: block;          /* face linkul să ocupe toată suprafața */
+  text-decoration: none;   /* scoate sublinierea */
+  color: inherit;          /* păstrează culoarea normală */
+}
 
 
 }
