@@ -1,160 +1,367 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Zaharia - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Responsive Stylesheet -->
-    <link rel="stylesheet" href="css/responsive.css">
-</head>
-<body>
-    <!-- Header Section -->
-    <header class="header">
-        <nav class="nav">
-            <a href="#" class="logo">Gabriel<span>Zaharia</span></a>
-            <!-- Desktop Navigation Menu -->
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <!-- Mobile Menu Button -->
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
+// =============================================
+// MAIN JAVASCRIPT FILE
+// Portfolio functionality and interactions
+// =============================================
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Hi, I'm Gabriel Zaharia</h1>
-            <p>Passionate Developer & Creative Problem Solver</p>
-            <a href="#projects" class="cta-button">View My Projects</a>
-        </div>
-    </section>
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializePortfolio();
+});
 
-    <!-- About Section -->
-    <section class="section" id="about">
-        <div class="section-title">
-            <h2>About Me</h2>
-            <p>Get to know more about my skills and experience</p>
-        </div>
-        <div class="about-content">
-            <div class="profile-container">
-                <img src="assets/images/profile.jpg" alt="Gabriel Zaharia" class="profile-image">
-            </div>
-            <div class="about-text">
-                <h3>Passion for Technology</h3>
-                <p>Hello! I'm Gabriel Zaharia, a developer passionate about technology and creative solutions. I love combining logic with design to create functional, elegant, and easy-to-use web applications.</p>
-                <p>My experience covers HTML/CSS, JavaScript, React, Node.js, and Python, and my passion for UI/UX helps me build intuitive interfaces that provide a pleasant user experience.</p>
-                <div class="skills">
-                    <span class="skill-tag">HTML/CSS</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">React</span>
-                    <span class="skill-tag">Node.js</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">UI/UX</span>
-                </div>
-            </div>
-        </div>
-    </section>
+/**
+ * Initialize all portfolio functionality
+ */
+function initializePortfolio() {
+    initializeMobileMenu();
+    initializeSmoothScroll();
+    initializeContactForm();
+    initializeScrollTop();
+    initializeScrollAnimations();
+    
+    console.log('Portfolio initialized successfully');
+}
 
-    <!-- Projects Section -->
-    <section class="section" id="projects">
-        <div class="section-title">
-            <h2>My Projects</h2>
-            <p>Some of my recent works</p>
-        </div>
-        <div class="projects-grid">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <i class="fas fa-shopping-cart"></i>
-                </div>
-                <div class="project-content">
-                    <h3>E-commerce Site</h3>
-                    <p>A complete e-commerce site with full functionality including shopping cart, user authentication, and payment processing.</p>
-                    <div class="project-tech">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>MongoDB</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
-                <div class="project-content">
-                    <h3>Weather App</h3>
-                    <p>Weather application with modern and responsive interface, real-time data, and location-based forecasts.</p>
-                    <div class="project-tech">
-                        <span>JavaScript</span>
-                        <span>API</span>
-                        <span>CSS3</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Project 3 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <i class="fas fa-gamepad"></i>
-                </div>
-                <div class="project-content">
-                    <h3>Game Development</h3>
-                    <p>Browser game with 2D graphics and interesting mechanics, built with modern web technologies.</p>
-                    <div class="project-tech">
-                        <span>HTML5</span>
-                        <span>Canvas</span>
-                        <span>JavaScript</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+/**
+ * Mobile Menu Functionality
+ * Handles toggle and animations for mobile navigation
+ */
+function initializeMobileMenu() {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    const menuIcon = mobileMenu.querySelector('i');
 
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <div class="section-title">
-            <h2>Contact</h2>
-            <p>Let's work together!</p>
-        </div>
-        <form class="contact-form">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-    </section>
+    // Toggle mobile menu on click
+    mobileMenu.addEventListener('click', function() {
+        // Toggle active class for menu
+        navLinks.classList.toggle('active');
+        
+        // Change menu icon based on state
+        if (navLinks.classList.contains('active')) {
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-times');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        } else {
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+    });
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="social-links">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-        <p>&copy; 2024 Gabriel Zaharia. All rights reserved.</p>
-    </footer>
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 767) {
+                navLinks.classList.remove('active');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+        });
+    });
 
-    <!-- JavaScript Files -->
-    <script src="js/main.js"></script>
-    <script src="js/animations.js"></script>
-</body>
-</html>
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.nav') && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 767) {
+            navLinks.classList.remove('active');
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+    });
+}
+
+/**
+ * Smooth Scroll Functionality
+ * Enables smooth scrolling for anchor links
+ */
+function initializeSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = targetElement.offsetTop - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+}
+
+/**
+ * Contact Form Handling
+ * Manages form submission and validation
+ */
+function initializeContactForm() {
+    const contactForm = document.querySelector('.contact-form');
+    
+    if (!contactForm) return;
+    
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = {
+            name: document.getElementById('name').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            message: document.getElementById('message').value.trim()
+        };
+        
+        // Basic validation
+        if (!validateForm(formData)) {
+            return;
+        }
+        
+        // Simulate form submission
+        submitForm(formData);
+    });
+    
+    // Real-time validation
+    const inputs = contactForm.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            validateField(this);
+        });
+        
+        input.addEventListener('input', function() {
+            clearFieldError(this);
+        });
+    });
+}
+
+/**
+ * Validate individual form field
+ */
+function validateField(field) {
+    const value = field.value.trim();
+    let isValid = true;
+    let errorMessage = '';
+    
+    switch(field.type) {
+        case 'text':
+            if (value.length < 2) {
+                isValid = false;
+                errorMessage = 'Name must be at least 2 characters long';
+            }
+            break;
+            
+        case 'email':
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(value)) {
+                isValid = false;
+                errorMessage = 'Please enter a valid email address';
+            }
+            break;
+            
+        case 'textarea':
+            if (value.length < 10) {
+                isValid = false;
+                errorMessage = 'Message must be at least 10 characters long';
+            }
+            break;
+    }
+    
+    if (!isValid) {
+        showFieldError(field, errorMessage);
+    } else {
+        clearFieldError(field);
+    }
+    
+    return isValid;
+}
+
+/**
+ * Show field error message
+ */
+function showFieldError(field, message) {
+    clearFieldError(field);
+    
+    field.style.borderColor = '#e74c3c';
+    
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'field-error';
+    errorDiv.style.color = '#e74c3c';
+    errorDiv.style.fontSize = '0.9rem';
+    errorDiv.style.marginTop = '5px';
+    errorDiv.textContent = message;
+    
+    field.parentNode.appendChild(errorDiv);
+}
+
+/**
+ * Clear field error
+ */
+function clearFieldError(field) {
+    field.style.borderColor = '';
+    
+    const existingError = field.parentNode.querySelector('.field-error');
+    if (existingError) {
+        existingError.remove();
+    }
+}
+
+/**
+ * Validate entire form
+ */
+function validateForm(formData) {
+    let isValid = true;
+    
+    if (!formData.name || formData.name.length < 2) {
+        isValid = false;
+        showNotification('Please enter a valid name (at least 2 characters)', 'error');
+    } else if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+        isValid = false;
+        showNotification('Please enter a valid email address', 'error');
+    } else if (!formData.message || formData.message.length < 10) {
+        isValid = false;
+        showNotification('Please enter a message with at least 10 characters', 'error');
+    }
+    
+    return isValid;
+}
+
+/**
+ * Submit form data (simulated)
+ */
+function submitForm(formData) {
+    // Show loading state
+    const submitBtn = document.querySelector('.submit-btn');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    
+    // Simulate API call
+    setTimeout(() => {
+        // In a real application, you would send data to your backend here
+        console.log('Form submitted:', formData);
+        
+        // Show success message
+        showNotification('Message sent successfully! I will get back to you soon.', 'success');
+        
+        // Reset form
+        document.querySelector('.contact-form').reset();
+        
+        // Reset button
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }, 2000);
+}
+
+/**
+ * Show notification message
+ */
+function showNotification(message, type = 'info') {
+    // Remove existing notifications
+    const existingNotification = document.querySelector('.notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+    
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.textContent = message;
+    
+    // Style the notification
+    notification.style.position = 'fixed';
+    notification.style.top = '20px';
+    notification.style.right = '20px';
+    notification.style.padding = '15px 20px';
+    notification.style.borderRadius = '5px';
+    notification.style.color = 'white';
+    notification.style.fontWeight = '500';
+    notification.style.zIndex = '10000';
+    notification.style.maxWidth = '300px';
+    notification.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+    notification.style.transform = 'translateX(400px)';
+    notification.style.transition = 'transform 0.3s ease';
+    
+    // Set background color based on type
+    const colors = {
+        success: '#27ae60',
+        error: '#e74c3c',
+        info: '#3498db'
+    };
+    
+    notification.style.backgroundColor = colors[type] || colors.info;
+    
+    // Add to page
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        notification.style.transform = 'translateX(400px)';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.remove();
+            }
+        }, 300);
+    }, 5000);
+}
+
+/**
+ * Scroll to Top Functionality
+ */
+function initializeScrollTop() {
+    // Create scroll to top button
+    const scrollTopBtn = document.createElement('div');
+    scrollTopBtn.className = 'scroll-top';
+    scrollTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
+    document.body.appendChild(scrollTopBtn);
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollTopBtn.classList.add('active');
+        } else {
+            scrollTopBtn.classList.remove('active');
+        }
+    });
+    
+    // Scroll to top when clicked
+    scrollTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+/**
+ * Initialize scroll animations
+ */
+function initializeScrollAnimations() {
+    // This will be implemented in animations.js
+    console.log('Scroll animations ready to be initialized');
+}
+
+// Export functions for use in other modules (if needed)
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        initializePortfolio,
+        initializeMobileMenu,
+        initializeSmoothScroll
+    };
+}
