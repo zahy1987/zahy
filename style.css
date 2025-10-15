@@ -504,3 +504,15 @@ p {
     background: var(--primary-color);
     transform: translateY(-3px);
 }
+.social-links a {
+    color: var(--white);
+    font-size: 1.8rem;
+    margin: 0 15px;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-5px);
+}
