@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Zaharia - Portofoliu</title>
+    <title>Gabriel Zaharia - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* === VARIABILE CSS === */
+        /* === CSS VARIABLES === */
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
@@ -83,6 +83,12 @@
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .mobile-menu:hover {
+            color: var(--secondary-color);
         }
 
         /* === HERO SECTION === */
@@ -296,11 +302,47 @@
             }
         }
 
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* === RESPONSIVE DESIGN === */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                box-shadow: var(--shadow);
+                padding: 1rem 0;
+                text-align: center;
             }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+                opacity: 0;
+                transform: translateY(-10px);
+                animation: slideDown 0.3s ease forwards;
+            }
+
+            .nav-links li:nth-child(1) { animation-delay: 0.1s; }
+            .nav-links li:nth-child(2) { animation-delay: 0.2s; }
+            .nav-links li:nth-child(3) { animation-delay: 0.3s; }
+            .nav-links li:nth-child(4) { animation-delay: 0.4s; }
 
             .mobile-menu {
                 display: block;
@@ -327,9 +369,9 @@
         <nav class="nav">
             <a href="#" class="logo">Shop<span>zahy</span></a>
             <ul class="nav-links">
-                <li><a href="#home">Acasă</a></li>
-                <li><a href="#about">Despre mine</a></li>
-                <li><a href="#projects">Proiecte</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="mobile-menu">
@@ -341,25 +383,24 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Salut, eu sunt G
-            Zaharia</h1>
-            <p>Developer pasionat & Creative Problem Solver</p>
-            <a href="#projects" class="cta-button">Vezi proiectele mele</a>
+            <h1>Hi, I'm Gabriel Zaharia</h1>
+            <p>Passionate Developer & Creative Problem Solver</p>
+            <a href="#projects" class="cta-button">View My Projects</a>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="section" id="about">
         <div class="section-title">
-            <h2>Despre Mine</h2>
-            <p>Salut! Sunt G Zaharia, un dezvoltator pasionat de tehnologie și soluții creative. Îmi place să combin logica cu designul pentru a crea aplicații web funcționale, elegante și ușor de folosit. Experiența mea acoperă HTML/CSS, JavaScript, React, Node.js și Python, iar pasiunea pentru UI/UX mă ajută să construiesc interfețe intuitive care oferă o experiență plăcută utilizatorilor. Îmi place să învăț constant și să experimentez cu tehnologii noi, transformând ideile în proiecte reale. În portofoliul meu vei găsi proiecte care reflectă creativitatea, atenția la detalii și dorința de a oferi valoare reală.</p>
+            <h2>About Me</h2>
+            <p>Hello! I'm Gabriel Zaharia, a developer passionate about technology and creative solutions. I love combining logic with design to create functional, elegant, and easy-to-use web applications. My experience covers HTML/CSS, JavaScript, React, Node.js, and Python, and my passion for UI/UX helps me build intuitive interfaces that provide a pleasant user experience. I enjoy learning constantly and experimenting with new technologies, turning ideas into real projects. In my portfolio, you'll find projects that reflect creativity, attention to detail, and the desire to provide real value.</p>
         </div>
         <div class="about-content">
             <div>
                 <img src="profile.jpg" alt="Profile" class="profile-image">
             </div>
             <div>
-                <h3>Pasiune pentru tehnologie</h3>
+                <h3>Passion for Technology</h3>
                 <div class="skills">
                     <span class="skill-tag">HTML/CSS</span>
                     <span class="skill-tag">JavaScript</span>
@@ -375,8 +416,8 @@
     <!-- Projects Section -->
     <section class="section" id="projects">
         <div class="section-title">
-            <h2>Proiectele Mele</h2>
-            <p>Unele dintre lucrările mele recente</p>
+            <h2>My Projects</h2>
+            <p>Some of my recent works</p>
         </div>
         <div class="projects-grid">
             <div class="project-card">
@@ -385,7 +426,7 @@
                 </div>
                 <div class="project-content">
                     <h3>E-commerce Site</h3>
-                    <p>Un site de comerț electronic cu funcționalități complete.</p>
+                    <p>A complete e-commerce site with full functionality.</p>
                 </div>
             </div>
             <div class="project-card">
@@ -394,7 +435,7 @@
                 </div>
                 <div class="project-content">
                     <h3>Weather App</h3>
-                    <p>Aplicație meteo cu interfață modernă și responsive.</p>
+                    <p>Weather application with modern and responsive interface.</p>
                 </div>
             </div>
             <div class="project-card">
@@ -403,7 +444,7 @@
                 </div>
                 <div class="project-content">
                     <h3>Game Development</h3>
-                    <p>Joc browser cu grafică 2D și mecanici interesante.</p>
+                    <p>Browser game with 2D graphics and interesting mechanics.</p>
                 </div>
             </div>
         </div>
@@ -413,11 +454,11 @@
     <section class="section" id="contact">
         <div class="section-title">
             <h2>Contact</h2>
-            <p>Hai să vorbim!</p>
+            <p>Let's talk!</p>
         </div>
         <form class="contact-form">
             <div class="form-group">
-                <label for="name">Nume</label>
+                <label for="name">Name</label>
                 <input type="text" id="name" required>
             </div>
             <div class="form-group">
@@ -425,10 +466,10 @@
                 <input type="email" id="email" required>
             </div>
             <div class="form-group">
-                <label for="message">Mesaj</label>
+                <label for="message">Message</label>
                 <textarea id="message" rows="5" required></textarea>
             </div>
-            <button type="submit" class="submit-btn">Trimite mesaj</button>
+            <button type="submit" class="submit-btn">Send Message</button>
         </form>
     </section>
 
@@ -439,21 +480,31 @@
             <a href="#"><i class="fab fa-linkedin"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
-        <p>&copy; 2024 Shopzahy. Toate drepturile rezervate.</p>
+        <p>&copy; 2024 Shopzahy. All rights reserved.</p>
     </footer>
 
     <script>
-        // === JAVASCRIPT FUNCTIONALITĂȚI ===
+        // === JAVASCRIPT FUNCTIONALITIES ===
 
-        // Mobile Menu Toggle
+        // Mobile Menu Toggle with Animation
         const mobileMenu = document.querySelector('.mobile-menu');
         const navLinks = document.querySelector('.nav-links');
 
         mobileMenu.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.classList.toggle('active');
+            
+            // Change icon based on menu state
+            const icon = mobileMenu.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
         });
 
-        // Smooth Scroll pentru navigație
+        // Smooth Scroll for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -463,9 +514,12 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
-                    // Închide meniul mobile la click
+                    // Close mobile menu on click
                     if (window.innerWidth <= 768) {
-                        navLinks.style.display = 'none';
+                        navLinks.classList.remove('active');
+                        const icon = mobileMenu.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
                     }
                 }
             });
@@ -482,13 +536,13 @@
                 message: document.getElementById('message').value
             };
 
-            // Aici ai integra cu un serviciu de email sau backend
-            console.log('Formular trimis:', formData);
-            alert('Mesajul tău a fost trimis! Voi răspunde în curând.');
+            // Here you would integrate with an email service or backend
+            console.log('Form submitted:', formData);
+            alert('Your message has been sent! I will respond soon.');
             contactForm.reset();
         });
 
-        // Scroll Animation - afișează elementele când devin vizibile
+        // Scroll Animation - show elements when they become visible
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -503,7 +557,7 @@
             });
         }, observerOptions);
 
-        // Observe sections pentru animații
+        // Observe sections for animations
         document.querySelectorAll('.section').forEach(section => {
             section.style.opacity = '0';
             section.style.transform = 'translateY(20px)';
@@ -511,29 +565,15 @@
             observer.observe(section);
         });
 
-        // Dark/Light Mode Toggle (bonus)
-        const toggleTheme = () => {
-            document.body.classList.toggle('dark-theme');
-            // Ai putea salva preferința în localStorage
-        };
-
-        // Resize handler pentru meniu
+        // Resize handler for menu
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768) {
-                navLinks.style.display = 'flex';
-            } else {
-                navLinks.style.display = 'none';
+                navLinks.classList.remove('active');
+                const icon = mobileMenu.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             }
         });
     </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
