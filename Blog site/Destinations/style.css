@@ -10,7 +10,6 @@ body {
   padding: 2rem;
   display: flex;
   justify-content: center;
-  gap: 30px; /* spațiu între carduri pe desktop */
   font-family: "Poppins", sans-serif;
   --primary: #290b50;
 }
@@ -75,3 +74,4 @@ button {
   font-weight: 300;
   border-radius: 15px;
 }
+
