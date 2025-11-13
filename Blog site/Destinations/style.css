@@ -27,6 +27,13 @@ body {
     align-items: center;
     text-align: center;
     
+    @media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+}
+
 
 }
 
@@ -74,4 +81,5 @@ button {
     border-radius: 15px;
 
 }
+
 
