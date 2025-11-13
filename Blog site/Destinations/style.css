@@ -7,19 +7,20 @@
 }
 
 body {
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    font-family: "Poppins", sans-serif;
-
-    --primary: #290b50
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr !important;
-    gap: 20px;
-  }
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 30px;          /* spațiu între carduri pe desktop */
+  font-family: "poppins", sans-serif;
+  --primary: #a29bff;
 }
 
+/* 🔽 Pe ecrane mici, cardurile devin vertical (unul sub altul) */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .card {
@@ -82,6 +83,7 @@ button {
     border-radius: 15px;
 
 }
+
 
 
 
