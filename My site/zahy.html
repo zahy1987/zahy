@@ -18,50 +18,64 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <input
-        type="email"
-        required
-        placeholder="Email"
-        class="border border-gray-400 rounded px-2 py-22 focus:outline-none valid:border-green-500 invalid:border-red-500"
-      />
     </div>
 
     <!-- Header Section -->
-    <div class="header">
-      <h1>Welcome to My Website</h1>
+    <div class="header bg-fuchsia-500">
+        <div class="header-content bg-pink-50 ">
+      <h1 class="text-">Welcome to My Website</h1>
       <p class="subtitle">Learning <em>HTML</em> and <em>CSS</em></p>
+        </div>
+        <div class="header-photo"></div>
     </div>
 
     <!-- Main Content Section -->
     <div class="main-content">
-      <div class="about-section" id="about">
-        <h2>About Us</h2>
+      <div class="about-section" id="about" >
+        <h2 class="highlight2"><span>About Us</span></h2>
         <p>
-          Welcome to our website! Here you'll find
-          <span style="font-size: 1.2em">amazing content</span> about web
-          development.
-        </p>
+  This website is a simple project created to practice
+  <span class="highlight">HTML</span>,
+  <span class="highlight">CSS</span>, and basic web structure.
+  It focuses on clean layout and responsive design.
+</p>
+
       </div>
 
-      <div class="services-section" id="services">
-        <h2>Our Services</h2>
-        <p>We specialize in:</p>
-        <ul>
-          <li><span class="highlight">Web Design</span></li>
-          <li><em>Content Creation</em></li>
-          <li><strong>Digital Marketing</strong></li>
-        </ul>
-      </div>
+<div class="services-section" id="services" >
+  <h2 class="text-center text-2xl font-bold hover:bg-blue-500 hover:text-green-500 rounded-full transition-all duration-100 ease-in-out">What I’m Learning</h2><br>
+   <p>
+    This project focuses on practicing and improving my front-end development skills,
+    including:
+  </p>
+  <ul class="mt-4 space-y-2">
+    <li>
+      <span class="font-medium text-pink-300">HTML</span> – semantic structure and clean markup
+    </li>
+    <li>
+      <span class="font-medium text-pink-300">CSS & Tailwind</span> – layout, spacing, and responsive design
+    </li>
+    <li>
+      <span class="font-medium text-pink-300">JavaScript</span> – basic interactivity and logic
+    </li>
+  </ul>
+</div>
+
 
       <div class="contact-section" id="contact">
         <h2>Contact Us</h2>
-        <p>Get in touch: <span class="email">email@example.com</span></p>
+        <p>Get in touch: <span class="email">Shopzahy@gmail.com</span></p>
       </div>
     </div>
+<footer class="bg-gray-100 mt-16">
+  <div class="max-w-6xl mx-auto px-4 py-6 text-center text-sm text-gray-600 space-y-1">
+    <p>&copy; 2024 My Website</p>
+    <p>
+      Built with HTML, CSS & Tailwind by
+      <span class="font-medium text-blue-600">Zaharia Gabriel</span>
+    </p>
+  </div>
+</footer>
 
-    <!-- Footer Section -->
-    <div class="footer">
-      <p>&copy; 2024 My Website</p>
-    </div>
   </body>
 </html>

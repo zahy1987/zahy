@@ -41,37 +41,49 @@ body {
 
 /* Header Styling */
 .header {
-  height: 100px;
-  background-color: #d946ef; /* fuchsia */
+  height: 200px;
+  background-color: #d946ef;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  transition: background-image 0.3s ease;
 }
 
-/* textul */
+/* TEXT */
 .header-content {
   text-align: center;
-  color: #111;
-  background-color: #fdf2f8; /* pink-50 */
+  background-color: #fdf2f8;
   padding: 20px 30px;
   border-radius: 10px;
   transition: opacity 0.3s ease;
+  z-index: 2;
 }
 
-/* hover: apare poza */
-.header:hover {
-  background-image: url("./eu.jpg"); /* ← poza ta */
+/* POZA ROTUNDĂ */
+.header-photo {
+  width: 140px;
+  height: 140px;
+  background-image: url("./eu.jpg");
   background-size: cover;
   background-position: center;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1;
 }
 
-/* hover: dispare textul */
+/* HOVER EFFECT */
 .header:hover .header-content {
   opacity: 0;
 }
+
+.header:hover .header-photo {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
 
 
 /* Main Content Styling */
@@ -79,7 +91,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 1rem;
-    b
+    
 }
 
 .highlight {
@@ -94,18 +106,31 @@ body {
     margin-bottom: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
     
 }
+ .about-section:hover {
+  background-color: #1260fa;
+  color: #f4f4f4;
+
+}
+.highlight2{
+  font-weight: 600;
+  color: #eb4513;
+  
+  
+} 
+
+
 .services-section:hover {
   background-color: #1260fa;
   color: #f4f4f4;
-h2}
-
-{
-    color: #333;
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
 }
+.about-section:hover .highlight {
+  color: #df1d1d; /* sau ce culoare vrei */
+  background-color: #f4f4f4;
+}
+
 
 /* Text Formatting */
 .highlight {
