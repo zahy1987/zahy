@@ -1,81 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Enhanced Website</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
-    <!-- Navigation Section -->
-    <div class="nav-container">
-      <nav class="main-nav">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#Service">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+<head>
+  <!-- =====================
+       META & SETUP
+  ====================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Enhanced Website</title>
 
-    <!-- Header Section -->
-    <div class="header bg-fuchsia-500">
-        <div class="header-content bg-pink-50 ">
-      <h1 class="text-">Welcome to My Website</h1>
-      <p class="subtitle">Learning <em>HTML</em> and <em>CSS</em></p>
-        </div>
-        <div class="header-photo"></div>
-    </div>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 
-    <!-- Main Content Section -->
-    <div class="main-content">
-      <div class="about-section" id="about" >
-        <h2 class="highlight2"><span>About Us</span></h2>
-        <p>
-  This website is a simple project created to practice
-  <span class="highlight">HTML</span>,
-  <span class="highlight">CSS</span>, and basic web structure.
-  It focuses on clean layout and responsive design.
-</p>
+  <!-- Tailwind (folosit doar punctual, nu pentru layout principal) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-      </div>
+<body>
 
-<div class="services-section" id="services" >
-  <h2 class="text-center text-2xl font-bold hover:bg-blue-500 hover:text-green-500 rounded-full transition-all duration-100 ease-in-out">What I’m Learning</h2><br>
-   <p>
-    This project focuses on practicing and improving my front-end development skills,
-    including:
-  </p>
-  <ul class="mt-4 space-y-2">
-    <li>
-      <span class="font-medium text-pink-300">HTML</span> – semantic structure and clean markup
-    </li>
-    <li>
-      <span class="font-medium text-pink-300">CSS & Tailwind</span> – layout, spacing, and responsive design
-    </li>
-    <li>
-      <span class="font-medium text-pink-300">JavaScript</span> – basic interactivity and logic
-    </li>
-  </ul>
-</div>
-
-
-      <div class="contact-section" id="contact">
-        <h2>Contact Us</h2>
-        <p>Get in touch: <span class="email">Shopzahy@gmail.com</span></p>
-      </div>
-    </div>
-<footer class="bg-gray-100 mt-16">
-  <div class="max-w-6xl mx-auto px-4 py-6 text-center text-sm text-gray-600 space-y-1">
-    <p>&copy; 2024 My Website</p>
-    <p>
-      Built with HTML, CSS & Tailwind by
-      <span class="font-medium text-blue-600">Zaharia Gabriel</span>
-    </p>
+  <!-- =====================
+       NAVIGATION
+  ====================== -->
+  <div class="nav-container">
+    <nav class="main-nav">
+      <ul>
+        <!-- Linkurile duc către id-urile secțiunilor -->
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </div>
-</footer>
 
-  </body>
+  <!-- =====================
+       HEADER / HERO
+  ====================== -->
+  <div class="header" id="home">
+
+    <!-- Textul din header -->
+    <div class="header-content">
+      <h1 class="text-3xl font-bold">Welcome to My Website</h1>
+      <p class="subtitle">
+        Learning <em>HTML</em> and <em>CSS</em>
+      </p>
+    </div>
+
+    <!-- Poza rotundă (apare la hover) -->
+    <div class="header-photo"></div>
+  </div>
+
+  <!-- =====================
+       MAIN CONTENT
+  ====================== -->
+  <div class="main-content">
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="about-section" id="about">
+
+      <!-- Titlu pregătit pentru hover + fundal pe viitor -->
+      <h2 class="section-title">
+        <span>About Us</span>
+      </h2>
+
+      <p>
+        This website is a simple project created to practice
+        <span class="highlight">HTML</span>,
+        <span class="highlight">CSS</span>, and basic web structure.
+        It focuses on clean layout and responsive design.
+      </p>
+
+    </section>
+
+    <!-- ===== SERVICES / LEARNING SECTION ===== -->
+    <section class="services-section" id="services">
+
+      <h2 class="section-title">
+        <span>What I’m Learning</span>
+      </h2>
+
+      <p>
+        This project focuses on practicing and improving my front-end development skills,
+        including:
+      </p>
+
+      <ul>
+        <li>
+          <span class="highlight">HTML</span> – semantic structure and clean markup
+        </li>
+        <li>
+          <span class="highlight">CSS & Tailwind</span> – layout, spacing, and responsive design
+        </li>
+        <li>
+          <span class="highlight">JavaScript</span> – basic interactivity and logic
+        </li>
+      </ul>
+
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="contact-section" id="contact">
+
+      <h2 class="section-title">
+        <span>Contact</span>
+      </h2>
+
+      <p>
+        Get in touch:
+        <a href="mailto:shopzahy@gmail.com" class="email">
+          Shopzahy@gmail.com
+        </a>
+      </p>
+
+    </section>
+
+  </div>
+
+  <!-- =====================
+       FOOTER
+  ====================== -->
+  <footer>
+    <div class="max-w-6xl mx-auto px-4 py-6 text-center text-sm text-gray-600 space-y-1">
+      <p>&copy; 2024 My Website</p>
+      <p>
+        Built with HTML, CSS & Tailwind by
+        <span class="font-medium text-blue-600">Zaharia Gabriel</span>
+      </p>
+    </div>
+  </footer>
+
+</body>
 </html>
