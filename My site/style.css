@@ -22,25 +22,48 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
+  
+}
+
+.main-nav a {
+  color: #fcf8fb;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
 }
 
 .main-nav ul {
   list-style: none;
   display: flex;
+  gap: 1rem;
   justify-content: center;
-  gap: 2rem;
+  
 }
 
-.main-nav a {
-  color: #e91e9d;
+.nav-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  transition: color 0.3s ease;
+  color: whi;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  
 }
 
-.main-nav a:hover {
-  color: #ffd700;
+.nav-btn:hover {
+  background-color: #df1d9e;
+  border-radius: 20px;
+  background: linear-gradient(to right,
+    #f387e3,
+    #a855f7)
+  color: ;
 }
+
 
 /* =====================
    HEADER
@@ -53,6 +76,8 @@ body {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  
+
 }
 
 .header-content {
@@ -62,6 +87,11 @@ body {
   border-radius: 10px;
   transition: opacity 0.3s ease;
   z-index: 2;
+  background: linear-gradient(
+    to right,
+    #f387e3,
+    #a855f7
+  );
 }
 
 .header-photo {
@@ -110,8 +140,15 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: background-color 0.3s ease, color 0.3s ease;
+  
 }
-
+ #contact , #home{
+  background: linear-gradient(
+    to right,
+    #f387e3,
+    #a855f7
+  );
+}
 .about-section:hover,
 .services-section:hover {
   background-color: #1260fa;
