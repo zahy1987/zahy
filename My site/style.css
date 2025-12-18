@@ -7,6 +7,8 @@
 }
 
 body {
+    margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
   line-height: 1.6;
   background-color: #f5f5f5;
@@ -58,10 +60,7 @@ body {
 .nav-btn:hover {
   background-color: #df1d9e;
   border-radius: 20px;
-  background: linear-gradient(to right,
-    #f387e3,
-    #a855f7)
-  color: ;
+ 
 }
 
 
@@ -76,10 +75,15 @@ body {
   justify-content: center;
   position: relative;
   overflow: hidden;
-  
-
 }
 
+/* =====================
+   HEADER TEXT & CONTENT
+===================== */
+em {
+  color: #666;
+  font-style: italic;
+}
 .header-content {
   text-align: center;
   background-color: #fdf2f8;
@@ -93,6 +97,10 @@ body {
     #a855f7
   );
 }
+
+/* =====================
+   HEADER PHOTO
+===================== */
 
 .header-photo {
   width: 140px;
@@ -119,17 +127,14 @@ body {
 }
 
 /* =====================
-   MAIN CONTENT
+   SECTIONS ABOUT
 ===================== */
 .main-content {
   max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  margin: 1rem auto;
+  padding: 0.8rem;
 }
 
-/* =====================
-   SECTIONS (CARDS)
-===================== */
 .about-section,
 .services-section,
 .contact-section {
@@ -142,22 +147,16 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
   
 }
- #contact , #home{
-  background: linear-gradient(
-    to right,
-    #f387e3,
-    #a855f7
-  );
-}
-.about-section:hover,
-.services-section:hover {
+.about-section:hover {
   background-color: #1260fa;
   color: #f4f4f4;
 }
 
+
 /* =====================
-   TEXT HIGHLIGHTS
+   section learning
 ===================== */
+
 .highlight {
   font-weight: 600;
   color: #4b79a1;
@@ -177,12 +176,23 @@ body {
   color: #eb4513;
 }
 
+
+.services-section:hover {
+  background-color: #1260fa;
+  color: #f4f4f4;
+}
+
+
 /* =====================
-   TEXT ELEMENTS
+   contact section
 ===================== */
-em {
-  color: #666;
-  font-style: italic;
+ #contact {
+  background: linear-gradient(
+    to right,
+    #f387e3,
+    #a855f7
+  );
+  margin: 0;
 }
 
 .email {
@@ -192,7 +202,36 @@ em {
 }
 
 .email:hover {
+  background-color: #df1d9e;
   text-decoration: underline;
+  border-radius: 50px;
+  padding: 5px;
+  text-shadow: 2px 2px 4px rgb(182, 182, 244)
 }
+
+/* =====================
+   FOOTAT
+===================== */
+
+.footer {
+  background-color: #a3a3a3;
+  padding: 0.2rem; 
+  margin: 0;
+  text-align: center;
+  font-size: 0.55rem;
+ 
+}
+
+
+/* =====================
+   FOOTER
+===================== */
+
+
+
+
+
+
+
 
 
