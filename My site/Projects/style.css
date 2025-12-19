@@ -81,3 +81,26 @@ text-transform: capitalize;
     
 }
 
+
+.subscription-section {
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.subscription-card {
+  width: 100%;
+  max-width: 450px;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 20px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(
+    to right,
+    #f387e3,
+    #a855f7
+  );
+}
