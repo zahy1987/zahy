@@ -1,4 +1,10 @@
 /* Hi */
+@media (max-width: 600px) {
+  .nav-btn {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.9rem;
+  }
+}
 
 * {
   margin: 0;
@@ -40,12 +46,12 @@ body {
 }
 
 .main-nav ul {
-  list-style: none;
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   justify-content: center;
-  
 }
+
 
 .nav-btn {
   display: inline-block;
@@ -57,11 +63,12 @@ body {
   
 }
 
-.nav-btn:hover {
+.nav-btn:hover,
+.nav-btn:active {
   background-color: #df1d9e;
   border-radius: 20px;
- 
 }
+
 
 
 /* =====================
@@ -210,7 +217,7 @@ em {
 }
 
 /* =====================
-   FOOTAT
+   FOOTER
 ===================== */
 
 .footer {
