@@ -1,0 +1,237 @@
+/* Hi */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+/* =====================
+   NAVIGATION
+===================== */
+.nav-container {
+  background-color: #9c12f1;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  
+}
+
+.main-nav a {
+  color: #fcf8fb;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  
+}
+
+.nav-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  
+}
+
+.nav-btn:hover {
+  background-color: #df1d9e;
+  border-radius: 20px;
+ 
+}
+
+
+/* =====================
+   HEADER
+===================== */
+.header {
+  height: 200px;
+  background-color: #d946ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* =====================
+   HEADER TEXT & CONTENT
+===================== */
+em {
+  color: #666;
+  font-style: italic;
+}
+.header-content {
+  text-align: center;
+  background-color: #fdf2f8;
+  padding: 20px 30px;
+  border-radius: 10px;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  background: linear-gradient(
+    to right,
+    #f387e3,
+    #a855f7
+  );
+}
+
+/* =====================
+   HEADER PHOTO
+===================== */
+
+.header-photo {
+  width: 140px;
+  height: 140px;
+  background-image: url("./eu.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1;
+}
+
+.header:hover .header-content {
+  opacity: 0;
+}
+
+.header:hover .header-photo {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* =====================
+   SECTIONS ABOUT
+===================== */
+.main-content {
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 0.8rem;
+}
+
+.about-section,
+.services-section,
+.contact-section {
+  background-color: #ffffff;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  
+}
+.about-section:hover {
+  background-color: #1260fa;
+  color: #f4f4f4;
+}
+
+
+/* =====================
+   section learning
+===================== */
+
+.highlight {
+  font-weight: 600;
+  color: #4b79a1;
+  background-color: #15e72d;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.about-section:hover .highlight {
+  color: #df1d1d;
+  background-color: #f4f4f4;
+}
+
+.highlight2 {
+  font-weight: 600;
+  color: #eb4513;
+}
+
+
+.services-section:hover {
+  background-color: #1260fa;
+  color: #f4f4f4;
+}
+
+
+/* =====================
+   contact section
+===================== */
+ #contact {
+  background: linear-gradient(
+    to right,
+    #f387e3,
+    #a855f7
+  );
+  margin: 0;
+}
+
+.email {
+  color: #0066cc;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.email:hover {
+  background-color: #df1d9e;
+  text-decoration: underline;
+  border-radius: 50px;
+  padding: 5px;
+  text-shadow: 2px 2px 4px rgb(182, 182, 244)
+}
+
+/* =====================
+   FOOTAT
+===================== */
+
+.footer {
+  background-color: #a3a3a3;
+  padding: 0.2rem; 
+  margin: 0;
+  text-align: center;
+  font-size: 0.55rem;
+ 
+}
+
+
+/* =====================
+   FOOTER
+===================== */
+
+
+
+
+
+
+
+
+
