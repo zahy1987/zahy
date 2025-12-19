@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 @media (max-width: 600px) {
   .preview {
     margin-bottom: 2rem;
@@ -35,6 +36,8 @@ body {
   color: #e5e7eb;
   overflow-x: hidden;
 }
+
+
 
 /* CARD PREVIEW */
 .preview {
@@ -164,6 +167,4 @@ code {
   line-height: 1.6;
   font-size: 0.85rem;
 }
-
-
 
