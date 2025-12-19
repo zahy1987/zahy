@@ -1,8 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @media (max-width: 600px) {
-  .nav-btn {
-    padding: 0.4rem 0.7rem;
-    font-size: 0.9rem;
+  .preview {
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .img-wrapper {
+    height: 220px;
+  }
+
+  .overlay {
+    position: static;
+    width: 100%;
+    margin-top: 0.5rem;
   }
 }
 
@@ -20,9 +33,6 @@ body {
   padding: 1rem;
   background: #0f172a;
   color: #e5e7eb;
-
-  min-height: 100vh;
-  min-height: 100dvh;
   overflow-x: hidden;
 }
 
@@ -154,5 +164,6 @@ code {
   line-height: 1.6;
   font-size: 0.85rem;
 }
+
 
 
