@@ -141,7 +141,6 @@ em {
   max-width: 800px;
   margin: 1rem auto;
   padding: 0.8rem;
-  min-height: 100vh;
 }
 
 .about-section,
@@ -235,6 +234,7 @@ em {
 /* =====================
    FOOTER
 ===================== */
+
 
 
 
