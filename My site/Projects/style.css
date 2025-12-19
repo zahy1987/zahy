@@ -19,7 +19,6 @@
 
   padding: 0px;
 }
-
 .shopping-card h2,
 .shopping-card p {
   color: #f4dede;
@@ -61,4 +60,3 @@
   object-fit: cover;
   gap: 5px;
 }
-
