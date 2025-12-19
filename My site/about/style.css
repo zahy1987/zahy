@@ -55,11 +55,14 @@ p a {
   text-decoration: underline;
 }
 
-#text-cv p , h2 {
-    text-shadow: 8px 8px 4px rgba(14,14,13,0.6);
-    color: #FFD700;
-    padding: 0.3rem;
-    
 
+#text-cv h2 {
+  text-shadow: 8px 8px 4px rgba(14,14,13,0.6);
+  color: #FFD700;
+  padding: 0.3rem;
+}
 
+#text-cv > p {
+  text-shadow: 8px 8px 4px rgba(14,14,13,0.6);
+  color: #FFD700;
 }
