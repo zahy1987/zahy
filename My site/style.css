@@ -19,6 +19,8 @@ body {
   line-height: 1.6;
   background-color: #f5f5f5;
   color: #222;
+  min-height: 100vh;
+  min-height: 100dvh
 }
 
 /* =====================
@@ -233,6 +235,7 @@ em {
 /* =====================
    FOOTER
 ===================== */
+
 
 
 
