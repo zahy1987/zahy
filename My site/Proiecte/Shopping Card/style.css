@@ -6,14 +6,19 @@
     box-sizing: border-box;
 }
 
-body{
-    font-family: "inter", sans-serif;
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
 
+body {
+  font-family: "Inter", sans-serif;
+  padding: 1rem;
+  background: #0f172a;
+  color: #e5e7eb;
 
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
 }
+
+
 
 .card {
     width: 350px;
@@ -44,6 +49,12 @@ body{
     );
 
 }
+.preview {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
 .content {
     display: flex;
     flex-direction: column;
