@@ -17,7 +17,7 @@ body {
 
 
 
-.container {
+.container-projects {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,4 +107,11 @@ text-transform: capitalize;
     #a855f7
   );
 }
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
