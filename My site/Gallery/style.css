@@ -1,5 +1,5 @@
 /* ===============================
-   Hi
+   RESET DE BAZĂ
 ================================ */
 * {
   margin: 0;
@@ -15,55 +15,58 @@ body {
 }
 
 /* ===============================
-   SECȚIUNEA CERTIFICATIONS (container mare)
+   SECȚIUNEA CERTIFICATIONS
 ================================ */
-.Certifications {background-color: rgb(252, 232, 57);
+.Certifications {
+  background-color: rgb(252, 232, 57);
   display: flex;
-  flex-direction: column;   /* elementele unul sub altul */
-  align-items: center;      /* centrează conținutul pe orizontală */
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 1.3rem;
-  border: 3px solid #666;   /* doar pentru debug / delimitare */
 }
 
-/* Titlul mare al secțiunii */
+/* Titlul secțiunii */
 .Certifications > h2 {
-  margin: 0 0 1rem 0;       /* fără spațiu sus, puțin jos */
+  margin: 0 0 1rem 0;
 }
 
 /* ===============================
-   CARDUL UNUI CERTIFICAT
+   CONTAINER CARDURI
+================================ */
+#certifications {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+
+/* ===============================
+   CARD CERTIFICAT (componenta)
 ================================ */
 .certificate-card {
   max-width: 320px;
-  margin: 0 auto;           /* fără spațiu sus, centrat */
   text-align: center;
+  
 }
 
 /* ===============================
-   IMAGINEA CERTIFICATULUI
-   (folosită ca fundal – efect de tablou)
+   IMAGINE CERTIFICAT (ramă)
 ================================ */
 .certificate-image {
   height: 220px;
-
-  /* imagine de fundal */
-  background-image: url("./Html.png");
-  background-size: cover;       /* umple div-ul frumos */
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* efect de ramă */
   border-radius: 12px;
   border: 2px solid #e5e5e5;
-
-  /* umbră pentru efect de profunzime */
   box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-
   margin: 1rem 0;
 }
 
 /* ===============================
-   TITLUL CERTIFICATULUI
+   TITLU CERTIFICAT
 ================================ */
 .certificate-card h3 {
   font-size: 1.6rem;
@@ -73,31 +76,26 @@ body {
 }
 
 /* ===============================
-   DESCRIEREA CERTIFICATULUI
-================================ */
-.certificate-card p {
-  font-size: 1.2rem;
-  color: rgb(74, 109, 251);
-  text-shadow: 4px 4px 2px rgba(14,14,13,0.6);
-}
-
-/* ===============================
-   LINK CĂTRE CERTIFICAT
+   LINK CERTIFICAT
 ================================ */
 .certificate-card a {
   display: inline-block;
   margin-top: 0.8rem;
-  color: #FFD700;               /* auriu */
+  color: #FFD700;
   text-decoration: underline;
   font-weight: 500;
 }
 
-/* ===============================
-   CONTAINER SECUNDAR (#certifications)
-   
-================================ */
-#certifications {
-  margin: auto;
-  padding: 0.5rem;
-  border: 2px dotted blue;      /* delimitare vizuală */
+/* imagini diferite pentru fiecare certificat */
+.certificate-card.html .certificate-image {
+  background-image: url("./Html.png");
 }
+
+.certificate-card.css .certificate-image {
+  background-image: url("./Css.png");
+}
+
+.certificate-card.tailwind .certificate-image {
+  background-image: url("./Tailwind.png");
+}
+
