@@ -1,0 +1,103 @@
+/* ===============================
+   Hi
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   STIL GENERAL PENTRU PAGINĂ
+================================ */
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* ===============================
+   SECȚIUNEA CERTIFICATIONS (container mare)
+================================ */
+.Certifications {background-color: rgb(252, 232, 57);
+  display: flex;
+  flex-direction: column;   /* elementele unul sub altul */
+  align-items: center;      /* centrează conținutul pe orizontală */
+  margin-bottom: 1.3rem;
+  border: 3px solid #666;   /* doar pentru debug / delimitare */
+}
+
+/* Titlul mare al secțiunii */
+.Certifications > h2 {
+  margin: 0 0 1rem 0;       /* fără spațiu sus, puțin jos */
+}
+
+/* ===============================
+   CARDUL UNUI CERTIFICAT
+================================ */
+.certificate-card {
+  max-width: 320px;
+  margin: 0 auto;           /* fără spațiu sus, centrat */
+  text-align: center;
+}
+
+/* ===============================
+   IMAGINEA CERTIFICATULUI
+   (folosită ca fundal – efect de tablou)
+================================ */
+.certificate-image {
+  height: 220px;
+
+  /* imagine de fundal */
+  background-image: url("./Html.png");
+  background-size: cover;       /* umple div-ul frumos */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* efect de ramă */
+  border-radius: 12px;
+  border: 2px solid #e5e5e5;
+
+  /* umbră pentru efect de profunzime */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+
+  margin: 1rem 0;
+}
+
+/* ===============================
+   TITLUL CERTIFICATULUI
+================================ */
+.certificate-card h3 {
+  font-size: 1.6rem;
+  color: rgb(74, 109, 251);
+  text-shadow: 4px 4px 2px rgba(14,14,13,0.6);
+  margin-bottom: 0.3rem;
+}
+
+/* ===============================
+   DESCRIEREA CERTIFICATULUI
+================================ */
+.certificate-card p {
+  font-size: 1.2rem;
+  color: rgb(74, 109, 251);
+  text-shadow: 4px 4px 2px rgba(14,14,13,0.6);
+}
+
+/* ===============================
+   LINK CĂTRE CERTIFICAT
+================================ */
+.certificate-card a {
+  display: inline-block;
+  margin-top: 0.8rem;
+  color: #FFD700;               /* auriu */
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* ===============================
+   CONTAINER SECUNDAR (#certifications)
+   
+================================ */
+#certifications {
+  margin: auto;
+  padding: 0.5rem;
+  border: 2px dotted blue;      /* delimitare vizuală */
+}
