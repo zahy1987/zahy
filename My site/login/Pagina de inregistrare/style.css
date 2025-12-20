@@ -113,3 +113,12 @@ button:hover{
     background-color: var(--primary);
 
 }
+
+#home {
+    color: #21f505;
+    background: linear-gradient(
+    to right,
+    #f387e3,
+    #a855f7
+  );
+}
