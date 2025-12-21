@@ -104,7 +104,7 @@ body {
 }
 
 .certificate-card.css .certificate-image {
-  background-image: url("./Css.png");
+  background-image: url("./csscertificat.png");
 }
 
 .certificate-card.tailwind .certificate-image {
@@ -144,4 +144,5 @@ body {
 	position:relative;
 	top:1px;
 }
+
 
