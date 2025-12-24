@@ -1,81 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- =====================
-       META & SETUP
-  ====================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>G. Zaharia</title>
-  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- =====================
        NAVIGATION
   ====================== -->
   <div class="nav-container">
-   <nav class="main-nav">
+    <nav class="main-nav active" aria-label="Main navigation">
       <ul>
-    <li><a href="./zahy.html" class="nav-btn">Home</a></li>
-    <li><a href="./Projects/Projects.html" class="nav-btn">Projects</a></li>
-    <li><a href="./Gallery/Gallery.html" class="nav-btn">Gallery</a></li>
-    <li><a href="./interviews/interviews.html" class="nav-btn">Interviews</a></li>
-    <li><a href="./about/about.html" class="nav-btn">About</a></li>
-    <li><a href="./contact/contact.html" class="nav-btn">Contact</a></li>
-    <li><a href="./login/index.html" class="nav-btn">Login</a></li>
+        <li><a href="./zahy.html" class="nav-btn active">Home</a></li>
+        <li><a href="./Projects/Projects.html" class="nav-btn">Projects</a></li>
+        <li><a href="./Gallery/Gallery.html" class="nav-btn">Gallery</a></li>
+        <li><a href="./interviews/interviews.html" class="nav-btn">Interviews</a></li>
+        <li><a href="./about/about.html" class="nav-btn">About</a></li>
+        <li><a href="./contact/contact.html" class="nav-btn">Contact</a></li>
+        <li><a href="./login/index.html" class="nav-btn">Login</a></li>
   </ul>
-</nav>
+    </nav>
+  </div>
 <hr>
   <!-- =====================
        HEADER
   ====================== -->
-  <div class="header" id="home">
+  <header class="header" tabindex="0" aria-label="Website header">
     <div class="header-content">
-      <h1 class="text-xl font-bold">Welcome to My Website</h1>
+      <h1>Welcome to My Website</h1>
       <p class="subtitle">
         Learning <em>HTML</em> and <em>CSS</em>
       </p>
     </div>
-
-    <!-- Poza rotunda de sus -->
-    <div class="header-photo"></div>
-  </div>
+    <div class="header-photo" role="img" aria-label="Profile photo"></div>
+  </header>
 
   <!-- =====================
        MAIN CONTENT
   ====================== -->
-  <div class="main-content">
+  <main class="main-content" id="main">
 
-    <!-- ===== ABOUT SECTION ===== -->
-    <section class="about-section" id="about">
-      <h2 class="section-title">
-        <span>About Us</span>
-      </h2>
-
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" >
+      <h2  class="section-title text-blue-700">About Us</h2>
       <p>
         This website is a simple project created to practice
         <span class="highlight">HTML</span>,
         <span class="highlight">CSS</span>, and basic web structure.
         It focuses on clean layout and responsive design.
       </p>
-
     </section>
 
-    <!-- ===== LEARNING SECTION ===== -->
-    <section class="services-section" id="services">
-
-      <h2 class="section-title">
-        <span>What I’m Learning</span>
-      </h2>
-
+    <!-- LEARNING SECTION -->
+    <section class="section services-section">
+      <h2 class="section-title text-blue-700">What I'm Learning</h2>
       <p>
         This project focuses on practicing and improving my front-end development skills,
         including:
       </p>
-
       <ul>
         <li>
           <span class="highlight">HTML</span> – semantic structure and clean markup
@@ -87,41 +77,19 @@
           <span class="highlight">JavaScript</span> – basic interactivity and logic
         </li>
       </ul>
-
     </section>
 
-    <!-- ===== CONTACT SECTION ===== -->
-    <section class="contact-section" id="contact">
-
-      <h2 class="section-title">
-        <span>Contact</span>
-      </h2>
-
-      <p>
-        Get in touch:
-        <a href="mailto:shopzahy@gmail.com" class="email">
-          Shopzahy@gmail.com
-        </a>
-      </p>
-
-    </section>
-
-  </div>
-
-  
+  </main>
 
   <!-- =====================
        FOOTER
   ====================== -->
   <footer class="footer">
-    <div>
-      <p>&copy; 2024 My Website</p>
-      <p>
-        Built with HTML, CSS & Tailwind by
-        <span class="font-medium text-blue-600">Zaharia Gabriel</span>
-      </p>
-    </div>
-    
+    <p>&copy; 2024 My Website</p>
+    <p>
+      Built with HTML, CSS & Tailwind by
+      <a href="./contact/contact.html" class="footer-highlight">Zaharia Gabriel</a>
+    </p>
   </footer>
 
 </body>
