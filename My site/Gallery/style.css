@@ -37,12 +37,51 @@ body {
   align-items: center;
 }
 
+.certificate-image {
+  
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #6b21a8;
+    width: 280px;
+    min-height: 200px;
+    border: 2px solid #353232;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 0px;
+    margin: 10px;
+
+}
+    
+.certificate-image  {  /* Efect 3D și tranziție */
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Perspectivă pentru efect 3D mai bun */
+    perspective: 1000px;
+}
+
+/* Efect la hover - cardul se ridică și umbra devine mai accentuată */
+.certificate-image:hover {
+    transform: translateY(-5px) rotateX(2deg) rotateY(2deg);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 60px 65px, rgba(0, 0, 0, 0.15) 0px -15px 35px, rgba(0, 0, 0, 0.15) 0px 6px 8px, rgba(0, 0, 0, 0.2) 0px 15px 15px, rgba(0, 0, 0, 0.12) 0px -4px 6px;
+}
+
+/* Efect când cardul este selectat/activ */
+.certificate-image:active {
+    transform: translateY(-2px) scale(0.98);
+    transition: transform 0.1s ease;
+}
+
 /* Titlul secțiunii */
 .Certifications > h2 {
   font-family: "Pacifico", cursive;
   font-weight: 400;
   font-style: normal;
-  color: oklch(45.7% 0.24 277.023);
+  color: oklch(74.564% 0.10726 289.637);
   margin: 0 0 1rem 0;
   text-decoration: underline;
 }
@@ -57,6 +96,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
 }
+
 
 
 
@@ -85,6 +125,12 @@ body {
   box-shadow: 0 15px 30px rgba(0,0,0,0.2);
   margin: 1rem 0;
   background-color: #f9f9f9;  
+  
+  
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #6b21a8;
+    border: 2px solid #353232;
 }
 
 
@@ -99,6 +145,7 @@ body {
   font-size: 1.6rem;
   text-shadow: 4px 4px 2px rgba(14,14,13,0.6);
   margin-bottom: 0.3rem;
+  
 }
 
 /* ===============================
@@ -110,6 +157,17 @@ body {
   color: #1100ff;
   text-decoration: underline;
   font-weight: 500;
+  
+  
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #6b21a8;
+    border: 2px solid #353232;
+}
+.certificate-card a:hover {
+    transform: translateY(-5px) rotateX(2deg) rotateY(2deg);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 60px 65px, rgba(0, 0, 0, 0.15) 0px -15px 35px, rgba(0, 0, 0, 0.15) 0px 6px 8px, rgba(0, 0, 0, 0.2) 0px 15px 15px, rgba(0, 0, 0, 0.12) 0px -4px 6px;
+
 }
 
 /* imagini diferite pentru fiecare certificat */
@@ -130,8 +188,24 @@ body {
   font-size: 2.2rem;
   margin-bottom: 2rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 2px;  
+}
+
+h2 {/* HTML: <div class="ribbon">Your text content</div> */
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+}
+.Certifications> h2 {
+  --r:  .6em; /* control the cutout of the ribbon */
+  --s: 1.5em; /* size of the folded part */
   
+  line-height: 1.8;
+  padding-inline: calc(var(--r) + .3em) 1lh;
+  border-bottom: var(--s) solid #0005;
+  background: #af0a25;
+  clip-path: polygon(calc(100% - 1lh) 0,0 0,var(--r) calc(50% - var(--s)/2),0 calc(100% - var(--s)),calc(100% - 1lh) calc(100% - var(--s)),calc(100% - 1lh) calc(100% - var(--r)),calc(100% - .5lh) 100%,100% calc(100% - var(--r)),100% calc(100% - var(--s)));
+  width: fit-content;
 }
 
 
@@ -149,6 +223,7 @@ body {
 	padding:7px 25px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #e1e2ed;
+  
 }
 .myButton:hover {
 	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
@@ -156,6 +231,7 @@ body {
 }
 .myButton:active {
 	position:relative;
-	top:1px;
+	top: 0.1px;
 }
+
 
