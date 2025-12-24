@@ -4,8 +4,7 @@
     align-items: center;
   }
 }
-
-
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Gemstones&display=swap');
 /* RESET */
 * {
   box-sizing: border-box;
@@ -44,21 +43,22 @@ body {
   text-align: center;
   margin-bottom: 2rem;
   font-weight: 600;
-  color: #4b79a1;
+  color: #ec664e;
   padding: 0.5rem 1rem;
   border-radius: 25px;
-  background: linear-gradient(to right, #f387e3, #a855f7);
+      background: linear-gradient(135deg, #3a59e4 0%, #764ba2 100%);
 }
-
+ 
 .contact-intro h2,
 .contact-intro h3 {
-  font-size: 2rem;
+  
+  font-size: 2.3rem;
   margin-bottom: 0.8rem;
 }
 
 .contact-intro p {
-  font-size: 1rem;
-  color: #333;
+  font-size: 1.1rem;
+  color: #22dcf5;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -146,3 +146,10 @@ body {
   margin: 4rem 0;
   text-align: center;
 }
+/* Font intro contact-intro */
+.rubik-gemstones-regular {
+  font-family: 'Rubik Gemstones', system-ui;
+  font-weight: 400;   /* Rubik Gemstones are doar 400 */
+  font-style: normal;
+}
+
