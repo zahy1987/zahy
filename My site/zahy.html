@@ -6,10 +6,19 @@
   <title>G. Zaharia</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
-
+  <!--Snow efect-->
+<style>
+        @keyframes fall {
+            to { transform: translateY(100vh); }
+        }
+    </style>
 </head>
 
-<body>
+<body class="bg-gray-900 text-white"> <!--snow class-->
+    <!-- Conținutul site-ului dvs. -->
+    
+    <!-- Container pentru fulgi -->
+    <div id="snowflakes-container" class="fixed top-0 left-0 w-full h-full pointer-events-none z-50 overflow-hidden"></div>
   <!-- Skip to main content for accessibility -->
   <a href="#main" class="skip-link">Skip to main content</a>
 
@@ -92,5 +101,30 @@
     </p>
   </footer>
 
+  <!--snow js-->
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('snowflakes-container');
+            const snowflakes = [ '✻', '❆', '✻', '✼'];
+            
+            function createSnowflake() {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'absolute text-white -top-4 select-none pointer-events-none';
+                snowflake.textContent = snowflakes[Math.floor(Math.random() * snowflakes.length)];
+                snowflake.style.left = Math.random() * 100 + 'vw';
+                snowflake.style.opacity = Math.random() * 1.6 + 0.4;
+                snowflake.style.animation = `fall linear ${(Math.random() * 10 + 25)}s infinite`;
+                snowflake.style.animationDelay = Math.random() * 0.1 + 's';
+                
+                container.appendChild(snowflake);
+                
+                setTimeout(() => {
+                    snowflake.remove();
+                }, parseFloat(snowflake.style.animationDuration) * 1000 || 15000);
+            }
+            
+            setInterval(createSnowflake, 500);
+        });
+    </script>
 </body>
 </html>
