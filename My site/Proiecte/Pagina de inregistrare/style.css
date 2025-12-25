@@ -14,13 +14,19 @@ body{
     --inputGray: rgb(85, 85, 85);
     --textColor: #2ff54c;
 
-    background-color: #189e8f;
     padding: 2rem;
     display: flex;
     justify-content: center;
     font-family: "Poppins", sans-serif;
     color: var(--textColor);
     border-radius: 5px;
+    
+  background: linear-gradient(
+    to right,
+    #cfbb39,
+    #a855f7
+  );
+  
 }
 .gz{
     width: 350px;
@@ -107,4 +113,13 @@ button:hover{
     color: white;
     background-color: var(--primary);
 
+}
+
+#home {
+    color: #21f505;
+    background: linear-gradient(
+    to right,
+    #f387e3,
+    #a855f7
+  );
 }
