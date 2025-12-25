@@ -234,4 +234,106 @@ h2 {/* HTML: <div class="ribbon">Your text content</div> */
 	top: 0.1px;
 }
 
+/* ===============================
+   ANIMAȚIE CONFETTI - Forme și Mărimi Diferite
+================================ */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0.3;
+  }
+}
 
+@keyframes confetti-fall-slow {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(180deg);
+    opacity: 0.3;
+  }
+}
+
+.confetti {
+  position: fixed;
+  top: -100px;
+  z-index: 9999;
+  pointer-events: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  animation: confetti-fall linear infinite;
+}
+
+/* FORME DIFERITE */
+
+/* Fâșii lungi și înguste */
+.confetti.ribbon-long {
+  width: 12px;
+  height: 70px;
+  border-radius: 2px;
+}
+
+/* Fâșii medii */
+.confetti.ribbon-medium {
+  width: 18px;
+  height: 50px;
+  border-radius: 3px;
+}
+
+/* Fâșii scurte și late */
+.confetti.ribbon-short {
+  width: 25px;
+  height: 35px;
+  border-radius: 4px;
+}
+
+/* Pătrate */
+.confetti.square {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  animation: confetti-fall-slow linear infinite;
+}
+
+/* Cercuri */
+.confetti.circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  animation: confetti-fall-slow linear infinite;
+}
+
+/* Dreptunghiuri late */
+.confetti.rectangle {
+  width: 30px;
+  height: 15px;
+  border-radius: 3px;
+}
+
+/* 20 de fâșii - poziții și culori */
+.confetti:nth-child(1) { left: 5%; animation-duration: 4s; animation-delay: 0s; background: linear-gradient(135deg, #ff0000, #cc0000); }
+.confetti:nth-child(2) { left: 10%; animation-duration: 5s; animation-delay: 0.3s; background: linear-gradient(135deg, #00ff00, #00cc00); }
+.confetti:nth-child(3) { left: 15%; animation-duration: 4.5s; animation-delay: 0.0s; background: linear-gradient(135deg, #0000ff, #0000cc); }
+.confetti:nth-child(4) { left: 20%; animation-duration: 5.5s; animation-delay: 0.0s; background: linear-gradient(135deg, #ffff00, #cccc00); }
+.confetti:nth-child(5) { left: 25%; animation-duration: 4.8s; animation-delay: 1.2s; background: linear-gradient(135deg, #ff00ff, #cc00cc); }
+.confetti:nth-child(6) { left: 30%; animation-duration: 5.2s; animation-delay: 1.5s; background: linear-gradient(135deg, #00ffff, #00cccc); }
+.confetti:nth-child(7) { left: 35%; animation-duration: 4.3s; animation-delay: 1.8s; background: linear-gradient(135deg, #ff6600, #cc5500); }
+.confetti:nth-child(8) { left: 40%; animation-duration: 5.8s; animation-delay: 2.1s; background: linear-gradient(135deg, #ff3399, #cc2277); }
+.confetti:nth-child(9) { left: 45%; animation-duration: 4.6s; animation-delay: 2.4s; background: linear-gradient(135deg, #66ff00, #55cc00); }
+.confetti:nth-child(10) { left: 50%; animation-duration: 5.4s; animation-delay: 2.7s; background: linear-gradient(135deg, #9900ff, #7700cc); }
+.confetti:nth-child(11) { left: 55%; animation-duration: 4.9s; animation-delay: 3s; background: linear-gradient(135deg, #ff9900, #cc7700); }
+.confetti:nth-child(12) { left: 60%; animation-duration: 5.1s; animation-delay: 3.3s; background: linear-gradient(135deg, #00ff99, #00cc77); }
+.confetti:nth-child(13) { left: 65%; animation-duration: 4.4s; animation-delay: 3.6s; background: linear-gradient(135deg, #ff0066, #cc0055); }
+.confetti:nth-child(14) { left: 70%; animation-duration: 5.6s; animation-delay: 3.9s; background: linear-gradient(135deg, #6600ff, #5500cc); }
+.confetti:nth-child(15) { left: 75%; animation-duration: 4.7s; animation-delay: 3.2s; background: linear-gradient(135deg, #ffcc00, #ccaa00); }
+.confetti:nth-child(16) { left: 80%; animation-duration: 5.3s; animation-delay: 1.5s; background: linear-gradient(135deg, #00ccff, #00aacc); }
+.confetti:nth-child(17) { left: 85%; animation-duration: 4.2s; animation-delay: 0.8s; background: linear-gradient(135deg, #ff6699, #cc5577); }
+.confetti:nth-child(18) { left: 90%; animation-duration: 5.7s; animation-delay: 3.1s; background: linear-gradient(135deg, #99ff00, #77cc00); }
+.confetti:nth-child(19) { left: 95%; animation-duration: 4.5s; animation-delay: 1.4s; background: linear-gradient(135deg, #ff00cc, #cc00aa); }
+.confetti:nth-child(20) { left: 8%; animation-duration: 5.9s; animation-delay: 2.7s; background: linear-gradient(135deg, #00ff66, #00cc55); }
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');

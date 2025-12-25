@@ -70,14 +70,50 @@
     <p>&copy; 2025 My Website</p>
     <p>
       Built with HTML, CSS & Tailwind by
-      <a href="/zahy/My%20site/contact/contact.html" class="footer-highlight">
-  Zaharia Gabriel
-</a>
-
+      <a href="../contact/contact.html" class="footer-highlight">Zaharia Gabriel</a>
     </p>
   </footer>
+
+  <section class="Certifications">
+      <h2>🎉 Certifications 🎉</h2>
+
+      <div id="certifications">
+        <div class="certificate-card html">
+          <h3>HTML & Web Essentials</h3>
+          <div class="certificate-image">Certificate Preview</div>
+          <a href="#" class="myButton">View certificate</a>
+        </div>
+
+        <div class="certificate-card css">
+          <h3>CSS Essentials</h3>
+          <div class="certificate-image">Certificate Preview</div>
+          <a href="#" class="myButton">View certificate</a>
+        </div>
+
+        <div class="certificate-card tailwind">
+          <h3>Tailwind CSS</h3>
+          <div class="certificate-image">Certificate Preview</div>
+          <a href="#" class="myButton">View certificate</a>
+        </div>
+      </div>
+    </section>
+
+    
+    <!--Animatie forneti-->
+    <script>
+      // Generează 20 de bucăți de confetti cu forme și mărimi diferite
+      const shapes = ['ribbon-long', 'ribbon-medium', 'ribbon-short', 'square', 'circle', 'rectangle'];
+      
+      for (let i = 0; i < 20; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        
+        // Alege o formă aleatorie pentru fiecare bucată
+        const randomShape = shapes[i % shapes.length];
+        confetti.classList.add(randomShape);
+        
+        document.body.appendChild(confetti);
+      }
+    </script>
   </body>
 </html>
-
-
-
