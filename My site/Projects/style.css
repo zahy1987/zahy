@@ -35,10 +35,12 @@ body {
 
 
 .container-projects {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap; /* ← asta face cardurile să treacă pe rânduri noi */
+  gap: 20px; /* spațiu între carduri */
 }
 
 .nav-container {
