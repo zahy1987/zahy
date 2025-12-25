@@ -1,0 +1,86 @@
+@media (max-width: 768px) {
+  #certifications {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.main-nav {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      width: 100%;
+      box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    
+}
+
+
+.cv-section {
+  margin: 3rem auto;
+  text-align: center;
+  background: #2A7B9B;
+  
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+
+.cv-frame {
+  width: 100%;
+  max-width: 900px;
+  height: 600px;
+  margin: 1.5rem auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cv-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+
+.myButton {
+	box-shadow: 5px 4px 10px 2px #8a2a21;
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+	background-color:#c62d1f;
+	border-radius:18px;
+	border:1px solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:6px 71px;
+	text-decoration:none;
+	text-shadow:0px 6px 6px #810e05;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
+	background-color:#f24437;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+p a {
+  color: blue;
+  text-decoration: underline;
+}
+
+#text-cv h2 {
+  text-shadow: 8px 8px 4px rgba(14,14,13,0.6);
+  color: #FFD700;
+  padding: 0.3rem;
+}
+
+#text-cv > p {
+  text-shadow: 8px 8px 4px rgba(14,14,13,0.6);
+  color: #FFD700;
+}
+
+    
+
