@@ -387,38 +387,35 @@
       outline-offset: 2px;
     }
     /* mos craciun*/
+/* mos craciun */
 .mos-craciun {
   position: fixed;
-  right: -220px;
-  bottom: 0.5%;
+  right: -220px; /* Start off-screen on the right */
+  bottom: 10px; /* 10px de la partea de jos */
   width: 200px;
-
   z-index: 9999;
   pointer-events: none;
-
   opacity: 1;
   animation: mos-cycle 10s linear infinite;
 }
 
-
 @keyframes mos-cycle {
-  /* PAUZĂ (ascuns) – 0–45% (4.5s) */
-  0%,
-  45% {
+  /* Ascuns în dreapta - 0-45% (4.5s) */
+  0%, 45% {
     transform: translateX(0);
   }
-
-  /* INTRĂ MAI REPEDE – 45–55% (1s) */
+  
+  /* Intră în scenă - 45-60% (1.5s) */
   60% {
-    transform: translateX(-220px);
+    transform: translateX(-220px); /* Se mișcă spre stânga */
   }
-
-  /* STĂ  4s – 55–95% */
+  
+  /* Rămâne vizibil - 60-95% (3.5s) */
   95% {
     transform: translateX(-220px);
   }
-
-  /* IESE FOARTE REPEDE – 95–100% (0.5s) */
+  
+  /* Iese din scenă - 95-100% (0.5s) */
   100% {
     transform: translateX(0);
   }
