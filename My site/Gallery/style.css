@@ -83,6 +83,8 @@ body {
   font-style: normal;
   color: oklch(74.564% 0.10726 289.637);
   margin: 0 0 1rem 0;
+}
+.deco {
   text-decoration: underline;
 }
 
