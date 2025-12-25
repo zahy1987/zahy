@@ -83,10 +83,10 @@ body {
   font-style: normal;
   color: oklch(74.564% 0.10726 289.637);
   margin: 0 0 1rem 0;
+	white-space: nowrap;
 }
 .deco {
   text-decoration: underline;
-	white-space: nowrap;
 }
 
 /* ===============================
@@ -341,3 +341,4 @@ h2 {/* HTML: <div class="ribbon">Your text content</div> */
 
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
