@@ -386,3 +386,40 @@
       outline: 2px solid var(--primary-pink);
       outline-offset: 2px;
     }
+    /* mos craciun*/
+.mos-craciun {
+  position: fixed;
+  right: -220px;
+  bottom: 0.5%;
+  width: 200px;
+
+  z-index: 9999;
+  pointer-events: none;
+
+  opacity: 1;
+  animation: mos-cycle 10s linear infinite;
+}
+
+
+@keyframes mos-cycle {
+  /* PAUZĂ (ascuns) – 0–45% (4.5s) */
+  0%,
+  45% {
+    transform: translateX(0);
+  }
+
+  /* INTRĂ MAI REPEDE – 45–55% (1s) */
+  60% {
+    transform: translateX(-220px);
+  }
+
+  /* STĂ  4s – 55–95% */
+  95% {
+    transform: translateX(-220px);
+  }
+
+  /* IESE FOARTE REPEDE – 95–100% (0.5s) */
+  100% {
+    transform: translateX(0);
+  }
+}
