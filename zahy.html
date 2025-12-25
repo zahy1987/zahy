@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>G. Zaharia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <!--Snow efect-->
+<style>
+        @keyframes fall {
+            to { transform: translateY(100vh); }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white"> <!--snow class-->
+    <!-- Conținutul site-ului dvs. -->
+    
+    <!-- Container pentru fulgi -->
+    <div id="snowflakes-container" class="fixed top-0 left-0 w-full h-full pointer-events-none z-50 overflow-hidden"></div>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- =====================
+       NAVIGATION
+  ====================== -->
+  <div class="nav-container">
+    <nav class="main-nav active" aria-label="Main navigation">
+      <ul>
+        <li><a href="./zahy.html" class="nav-btn active">Home</a></li>
+        <li><a href="./Projects/Projects.html" class="nav-btn">Projects</a></li>
+        <li><a href="./Gallery/Gallery.html" class="nav-btn">Gallery</a></li>
+        <!-- <li><a href="./interviews/interviews.html" class="nav-btn">Interviews</a></li> -->
+        <li><a href="./about/about.html" class="nav-btn">About</a></li>
+        <li><a href="./contact/contact.html" class="nav-btn">Contact</a></li>
+        <!-- <li><a href="./login/index.html" class="nav-btn">Login</a></li> -->
+  </ul>
+    </nav>
+  </div>
+<hr>
+<img src="./pngegg.png" class="mos-craciun" alt="Mos Craciun">
+
+
+  <!-- =====================
+       HEADER
+  ====================== -->
+  <header class="header" tabindex="0" aria-label="Website header">
+    <div class="header-content">
+      <h1>Welcome to My Website</h1>
+      <p class="subtitle">
+        Learning <em>HTML</em> and <em>CSS</em>
+      </p>
+    </div>
+    <div class="header-photo" role="img" aria-label="Profile photo"></div>
+  </header>
+
+  <!-- =====================
+       MAIN CONTENT
+  ====================== -->
+  <main class="main-content" id="main">
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" >
+      <h2  class="section-title text-blue-700">About Us</h2>
+      <p>
+        This website is a simple project created to practice
+        <span class="highlight">HTML</span>,
+        <span class="highlight">CSS</span>, and basic web structure.
+        It focuses on clean layout and responsive design.
+      </p>
+    </section>
+
+    <!-- LEARNING SECTION -->
+    <section class="section services-section">
+      <h2 class="section-title text-blue-700">What I'm Learning</h2>
+      <p>
+        This project focuses on practicing and improving my front-end development skills,
+        including:
+      </p>
+      <ul>
+        <li>
+          <span class="highlight">HTML</span> – semantic structure and clean markup
+        </li>
+        <li>
+          <span class="highlight">CSS & Tailwind</span> – layout, spacing, and responsive design
+        </li>
+        <li>
+          <span class="highlight">JavaScript</span> – basic interactivity and logic
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- =====================
+       FOOTER
+  ====================== -->
+  <footer class="footer">
+    <p>&copy; 2025 My Website</p>
+    <p>
+      Built with HTML, CSS & Tailwind by
+      <a href="./contact/contact.html" class="footer-highlight">Zaharia Gabriel</a>
+    </p>
+  </footer>
+
+  <!--snow js-->
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('snowflakes-container');
+            const snowflakes = [
+  '❄','❅','❆','✻','✼','❉','❊','❋','✽','✾',
+  '✿','❇','❈','❃','❂','✺','✹','✷','✶','✵',
+  '❀','✲','✱','✧','✦','✪','✫','✬','✭','✮',
+  '✯','✰','✱','✲','✳','✴','✵','✶','✷','✸',
+  '✹','✺','✻','✼','✽','✾','❄','❅','❆','❉'
+];
+
+            
+            function createSnowflake() {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'absolute text-white -top-4 select-none pointer-events-none';
+                snowflake.textContent = snowflakes[Math.floor(Math.random() * snowflakes.length)];
+                snowflake.style.left = Math.random() * 100 + 'vw';
+                snowflake.style.opacity = Math.random() * 1.6 + 0.4;
+                snowflake.style.animation = `fall linear ${(Math.random() * 10 + 15)}s infinite`;
+                snowflake.style.animationDelay = Math.random() * 0.1 + 's';
+                
+                container.appendChild(snowflake);
+                
+                setTimeout(() => {
+                    snowflake.remove();
+                }, parseFloat(snowflake.style.animationDuration) * 1000 || 15000);
+            }
+            
+            setInterval(createSnowflake, 500);
+        });
+    </script>
+</body>
+</html>
