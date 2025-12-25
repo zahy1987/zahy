@@ -144,18 +144,20 @@ body {
    TITLU CERTIFICAT
 ================================ */
 .certificate-card h3 {
-  display: inline; /* sau inline-block dacă vrei și padding */
+  display: inline-block; /* mai sigur decât inline dacă vrei padding */
   font-family: "Pacifico", cursive;
   font-weight: 400;
   font-style: normal;
-  color: rgba(35, 231, 245, 0.164);
+  color: rgba(35, 231, 245, 1); /* opac pe mobil */
   font-size: 1.6rem;
   text-shadow: 4px 4px 2px rgba(14,14,13,0.6);
   margin-bottom: 0.3rem;
   background-color: hsl(24, 96%, 52%);
   padding: 0.15rem 0.7rem;
-  border-radius: 30px 1px;
+  border-radius: 30px 10px; /* valori valide */
+  white-space: nowrap; /* să nu se rupă textul pe mai multe linii */
 }
+
 
 
 /* ===============================
@@ -345,5 +347,6 @@ h2 {
 .confetti:nth-child(18) { left: 90%; animation-duration: 5.7s; animation-delay: 3.1s; background: linear-gradient(135deg, #99ff00, #77cc00); }
 .confetti:nth-child(19) { left: 95%; animation-duration: 4.5s; animation-delay: 1.4s; background: linear-gradient(135deg, #ff00cc, #cc00aa); }
 .confetti:nth-child(20) { left: 8%; animation-duration: 5.9s; animation-delay: 2.7s; background: linear-gradient(135deg, #00ff66, #00cc55); }
+
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
