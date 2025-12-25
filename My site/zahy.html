@@ -108,7 +108,14 @@
 <script>
         document.addEventListener('DOMContentLoaded', function() {
             const container = document.getElementById('snowflakes-container');
-            const snowflakes = [ '✻', '❆', '✻', '✼'];
+            const snowflakes = [
+  '❄','❅','❆','✻','✼','❉','❊','❋','✽','✾',
+  '✿','❇','❈','❃','❂','✺','✹','✷','✶','✵',
+  '❀','✲','✱','✧','✦','✪','✫','✬','✭','✮',
+  '✯','✰','✱','✲','✳','✴','✵','✶','✷','✸',
+  '✹','✺','✻','✼','✽','✾','❄','❅','❆','❉'
+];
+
             
             function createSnowflake() {
                 const snowflake = document.createElement('div');
@@ -116,7 +123,7 @@
                 snowflake.textContent = snowflakes[Math.floor(Math.random() * snowflakes.length)];
                 snowflake.style.left = Math.random() * 100 + 'vw';
                 snowflake.style.opacity = Math.random() * 1.6 + 0.4;
-                snowflake.style.animation = `fall linear ${(Math.random() * 10 + 25)}s infinite`;
+                snowflake.style.animation = `fall linear ${(Math.random() * 10 + 15)}s infinite`;
                 snowflake.style.animationDelay = Math.random() * 0.1 + 's';
                 
                 container.appendChild(snowflake);

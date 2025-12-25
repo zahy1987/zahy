@@ -244,4 +244,44 @@ text-transform: capitalize;
 }
 
 
+/* PLOTEA ÎMBUNĂTĂȚITĂ */
+#rain-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9998;
+  overflow: hidden;
+}
 
+.rain-drop {
+  position: absolute;
+  top: -50px;
+  width: 3px; /* Mai groase */
+  background: linear-gradient(to bottom, 
+    transparent 10%, 
+    rgba(255, 255, 255, 0.9) 50%, 
+    rgba(173, 216, 230, 0.8) 100%);
+  border-radius: 0 0 10px 10px;
+  pointer-events: none;
+  box-shadow: 0 0 8px rgba(173, 216, 230, 0.5); /* Luminozitate */
+}
+
+@keyframes rainFall {
+  0% {
+    transform: translateY(-50px) translateX(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(calc(100vh + 50px)) translateX(20px);
+    opacity: 0.4;
+  }
+}
+
+/* Pentru picăturile diagonale (realism) */
+.rain-drop.diagonal {
+  transform: rotate(15deg);
+  transform-origin: top center;
+}
