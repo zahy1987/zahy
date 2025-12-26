@@ -1,3 +1,7 @@
+/* ===============================
+   MEDIA QUERY - MOBILE
+   Pentru certificări (din Gallery)
+================================ */
 @media (max-width: 768px) {
   #certifications {
     flex-direction: column;
@@ -5,63 +9,86 @@
   }
 }
 
+/* ===============================
+   RESET GENERAL
+   Resetare margin, padding, box-sizing
+================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
+/* ===============================
+   BODY - STILURI GENERALE
+   Background gradient violet fix
+================================ */
 body {
   margin: 0;
   padding: 0;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      line-height: 1.6;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      background-attachment: fixed;
-      color: var(--text-dark);
-      min-height: 100vh;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-attachment: fixed; /* Background rămâne fix la scroll */
+  color: var(--text-dark);
+  min-height: 100vh;
 }
+
+/* ===============================
+   NAVIGAȚIE PRINCIPALĂ
+   Sticky navigation bar cu shadow 3D
+================================ */
 .main-nav {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      width: 100%;
-      box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  /* Shadow complex pentru efect 3D adânc */
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
-
-
+/* ===============================
+   CONTAINER PROIECTE
+   Flexbox pentru aliniere carduri
+================================ */
 .container-projects {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  flex-wrap: wrap; /* ← asta face cardurile să treacă pe rânduri noi */
-  gap: 20px; /* spațiu între carduri */
+  flex-wrap: wrap; /* Cardurile trec pe rânduri noi automat */
+  gap: 20px; /* Spațiu între carduri */
 }
 
+/* ===============================
+   CONTAINER NAVIGAȚIE
+   Wrapper pentru bara de navigație
+================================ */
 .nav-container {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      width: 100%;
-      box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    }
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  /* Același shadow complex ca .main-nav */
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
 
-
-
+/* ===============================
+   CARD PROIECT (shopping-card)
+   Design pentru fiecare card individual
+================================ */
 .shopping-card  {
+    /* Shadow complex pentru efect 3D dramatic */
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #6b21a8;
+    background-color: #6b21a8; /* Violet închis */
     width: 280px;
     min-height: 200px;
     border: 2px solid #353232;
     
+    /* Flexbox pentru layout intern */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -70,7 +97,7 @@ body {
     padding: 0px;
     margin: 10px;
     
-    /* Efect 3D și tranziție */
+    /* Efect 3D și tranziție smooth */
     transform-style: preserve-3d;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     
@@ -84,72 +111,91 @@ body {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 60px 65px, rgba(0, 0, 0, 0.15) 0px -15px 35px, rgba(0, 0, 0, 0.15) 0px 6px 8px, rgba(0, 0, 0, 0.2) 0px 15px 15px, rgba(0, 0, 0, 0.12) 0px -4px 6px;
 }
 
-/* Efect când cardul este selectat/activ */
+/* Efect când cardul este selectat/activ (la click) */
 .shopping-card:active {
     transform: translateY(-2px) scale(0.98);
     transition: transform 0.1s ease;
 }
 
-
+/* ===============================
+   TEXT ÎN CARDURI
+   Stiluri pentru h2 și p din carduri
+================================ */
 .shopping-card h2,
 .shopping-card p {
-  color: #f4dede;
+  color: #f4dede; /* Roz deschis */
   margin-bottom: 0px;
-  text-shadow: 4px 4px 2px rgba(217,70,239,0.6);
-  
-  
+  text-shadow: 4px 4px 2px rgba(217,70,239,0.6); /* Shadow violet */
 }
 
+/* ===============================
+   BUTON VIEW PROJECT
+   Design buton cu gradient și shadow
+================================ */
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  background: #6b21a8;
+  background: #6b21a8; /* Violet închis */
   color: white;
   text-decoration: none;
   border-radius: 8px;
+  /* Shadow complex pentru profunzime */
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
   margin-bottom: 7px;
 }
 
+/* Efect hover pentru buton - se ridică și schimbă culoarea */
 .btn:hover{
-      background: linear-gradient(135deg,  #764ba2 100%);
-      transform: translateY(-0.125rem);
-      box-shadow: 0 0.25rem 0.5rem var(--shadow-medium);
-      outline: 2px solid var(--white);
-      outline-offset: 2px;
-    }
+  background: linear-gradient(135deg,  #764ba2 100%);
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.25rem 0.5rem var(--shadow-medium);
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
+/* ===============================
+   IMAGINE PREVIEW PROIECT
+   Imagine din carduri
+================================ */
 .shop {
   width: 100%;
   height: 150px;
-  object-fit: cover;
+  object-fit: cover; /* Păstrează proporțiile */
   border-radius: 20px;
   margin-bottom: 10px;
 }
 
-
+/* ===============================
+   STILURI SPECIALE PENTRU CARDURI "TOUR"
+   Font Comic Sans pentru carduri cu clasa .tour
+================================ */
 .tour > p,
 .tour > h2 {
     font-family: "Comic Sans MS", cursive, sans-serif;
-letter-spacing: 3.4px;
-word-spacing: -4.4px;
-color: hsl(292, 57%, 86%);
-font-weight: 700;
-text-decoration: none;
-font-style: italic;
-font-variant: normal;
-text-transform: capitalize;
-    
+    letter-spacing: 3.4px;
+    word-spacing: -4.4px;
+    color: hsl(292, 57%, 86%); /* Violet deschis */
+    font-weight: 700;
+    text-decoration: none;
+    font-style: italic;
+    font-variant: normal;
+    text-transform: capitalize;
 }
 
-
+/* ===============================
+   SECȚIUNE SUBSCRIPTION
+   Container pentru formular newsletter
+================================ */
 .subscription-section {
   padding: 3rem 1rem;
   display: flex;
   justify-content: center;
-
 }
 
-
+/* ===============================
+   CARD SUBSCRIPTION
+   Design card pentru newsletter
+================================ */
 .subscription-card {
   width: 100%;
   max-width: 450px;
@@ -160,6 +206,7 @@ text-transform: capitalize;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  /* Gradient roz-violet */
   background: linear-gradient(
     to right,
     #f387e3,
@@ -167,14 +214,16 @@ text-transform: capitalize;
   );
 }
 
-
-/* Efect la hover - cardul se ridică și umbra devine mai accentuată */
+/* Efect la hover - cardul subscription se ridică */
 .subscription-card:hover {
     transform: translateY(-5px) rotateX(2deg) rotateY(2deg);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 60px 65px, rgba(0, 0, 0, 0.15) 0px -15px 35px, rgba(0, 0, 0, 0.15) 0px 6px 8px, rgba(0, 0, 0, 0.2) 0px 15px 15px, rgba(0, 0, 0, 0.12) 0px -4px 6px;
 }
 
-
+/* ===============================
+   CONTAINER GENERAL
+   Wrapper pentru centrare
+================================ */
 .container {
   width: 100%;
   display: flex;
@@ -182,13 +231,15 @@ text-transform: capitalize;
   align-items: center;
 }
 
-
+/* ===============================
+   PLACEHOLDER (INPUT)
+   Stiluri pentru input-uri
+================================ */
 .placeholder {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     font-family: Arial, Helvetica, sans-serif;
     
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border: 2px solid #fff;
     
     display: flex;
@@ -203,87 +254,43 @@ text-transform: capitalize;
     transform-style: preserve-3d;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     
-    /* Perspectivă pentru efect 3D mai bun */
+    /* Perspectivă pentru efect 3D */
     perspective: 1000px;
 }
 
-/* Efect la hover - cardul se ridică și umbra devine mai accentuată */
+/* Efect hover pentru placeholder */
 .placeholder:hover {
     transform: translateY(-5px) rotateX(2deg) rotateY(2deg);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 60px 65px, rgba(0, 0, 0, 0.15) 0px -15px 35px, rgba(0, 0, 0, 0.15) 0px 6px 8px, rgba(0, 0, 0, 0.2) 0px 15px 15px, rgba(0, 0, 0, 0.12) 10px -4px 6px;
 }
 
-
+/* ===============================
+   BUTON SEND
+   Buton pentru trimitere formular
+================================ */
 .Send-buton {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     font-family: Arial, Helvetica, sans-serif;
     
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border: 2px solid #fff;
-    
     
     /* Efect 3D și tranziție */
     transform-style: preserve-3d;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     
-    /* Perspectivă pentru efect 3D mai bun */
+    /* Perspectivă pentru efect 3D */
     perspective: 1000px;
 }
 
-/* Efect la hover - cardul se ridică și umbra devine mai accentuată */
+/* Efect hover buton send */
 .Send-buton:hover {
     transform: translateY(-5px) rotateX(2deg) rotateY(2deg);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 60px 65px, rgba(0, 0, 0, 0.15) 0px -15px 35px, rgba(0, 0, 0, 0.15) 0px 6px 8px, rgba(0, 0, 0, 0.2) 0px 15px 15px, rgba(0, 0, 0, 0.12) 10px -4px 6px;
 }
 
-/* Efect când cardul este selectat/activ */
-
+/* Efect când butonul este activ (click) */
 .Send-buton:active {
     transform: translateY(-2px) scale(0.98);
     transition: transform 0.1s ease;
-
-}
-
-
-/* PLOTEA ÎMBUNĂTĂȚITĂ */
-#rain-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9998;
-  overflow: hidden;
-}
-
-.rain-drop {
-  position: absolute;
-  top: -50px;
-  width: 3px; /* Mai groase */
-  background: linear-gradient(to bottom, 
-    transparent 10%, 
-    rgba(255, 255, 255, 0.9) 50%, 
-    rgba(173, 216, 230, 0.8) 100%);
-  border-radius: 0 0 10px 10px;
-  pointer-events: none;
-  box-shadow: 0 0 8px rgba(173, 216, 230, 0.5); /* Luminozitate */
-}
-
-@keyframes rainFall {
-  0% {
-    transform: translateY(-50px) translateX(0);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(calc(100vh + 50px)) translateX(20px);
-    opacity: 0.4;
-  }
-}
-
-/* Pentru picăturile diagonale (realism) */
-.rain-drop.diagonal {
-  transform: rotate(15deg);
-  transform-origin: top center;
 }

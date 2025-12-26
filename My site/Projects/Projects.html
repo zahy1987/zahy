@@ -3,116 +3,142 @@
 <head>
   <!-- =====================
        META & SETUP
+       Configurări de bază pentru pagină
   ====================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects G. Zaharia</title>
   
+  <!-- CSS Links: subscribe section, global styles, page-specific styles -->
   <link rel="stylesheet" href="./subscribe section/style.css">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
     
   <!-- =====================
-       NAVIGATION
+       NAVIGATION SECTION
+       Meniu principal sticky
   ====================== -->
   <div class="nav-container">
     <nav class="main-nav">
       <ul>
+    <!-- Link Home -->
     <li><a href="../zahy.html" class="nav-btn ">Home</a></li>
+    
+    <!-- Link Projects (active - pagina curentă) -->
     <li><a href="../Projects/Projects.html" class="nav-btn active">Projects</a></li>
+    
+    <!-- Link Gallery -->
     <li><a href="../Gallery/Gallery.html" class="nav-btn">Gallery</a></li>
+    
+    <!-- Link Interviews (comentat - în dezvoltare) -->
     <!-- <li><a href="../interviews/interviews.html" class="nav-btn">Interviews</a></li> -->
+    
+    <!-- Link About -->
     <li><a href="../about/about.html" class="nav-btn">About</a></li>
+    
+    <!-- Link Contact -->
     <li><a href="../contact/contact.html" class="nav-btn">Contact</a></li>
+    
+    <!-- Link Login (comentat - în dezvoltare) -->
     <!-- <li><a href="../login/index.html" class="nav-btn">Login</a></li> -->
   </ul>
 </nav>
+
+<!-- Linie separator -->
 <hr>
+
+<!-- =====================
+     CONTAINER PROIECTE
+     Toate cardurile de proiecte
+====================== -->
 <div class="container-projects">
   
+    <!-- PROIECT 1: Shopping Card -->
     <section class="shopping-card" id="shop">
         <h2>Shopping Card</h2>
         <p>HTML & CSS</p>
         <img class="shop" src="./Screenshot 2025-12-19 063504.png">
         <a href="../Proiecte/Shopping Card/index.html"  target="_blank" class="btn">View Project</a>
-
     </section>
 
-    
+    <!-- PROIECT 2: User Management System -->
     <section class="shopping-card tour">
         <H2>User Management System</H2>
         <p>HTML & CSS</p>
         <img class="shop" src="../Proiecte/table/Screenshot 2025-12-25 200635.png">
         <a href="../Proiecte/table/index.html"  target="_blank" class="btn">View Project</a>
-
     </section>
 
+    <!-- PROIECT 3: Package Tour Card -->
     <section class="shopping-card tour">
         <H2>Package Tour Card</H2>
         <p>HTML & CSS</p>
         <img class="shop" src="./packageTour.png">
         <a href="../Proiecte/Package Tour Card Using/index.html"  target="_blank" class="btn">View Project</a>
-
     </section>
 
+    <!-- PROIECT 4: Promo Card (gol - placeholder) -->
     <section class="promo-card" id="promo">
-
     </section>
 
-    
-<section class="shopping-card tour">
+    <!-- PROIECT 5: Portfolio Card -->
+    <section class="shopping-card tour">
         <H2>Portfolio card</H2>
         <p>HTML & CSS</p>
         <img class="shop" src="../Proiecte/Portfolio Card Desig/thumb.jpg">
         <a href="../Proiecte/Portfolio Card Desig/index.html"  target="_blank" class="btn">View Project</a>
-
     </section>
 
+    <!-- PROIECT 6: Login Page -->
     <section class="shopping-card tour">
         <H2>Login page</H2>
         <p>HTML & CSS</p>
         <img class="shop" src="../Proiecte/Login buton/Screenshot 2025-12-25 195348.png">
         <a href="../Proiecte/Login buton/index.html"  target="_blank" class="btn">View Project</a>
-
     </section>
 
-    
+    <!-- PROIECT 7: Sign Up Page -->
     <section class="shopping-card tour">
         <H2>Sign up page</H2>
         <p>HTML & CSS</p>
         <img class="shop" src="../Proiecte/Pagina de inregistrare/imagine/Screenshot 2025-12-25 195943.png">
         <a href="../Proiecte/Pagina de inregistrare/index.html"  target="_blank" class="btn">View Project</a>
-
     </section>
 
+    <!-- PROIECT 8: Promo Card -->
     <section class="shopping-card tour">
         <H2>Promo Card</H2>
         <p>HTML & CSS</p>
         <img class="shop" src="../Proiecte/PROMO card/Screenshot 2025-12-25 200329.png">
         <a href="../Proiecte/PROMO card/index.html"  target="_blank" class="btn">View Project</a>
-
     </section>
 
-    
-
-
 </div>
+<!-- Sfârșit container-projects -->
 
 
-    
+<!-- =====================
+     SECȚIUNE SUBSCRIPTION
+     Formular newsletter
+====================== -->
 <section class="subscription-section">
   <div class="subscription-card">
-    <h2>Let’s keep in touch</h2>
+    <!-- Titlu -->
+    <h2>Let's keep in touch</h2>
 
+    <!-- Descriere -->
     <p class="desc">
       Subscribe to keep up with fresh news and exciting updates.
       We promise not to spam you!
     </p>
 
+    <!-- Input group: email + buton send -->
     <div class="input-group" class="placeholder">
       <input type="email" placeholder="Enter your email address" class="placeholder">
       <button class="Send-buton">
@@ -121,6 +147,7 @@
       </button>
     </div>
 
+    <!-- Checkbox consent -->
     <div class="condition">
       <input type="checkbox" id="agree" class="agree">
       <label for="agree">
@@ -132,6 +159,7 @@
 
   <!-- =====================
        FOOTER
+       Subsol cu informații copyright
   ====================== -->
   <footer class="footer">
     <p>&copy; 2025 My Website</p>
@@ -141,10 +169,9 @@
     </p>
   </footer>
   
-    
-    <div class="sun-glow"></div>
-<div class="sun-corner"></div>
+  <!-- Elemente decorative (nefolosite momentan în CSS) -->
+  <div class="sun-glow"></div>
+  <div class="sun-corner"></div>
 
-  
 </body>
 </html>
