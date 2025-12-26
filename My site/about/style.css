@@ -111,8 +111,9 @@ p a {
 ================================ */
 #text-cv h2 {
   text-shadow: 8px 8px 4px rgba(14,14,13,0.6); /* Shadow masiv pentru contrast */
-  color: #FFD700; /* Galben auriu */
-  padding: 0.3rem;
+  color: #ffffff;
+  font-size: 1.3rem;
+ 
 }
 
 /* ===============================
@@ -121,5 +122,41 @@ p a {
 ================================ */
 #text-cv > p {
   text-shadow: 8px 8px 4px rgba(14,14,13,0.6); /* Shadow masiv pentru contrast */
-  color: #FFD700; /* Galben auriu */
+  color: #ffffff; 
+  font-size: 1.2rem;
+}
+
+/* Stil pentru link ca buton */
+
+
+.download-btn {
+  display: inline-block;  
+  color: rgb(81, 43, 247);
+  text-decoration: underline;  
+  font-weight: bold;
+  
+}
+
+.download-btn:hover {  
+  background: linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+  background-color: #c62d1f;
+  border-radius: 18px; /* Colțuri foarte rotunjite */
+  border: 1px solid #d02718; /* Bordură roșie închis */  
+  display: inline-block;
+  cursor: pointer;  
+  color: #ffffff; /* Text alb */
+  font-family: Arial;
+  font-size: 17px;
+  padding: 3px 3px; /* Padding generos pe orizontală */  
+  text-decoration: none;
+  text-shadow: 0px 6px 6px #810e05; /* Shadow pentru text */
+  
+}
+
+.download-btn:hover span {
+  display: none;
+}
+
+.download-btn:hover::before {
+  content: "Download my CV";
 }
