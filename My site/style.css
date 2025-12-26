@@ -170,21 +170,20 @@
 .header-photo {
   width: 8.75rem;
   height: 8.75rem;
-  background-image: url("./eu.jpg");
   background-size: cover;
   background-position: center;
   border-radius: 50%;
   
   /* Bordură tricoloră pentru Cetățenia Română */
-  border: 0.5rem solid transparent;
+  border: 0.33rem solid transparent;
   
   /* Gradient tricolor în cerc - roșu stânga jos, galben sus, albastru dreapta jos */
   background-image: 
     url("./eu.jpg"), 
     conic-gradient(
       from 540deg at 50% 50%,
-      #002B7F 0deg 120deg,    
-      #FCD116 120deg 240deg,  
+      #3a0be4e5 0deg 120deg,    
+      #FFFF00 120deg 240deg,  
       #CE1126 240deg 360deg  
     );
   
