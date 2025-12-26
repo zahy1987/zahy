@@ -1,0 +1,240 @@
+/* ===============================
+   IMPORT FONTURI GOOGLE
+   Importăm toate fonturile necesare pentru design
+================================ */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Gemstones&display=swap');
+
+/* ===============================
+   RESET GENERAL
+   Resetare margin, padding, box-sizing pentru toate elementele
+================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===============================
+   BODY - STILURI GENERALE
+   Background gradient violet fix și setări de bază
+================================ */
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-attachment: fixed; /* Background rămâne fix la scroll */
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+/* ===============================
+   NAVIGAȚIE PRINCIPALĂ
+   Bara de navigare sticky cu gradient și shadow 3D
+================================ */
+.main-nav {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  /* Shadow complex pentru efect 3D profund */
+  box-shadow: 
+    rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+    rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+/* ===============================
+   CONTAINER PRINCIPAL CONTACT
+   Layout principal pentru pagina de contact
+================================ */
+.contact-container {
+  max-width: 1100px; /* Lățime maximă pentru desktop */
+  margin: 4rem auto; /* Centrare și spațiere verticală */
+  padding: 0 1rem; /* Padding orizontal pentru mobile */
+}
+
+/* ===============================
+   INTRO SECTION (CONTACT)
+   Secțiune de introducere cu titlu și descriere
+   Folosită pentru ambele secțiuni: titlul principal și "Online"
+================================ */
+.contact-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  color: #ec664e; /* Portocaliu-roșu */
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  /* Gradient albastru-violet */
+  background: linear-gradient(135deg, #3a59e4 0%, #764ba2 100%);
+}
+
+/* Titluri din contact-intro (h2 și h3) */
+.contact-intro h2,
+.contact-intro h3 {
+  font-size: 2.3rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Paragrafe din contact-intro */
+.contact-intro p {
+  font-size: 1.1rem;
+  color: #22dcf5; /* Cyan deschis */
+  max-width: 600px; /* Lățime maximă pentru lizibilitate */
+  margin: 0 auto; /* Centrare */
+}
+
+/* ===============================
+   FONT SPECIAL: RUBIK GEMSTONES
+   Font decorativ pentru titluri și text special
+================================ */
+.rubik-gemstones-regular {
+  font-family: 'Rubik Gemstones', system-ui;
+  font-weight: 400; /* Rubik Gemstones are doar greutatea 400 */
+  font-style: normal;
+}
+
+/* ===============================
+   CONTENT FORMULAR
+   Container pentru formularul de contact
+================================ */
+.contact-content {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0; /* Spațiere verticală */
+}
+
+/* ===============================
+   SECȚIUNE FORMULAR
+   Card cu formular de contact
+================================ */
+.contact-form-section {
+  background: #f9f9f9; /* Fundal gri deschis */
+  padding: 2rem;
+  border-radius: 12px; /* Colțuri rotunjite */
+  max-width: 600px; /* Lățime maximă */
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Shadow subtil */
+}
+
+/* Titlu formular (h3) */
+.contact-form-section h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* ===============================
+   FORMULAR DE CONTACT
+   Stiluri pentru elementele din formular
+================================ */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* Spațiu între câmpuri */
+}
+
+/* ===============================
+   GRUP CÂMP FORMULAR
+   Container pentru fiecare câmp (label + input/textarea)
+================================ */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label pentru câmpuri */
+.form-group label {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Input-uri și textarea */
+.form-group input,
+.form-group textarea {
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #ccc; /* Bordură gri */
+  font-size: 0.95rem;
+}
+
+/* Focus state pentru input-uri și textarea */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none; /* Elimină outline-ul default */
+  border-color: #4caf50; /* Bordură verde la focus */
+}
+
+/* ===============================
+   BUTON SUBMIT
+   Buton verde de trimitere formular
+================================ */
+.submit-btn {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background: #4caf50; /* Verde */
+  color: #fff; /* Text alb */
+  border: none;
+  border-radius: 30px; /* Colțuri foarte rotunjite */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Hover effect pentru buton */
+.submit-btn:hover {
+  background: #43a047; /* Verde mai închis */
+}
+
+/* ===============================
+   MESAJ FORMULAR
+   Container pentru mesajul de confirmare/eroare după submit
+================================ */
+.form-message {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ===============================
+   SECȚIUNE SOCIAL MEDIA
+   Container pentru link-uri social media
+================================ */
+.social-section {
+  display: flex;
+  justify-content: center;
+  margin: 4rem 0; /* Spațiere verticală generoasă */
+  text-align: center;
+}
+
+/* ===============================
+   MEDIA QUERY - MOBILE
+   Responsive pentru certificări (din Gallery)
+================================ */
+@media (max-width: 768px) {
+  /* Certificări în coloană pe mobile */
+  #certifications {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Ajustări pentru contact-intro pe mobile */
+  .contact-intro h2,
+  .contact-intro h3 {
+    font-size: 1.8rem; /* Font mai mic pe mobile */
+  }
+  
+  .contact-intro p {
+    font-size: 1rem; /* Text mai mic pe mobile */
+  }
+  
+  /* Formularul la lățime completă pe mobile */
+  .contact-form-section {
+    padding: 1.5rem;
+  }
+}
