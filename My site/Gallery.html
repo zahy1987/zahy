@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- =====================
+       META & PAGE SETUP
+       - Configurări de bază pentru pagină
+       - Viewport pentru responsive design
+    ====================== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery - Certificările Mele</title>
+
+    <!-- =====================
+       CSS STYLESHEETS
+       - style.css din directorul părinte (stiluri globale)
+       - style.css local (stiluri specifice galeriei)
+    ====================== -->
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- =====================
+       TAILWIND CSS CDN
+       - Framework CSS pentru stilizare rapidă
+       - Folosit pentru clase utility
+    ====================== -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body>
+    <!-- =====================
+       NAVIGATION
+       - Meniu principal de navigare
+       - Link-uri către toate secțiunile site-ului
+    ====================== -->
+    <div class="nav-container">
+      <nav class="main-nav">
+        <ul>
+          <!-- Link către pagina principală -->
+          <li><a href="../zahy.html" class="nav-btn">Home</a></li>
+          
+          <!-- Link către secțiunea de proiecte -->
+          <li><a href="../Projects/Projects.html" class="nav-btn">Projects</a></li>
+          
+          <!-- Link către galerie (pagina curentă - marcată ca activă) -->
+          <li><a href="../Gallery/Gallery.html" class="nav-btn active">Gallery</a></li>
+          
+          <!-- Link către interviuri (comentat - în dezvoltare) -->
+          <!-- <li><a href="../interviews/interviews.html" class="nav-btn">Interviews</a></li> -->
+          
+          <!-- Link către pagina despre -->
+          <li><a href="../about/about.html" class="nav-btn">About</a></li>
+          
+          <!-- Link către pagina de contact -->
+          <li><a href="../contact/contact.html" class="nav-btn">Contact</a></li>
+          
+          <!-- Link către login (comentat - în dezvoltare) -->
+          <!-- <li><a href="../login/index.html" class="nav-btn">Login</a></li> -->
+        </ul>
+      </nav>
+    </div>
+    
+    <!-- Linie orizontală separator -->
+    <hr />
+
+    <!-- =====================
+       CERTIFICATIONS SECTION
+       - Secțiunea principală cu certificatele
+       - Afișează toate certificările obținute
+    ====================== -->
+    <section class="Certifications">
+      <!-- =====================
+         TITLUL SECȚIUNII
+         - Design festiv cu emoji-uri
+         - Font Pacifico pentru aspect prietenos
+      ====================== -->
+      <h2>
+        🎉 
+        <span class="deco text-2xl sm:text-3xl md:text-4xl font-pacifico font-normal whitespace-nowrap">
+          Certifications
+        </span> 
+        🎉
+      </h2>
+      
+      <!-- =====================
+         CONTAINER PENTRU CARDURI
+         - ID important pentru layout flex
+         - Afișare în linie pe desktop, coloană pe mobil
+      ====================== -->
+      <div id="certifications">
+        
+        <!-- =====================
+           CARD CERTIFICAT HTML
+           - Primul certificat: HTML & Web Essentials
+           - Clasa "html" pentru imagine specifică
+           - Clasa "certificate-frame" pentru rama decorativă
+        ====================== -->
+        <div class="certificate-card html certificate-frame">
+          <!-- Titlul certificatului -->
+          <h3>HTML & Web Essentials</h3>
+          
+          <!-- Container pentru imaginea certificatului -->
+          <div class="certificate-image"></div>
+          
+          <!-- Link către certificatul complet -->
+          <a href="./Html.png" class="myButton" target="_blank">
+            View certificate
+          </a>
+        </div>
+
+        <!-- =====================
+           CARD CERTIFICAT CSS
+           - Al doilea certificat: CSS Essentials
+           - Clasa "css" pentru imagine specifică
+        ====================== -->
+        <div class="certificate-card css certificate-frame">
+          <!-- Titlul certificatului -->
+          <h3>CSS Essentials</h3>
+          
+          <!-- Container pentru imaginea certificatului -->
+          <div class="certificate-image"></div>
+          
+          <!-- Link către certificatul complet -->
+          <a href="./css.png" class="myButton" target="_blank">
+            View certificate
+          </a>
+        </div>
+
+        <!-- =====================
+           CARD CERTIFICAT TAILWIND
+           - Al treilea certificat: Tailwind CSS
+           - Clasa "tailwind" pentru imagine specifică
+        ====================== -->
+        <div class="certificate-card tailwind certificate-frame">
+          <!-- Titlul certificatului -->
+          <h3>Tailwind CSS</h3>
+          
+          <!-- Container pentru imaginea certificatului -->
+          <div class="certificate-image"></div>
+          
+          <!-- Link către certificatul complet -->
+          <a href="./Tailwind.png" class="myButton" target="_blank">
+            View certificate
+          </a>
+        </div>
+        
+      </div> <!-- Sfârșitul containerului de certificări -->
+    </section> <!-- Sfârșitul secțiunii Certifications -->
+
+    <!-- =====================
+       FOOTER
+       - Subsol cu informații copyright
+       - Link către pagina de contact
+    ====================== -->
+    <footer class="footer">
+      <!-- Text copyright -->
+      <p>&copy; 2025 My Website</p>
+      
+      <!-- Informații despre creator -->
+      <p>
+        Built with HTML, CSS & Tailwind by
+        <a href="../contact/contact.html" class="footer-highlight">Zaharia Gabriel</a>
+      </p>
+    </footer>
+
+    <!-- =====================
+       ANIMAȚIE CONFETTI
+       - Script JavaScript pentru generarea confetti-ului
+       - Creează 20 de bucăți colorate animate
+    ====================== -->
+    <script>
+      // =====================
+      // GENERARE CONFETTI DINAMIC
+      // - Creează 20 de elemente animate
+      // - Forme diferite: ribbon (fâșii), square (pătrate), circle (cercuri), rectangle (dreptunghiuri)
+      // =====================
+      
+      // Array cu toate tipurile de forme disponibile
+      const shapes = [
+        'ribbon-long',      // Fâșie lungă
+        'ribbon-medium',    // Fâșie medie
+        'ribbon-short',     // Fâșie scurtă
+        'square',           // Pătrat
+        'circle',           // Cerc
+        'rectangle'         // Dreptunghi
+      ];
+      
+      // Buclă pentru a crea 20 de bucăți de confetti
+      for (let i = 0; i < 20; i++) {
+        // Creează un nou element div
+        const confetti = document.createElement('div');
+        
+        // Adaugă clasa de bază 'confetti'
+        confetti.className = 'confetti';
+        
+        // Alege o formă aleatorie din array
+        // Folosim modulo (%) pentru a cicla prin forme
+        const randomShape = shapes[i % shapes.length];
+        
+        // Adaugă clasa cu forma specifică
+        confetti.classList.add(randomShape);
+        
+        // Adaugă elementul în DOM (în body)
+        document.body.appendChild(confetti);
+      }
+      
+      // CSS-ul va gestiona:
+      // - Poziția specifică pentru fiecare confetti (nth-child)
+      // - Culorile gradient pentru fiecare bucată
+      // - Viteza de cădere (animation-duration)
+      // - Întârzierea înainte de start (animation-delay)
+    </script>
+  </body>
+</html>

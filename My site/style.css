@@ -1,421 +1,565 @@
-    /* CSS Custom Properties for easy maintenance */
-    :root {
-      --primary-purple: #9c12f1;
-      --primary-pink: #df1d9e;
-      --header-purple: #d946ef;
-      --light-purple: #a855f7;
-      --pink-gradient-start: #f387e3;
-      --accent-blue: #1260fa;
-      --accent-green: #15e72d;
-      --text-dark: #222;
-      --text-light: #f4f4f4;
-      --bg-light: #f5f5f5;
-      --white: #ffffff;
-      --main-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --shadow-light: rgba(0, 0, 0, 0.1);
-      --shadow-medium: rgba(0, 0, 0, 0.2);
-      
-      --nav-padding: 0.6rem 1.2rem;
-      --border-radius-small: 0.5rem;
-      --border-radius-medium: 0.625rem;
-      --border-radius-large: 1.25rem;
-      --section-padding: 2rem;
-      --transition-speed: 0.3s;
-    }
+/* ===============================
+   IMPORT FONTURI GOOGLE
+   - Importăm toate fonturile necesare pentru design
+================================ */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-
+/* ===============================
+   RESET DE BAZĂ
+   - Resetăm marginile și padding-ul pentru toate elementele
+   - Box-sizing: border-box pentru calcul mai ușor al dimensiunilor
+================================ */
 * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      line-height: 1.6;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      background-attachment: fixed;
-      color: var(--text-dark);
-      min-height: 100vh;
-    }
-
-    /* =====================
-       NAVIGATION
-    ===================== */
-    .nav-container {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      width: 100%;
-      box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    }
-
-    .main-nav ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      justify-content: center;
-      list-style: none;
-      padding: 0.5rem;
-    }
-
-    .main-nav a {
-      display: inline-block;
-      padding: var(--nav-padding);
-      text-decoration: none;
-      color: var(--white);
-      font-size: var(--border-radius-large);
-      background-color: transparent;
-      border-radius: var(--border-radius-large);
-      transition: background-color var(--transition-speed) ease, 
-                  transform var(--transition-speed) ease,
-                  box-shadow var(--transition-speed) ease;
-      font-weight: 500;
-    }
-
-    .main-nav a:hover,
-    .main-nav a:focus {
-      
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      transform: translateY(-0.125rem);
-      box-shadow: 0 0.25rem 0.5rem var(--shadow-medium);
-      outline: 2px solid var(--white);
-      outline-offset: 2px;
-    }
-
-    .main-nav a:active {
-      transform: translateY(0);
-      box-shadow: 0 0.125rem 0.25rem var(--shadow-light);
-    }
-
-    .main-nav li {
-  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.main-nav a.active {
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0.25rem 0.5rem var(--shadow-medium);
-}
-
-/* Indicator arrow for active page */
-.main-nav a.active::after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 15px;
+/* ===============================
+   STIL GENERAL PENTRU PAGINĂ
+   - Background gradient cu efect fix
+   - Font familie și culori de bază
+================================ */
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  line-height: 1.6;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  clip-path: polygon(50% 100%, 0 0, 100% 0);
-  animation: bounce 1s infinite;
+  background-attachment: fixed; /* Background rămâne fix la scroll */
+  color: var(--text-dark);
+  min-height: 100vh;
 }
 
+/* ===============================
+   SECȚIUNEA CERTIFICATIONS
+   - Container principal pentru certificatele
+   - Centrat și cu spațiere adecvată
+================================ */
+.Certifications {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.5rem 0 1rem 0;
+}
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  50% {
-    transform: translateX(-50%) translateY(2px);
+/* ===============================
+   TITLUL SECȚIUNII CERTIFICATIONS
+   - Design special cu efect de ribbon
+   - Font Pacifico pentru aspect festiv
+================================ */
+.Certifications > h2 {
+  --r: 0.6em; /* Controlează decupajul ribbon-ului */
+  --s: 1.5em; /* Dimensiunea părții îndoite */
+  
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.2rem;
+  color: #fff;
+  line-height: 2.0;
+  margin: 0.7rem 0 2rem 0;
+  padding-inline: calc(var(--r) + .3em) 1lh;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  
+  /* Efect ribbon cu gradient roșu */
+  background: #af0a25;
+  border-bottom: var(--s) solid #0005;
+  clip-path: polygon(
+    calc(100% - 1lh) 0,
+    0 0,
+    var(--r) calc(50% - var(--s)/2),
+    0 calc(100% - var(--s)),
+    calc(100% - 1lh) calc(100% - var(--s)),
+    calc(100% - 1lh) calc(100% - var(--r)),
+    calc(100% - .5lh) 100%,
+    100% calc(100% - var(--r)),
+    100% calc(100% - var(--s))
+  );
+  width: fit-content;
+}
+
+/* Subliniere decorativă pentru text */
+.deco {
+  text-decoration: underline;
+}
+
+/* ===============================
+   CONTAINER PENTRU CARDURI
+   - Layout flex pentru desktop (linie)
+   - Se va schimba în coloană pe mobil
+================================ */
+#certifications {
+  display: flex;
+  flex-direction: row; /* În linie pe desktop */
+  flex-wrap: wrap; /* Permite wrap dacă sunt multe carduri */
+  justify-content: center;
+  align-items: flex-start; /* Aliniază cardurile sus */
+  gap: 2rem; /* Spațiu între carduri */
+  width: 100%;
+  max-width: 1200px; /* Limitează lățimea maximă */
+  padding: 0 1rem;
+}
+
+/* 📱 RESPONSIVE - MOBIL
+   - Sub 768px, cardurile se aranjează în coloană
+================================ */
+@media (max-width: 768px) {
+  #certifications {
+    flex-direction: column; /* În coloană pe mobil */
+    align-items: center;
+    gap: 1.5rem;
   }
 }
 
-    /* =====================
-       HEADER
-    ===================== */
-    .header {
-      min-height: 12.5rem;
-      /* background: linear-gradient(135deg, var(--header-purple), var(--light-purple)); */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      padding: 2rem;
-    }
-
-    .header-content {
-      text-align: center;
-      /* background: linear-gradient(to right, var(--pink-gradient-start), var(--light-purple)); */
-      padding: 1.25rem 1.875rem;
-      border-radius: var(--border-radius-medium);
-      z-index: 2;
-      box-shadow: 0 0.625rem 1.5625rem var(--shadow-medium);
-    }
-
-    .header-content h1 {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-    }
-
-    .subtitle {
-      color: var(--white);
-      font-size: 1rem;
-    }
-
-    .subtitle em {
-      color: var(--text-light);
-      font-style: italic;
-      font-weight: 600;
-    }
-
-    .header-photo {
-      width: 8.75rem;
-      height: 8.75rem;
-      background-image: url("./eu.jpg");
-      background-size: cover;
-      background-position: center;
-      border-radius: 50%;
-      border: 0.25rem solid var(--white);
-      box-shadow: 0 0.625rem 1.5625rem var(--shadow-medium);
-      position: absolute;
-      opacity: 0;
-      transition: opacity var(--transition-speed) ease, 
-                  transform var(--transition-speed) ease;
-      z-index: 1;
-    }
-
-    .header:hover .header-content {
-      opacity: 0;
-    }
-
-    .header:hover .header-photo {
-      opacity: 1;
-      transform: scale(1.05);
-    }
-
-    /* Accessibility: Show photo on focus */
-    .header:focus-within .header-content {
-      opacity: 0;
-    }
-
-    .header:focus-within .header-photo {
-      opacity: 1;
-      transform: scale(1.05);
-    }
-
-    /* =====================
-       MAIN CONTENT
-    ===================== */
-    .main-content {
-      max-width: 50rem;
-      margin: 1rem auto;
-      padding: 1rem;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-    }
-
-    .section {
-      /* background-color: var(--white); */
-      padding: var(--section-padding);
-      margin-bottom: 2rem;
-      border-radius: var(--border-radius-small);
-      box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-      text-align: center;
-      transition: background-color var(--transition-speed) ease, 
-                  color var(--transition-speed) ease,
-                  transform var(--transition-speed) ease;
-    }
-
-    .section:hover {
-      transform: translateY(-0.25rem);
-      box-shadow: 0 0.5rem 1rem var(--shadow-light);
-    }
-
-    .about-section:hover,
-    .services-section:hover {
-      background-color: var(--accent-blue);
-      color: var(--text-light);
-    }
-
-    .section-title {
-      font-size: 1.75rem;
-      margin-bottom: 1.25rem;
-      font-weight: bold;
-    }
-
-    .about-section:hover .section-title,
-    .services-section:hover .section-title {
-      color: var(--white);
-    }
-
-    .section p {
-      margin-bottom: 1rem;
-      font-size: 1.0625rem;
-      line-height: 1.7;
-    }
-
-    .section ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .section li {
-      margin-bottom: 0.75rem;
-      font-size: 1.0625rem;
-    }
-
-    /* =====================
-       HIGHLIGHTS
-    ===================== */
-    .highlight {
-      font-weight: 600;
-      color: white;
-      background-color: oklch(50% 0.134 242.749);
-      padding: 0.25rem 0.5rem;
-      border-radius: 0.25rem;
-      transition: color var(--transition-speed) ease, 
-                  background-color var(--transition-speed) ease;
-    }
-
-    .about-section:hover .highlight,
-    .services-section:hover .highlight {
-      color: blue;
-      background-color: var(--text-light);
-    }
-
-    /* =====================
-       CONTACT SECTION
-    ===================== */
-    .contact-section {
-      background: linear-gradient(to right, var(--pink-gradient-start), var(--light-purple));
-      color: var(--white);
-      margin-bottom: 0;
-    }
-
-    .contact-section .section-title {
-      color: var(--white);
-    }
-
-    .email {
-      color: var(--white);
-      font-weight: bold;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      display: inline-block;
-      border-radius: var(--border-radius-large);
-      transition: background-color var(--transition-speed) ease,
-                  box-shadow var(--transition-speed) ease,
-                  transform var(--transition-speed) ease;
-    }
-
-    .email:hover,
-    .email:focus {
-      background-color: var(--primary-pink);
-      box-shadow: 0 0.25rem 0.5rem var(--shadow-medium);
-      transform: translateY(-0.125rem);
-      outline: 2px solid var(--white);
-      outline-offset: 2px;
-    }
-
-    /* =====================
-       FOOTER
-    ===================== */
-    .footer {
-      background-color: #a3a3a3;
-      padding: 1.5rem;
-      text-align: center;
-      font-size: 0.875rem;
-      color: var(--text-dark);
-    }
-
-    .footer p {
-      margin: 0.25rem 0;
-    }
-
-    .footer-highlight {
-      font-weight: 600;
-      color: var(--primary-purple);
-      text-decoration: none;
-      transition: color var(--transition-speed) ease,
-                  text-shadow var(--transition-speed) ease;
-      cursor: pointer;
-    }
-
-    .footer-highlight:hover {
-      color: var(--primary-pink);
-      text-shadow: 0 0 10px rgba(223, 29, 158, 0.5);
-    }
-
-    /* =====================
-       RESPONSIVE DESIGN
-    ===================== */
-    @media (max-width: 37.5rem) {
-      .main-nav a {
-        padding: 0.4rem 0.7rem;
-        font-size: 0.9rem;
-      }
-
-      .header-content h1 {
-        font-size: 1.25rem;
-      }
-
-      .section {
-        padding: 1.5rem;
-      }
-
-      .section-title {
-        font-size: 1.5rem;
-      }
-    }
-
-    /* =====================
-       ACCESSIBILITY
-    ===================== */
-    /* Skip to main content link */
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: var(--primary-purple);
-      color: var(--white);
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-      z-index: 100;
-    }
-
-    .skip-link:focus {
-      top: 0;
-    }
-
-    /* Focus visible for better keyboard navigation */
-    *:focus-visible {
-      outline: 2px solid var(--primary-pink);
-      outline-offset: 2px;
-    }
-    /* mos craciun*/
-.mos-craciun {
-  position: fixed;
-  right: -220px; /* Start off-screen on the right */
-  bottom: 10px; /* 10px de la partea de jos */
-  width: 200px;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 1;
-  animation: mos-cycle 10s linear infinite;
+/* ===============================
+   CARD CERTIFICAT (componentă)
+   - Container pentru fiecare certificat individual
+================================ */
+.certificate-card {
+  width: 320px;
+  max-width: 100%; /* Responsive pentru ecrane mici */
+  text-align: center;
+  margin: 0; /* Margin-ul e gestionat de gap în container */
 }
 
-@keyframes mos-cycle {
-  /* Ascuns în dreapta - 0-45% (4.5s) */
-  0%, 45% {
-    transform: translateX(0);
-  }
+/* ===============================
+   RAMA CERTIFICATULUI
+   - Fundal cu textură de hârtie
+   - Bordură stil cadru foto vintage
+================================ */
+.certificate-frame {
+  background-image: url("./hartie.jpg"); /* Textura de hârtie */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   
-  /* Intră în scenă - 45-60% (1.5s) */
-  60% {
-    transform: translateX(-220px); /* Se mișcă spre stânga */
-  }
+  padding: 1.2rem;
   
-  /* Rămâne vizibil - 60-95% (3.5s) */
-  95% {
-    transform: translateX(-220px);
-  }
+  /* Bordură stil cadru foto - diferite culori pe fiecare latură */
+  border-style: solid;
+  border-width: 14px;
+  border-top-color: #444;
+  border-bottom-color: #444;
+  border-left-color: #000;
+  border-right-color: #000;
+  border-radius: 6px;
   
-  /* Iese din scenă - 95-100% (0.5s) */
+  /* Efect de profunzime cu umbră multiplă */
+  box-shadow:
+    2px 2px 6px rgba(0, 0, 0, 0.5), /* Umbră exterioară */
+    inset 0 0 0 2px #ddd; /* Bordură interioară */
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  overflow: hidden;
+}
+
+/* ===============================
+   IMAGINE CERTIFICAT
+   - Container pentru imaginea certificatului
+   - Efect 3D la hover
+================================ */
+.certificate-image {
+  width: 100%;      
+  height: 220px;
+  
+  /* Setări pentru afișarea imaginii de fundal */
+  background-size: contain;   
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #6b21a8; /* Fundal violet */
+  
+  border-radius: 12px;
+  border: 2px solid #353232;
+  
+  /* Umbră complexă pentru efect 3D dramatic */
+  box-shadow: 
+    rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  
+  /* Activează transformările 3D */
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  perspective: 1000px; /* Perspectivă pentru efect 3D mai bun */
+}
+
+/* Efect la hover - cardul se ridică și umbra devine mai accentuată */
+.certificate-image:hover {
+  transform: translateY(-5px) rotateX(2deg) rotateY(2deg);
+  box-shadow: 
+    rgba(0, 0, 0, 0.3) 0px 60px 65px,
+    rgba(0, 0, 0, 0.15) 0px -15px 35px,
+    rgba(0, 0, 0, 0.15) 0px 6px 8px,
+    rgba(0, 0, 0, 0.2) 0px 15px 15px,
+    rgba(0, 0, 0, 0.12) 0px -4px 6px;
+}
+
+/* Efect când cardul este selectat/activ (click) */
+.certificate-image:active {
+  transform: translateY(-2px) scale(0.98);
+  transition: transform 0.1s ease;
+}
+
+/* ===============================
+   IMAGINI SPECIFICE PENTRU FIECARE CERTIFICAT
+   - Fiecare certificat are propria imagine de fundal
+================================ */
+.certificate-card.html .certificate-image {
+  background-image: url("./Html.png");
+}
+
+.certificate-card.css .certificate-image {
+  background-image: url("./css.png");
+}
+
+.certificate-card.tailwind .certificate-image {
+  background-image: url("./Tailwind.png");
+}
+
+/* ===============================
+   TITLU CERTIFICAT
+   - Design cu fundal colorat și text shadow
+   - Responsive pentru dimensiuni diferite
+================================ */
+.certificate-card h3 {
+  display: inline-block;
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  color: rgba(237, 243, 243, 0.904);
+  font-size: 1.3rem; /* Desktop */
+  text-shadow: 4px 4px 2px rgba(14,14,13,0.6);
+  margin-bottom: 0.3rem;
+  background-color: hsl(24, 96%, 52%); /* Portocaliu vibrant */
+  padding: 0.4rem 0.6rem;
+  border-radius: 30px 10px; /* Colțuri asimetrice pentru design unic */
+  white-space: nowrap;
+}
+
+/* 📱 Responsive pentru telefoane mici */
+@media (max-width: 640px) {
+  .certificate-card h3 {
+    font-size: 1.05rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+/* ===============================
+   BUTON "VIEW CERTIFICATE"
+   - Design gradient cu efect 3D
+   - Animații la hover și click
+================================ */
+.myButton {
+  /* Efect 3D cu shadow */
+  box-shadow: 3px 4px 0px 0px #899599;
+  
+  /* Gradient de fundal */
+  background: linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+  background-color: #ededed;
+  
+  border-radius: 15px;
+  border: 1px solid #d6bcd6;
+  
+  display: inline-block;
+  cursor: pointer;
+  
+  color: #3a8a9e;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  padding: 7px 25px;
+  
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #e1e2ed;
+  
+  transition: all 0.2s ease;
+}
+
+/* Efect hover - inversează gradientul */
+.myButton:hover {
+  background: linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+  background-color: #bab1ba;
+}
+
+/* Efect active - butonul se mișcă ușor în jos */
+.myButton:active {
+  position: relative;
+  top: 0.1px;
+}
+
+/* ===============================
+   LINK CERTIFICAT
+   - Stilizare pentru link-urile din carduri
+================================ */
+.certificate-card a {
+  display: inline-block;
+  margin-top: 0.8rem;
+  color: #1100ff;
+  text-decoration: underline;
+  font-weight: 500;
+  
+  /* Umbră similară cu imaginile */
+  box-shadow: 
+    rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  
+  background-color: #6b21a8;
+  border: 2px solid #353232;
+}
+
+/* Efect hover pentru link */
+.certificate-card a:hover {
+  transform: translateY(-5px) rotateX(2deg) rotateY(2deg);
+  box-shadow: 
+    rgba(0, 0, 0, 0.3) 0px 60px 65px,
+    rgba(0, 0, 0, 0.15) 0px -15px 35px,
+    rgba(0, 0, 0, 0.15) 0px 6px 8px,
+    rgba(0, 0, 0, 0.2) 0px 15px 15px,
+    rgba(0, 0, 0, 0.12) 0px -4px 6px;
+}
+
+/* ===============================
+   ANIMAȚIE CONFETTI
+   - Animație de cădere pentru confetti
+   - Două variante de viteză
+================================ */
+
+/* Animație principală - rotație completă */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
   100% {
-    transform: translateX(0);
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0.3;
   }
+}
+
+/* Animație lentă - jumătate de rotație */
+@keyframes confetti-fall-slow {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(180deg);
+    opacity: 0.3;
+  }
+}
+
+/* ===============================
+   CLASA DE BAZĂ PENTRU CONFETTI
+   - Setări comune pentru toate bucățile
+================================ */
+.confetti {
+  position: fixed;
+  top: -100px;
+  z-index: 9999; /* Deasupra tuturor elementelor */
+  pointer-events: none; /* Nu interferează cu click-urile */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  animation: confetti-fall linear infinite;
+}
+
+/* ===============================
+   FORME DIFERITE DE CONFETTI
+   - Fâșii lungi, medii, scurte
+   - Pătrate, cercuri, dreptunghiuri
+================================ */
+
+/* Fâșii lungi și înguste */
+.confetti.ribbon-long {
+  width: 12px;
+  height: 70px;
+  border-radius: 2px;
+}
+
+/* Fâșii medii */
+.confetti.ribbon-medium {
+  width: 18px;
+  height: 50px;
+  border-radius: 3px;
+}
+
+/* Fâșii scurte și late */
+.confetti.ribbon-short {
+  width: 25px;
+  height: 35px;
+  border-radius: 4px;
+}
+
+/* Pătrate */
+.confetti.square {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  animation: confetti-fall-slow linear infinite;
+}
+
+/* Cercuri */
+.confetti.circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%; /* 50% face forma circulară */
+  animation: confetti-fall-slow linear infinite;
+}
+
+/* Dreptunghiuri late */
+.confetti.rectangle {
+  width: 30px;
+  height: 15px;
+  border-radius: 3px;
+}
+
+/* ===============================
+   20 DE BUCĂȚI DE CONFETTI
+   - Fiecare cu poziție, viteză și culoare unică
+   - Gradient bicolor pentru fiecare
+================================ */
+.confetti:nth-child(1) { 
+  left: 5%; 
+  animation-duration: 4s; 
+  animation-delay: 0s; 
+  background: linear-gradient(135deg, #ff0000, #cc0000); /* Roșu */
+}
+
+.confetti:nth-child(2) { 
+  left: 10%; 
+  animation-duration: 5s; 
+  animation-delay: 0.3s; 
+  background: linear-gradient(135deg, #00ff00, #00cc00); /* Verde */
+}
+
+.confetti:nth-child(3) { 
+  left: 15%; 
+  animation-duration: 4.5s; 
+  animation-delay: 0.0s; 
+  background: linear-gradient(135deg, #0000ff, #0000cc); /* Albastru */
+}
+
+.confetti:nth-child(4) { 
+  left: 20%; 
+  animation-duration: 5.5s; 
+  animation-delay: 0.0s; 
+  background: linear-gradient(135deg, #ffff00, #cccc00); /* Galben */
+}
+
+.confetti:nth-child(5) { 
+  left: 25%; 
+  animation-duration: 4.8s; 
+  animation-delay: 1.2s; 
+  background: linear-gradient(135deg, #ff00ff, #cc00cc); /* Magenta */
+}
+
+.confetti:nth-child(6) { 
+  left: 30%; 
+  animation-duration: 5.2s; 
+  animation-delay: 1.5s; 
+  background: linear-gradient(135deg, #00ffff, #00cccc); /* Cyan */
+}
+
+.confetti:nth-child(7) { 
+  left: 35%; 
+  animation-duration: 4.3s; 
+  animation-delay: 1.8s; 
+  background: linear-gradient(135deg, #ff6600, #cc5500); /* Portocaliu */
+}
+
+.confetti:nth-child(8) { 
+  left: 40%; 
+  animation-duration: 5.8s; 
+  animation-delay: 2.1s; 
+  background: linear-gradient(135deg, #ff3399, #cc2277); /* Roz */
+}
+
+.confetti:nth-child(9) { 
+  left: 45%; 
+  animation-duration: 4.6s; 
+  animation-delay: 2.4s; 
+  background: linear-gradient(135deg, #66ff00, #55cc00); /* Verde lime */
+}
+
+.confetti:nth-child(10) { 
+  left: 50%; 
+  animation-duration: 5.4s; 
+  animation-delay: 2.7s; 
+  background: linear-gradient(135deg, #9900ff, #7700cc); /* Violet */
+}
+
+.confetti:nth-child(11) { 
+  left: 55%; 
+  animation-duration: 4.9s; 
+  animation-delay: 3s; 
+  background: linear-gradient(135deg, #ff9900, #cc7700); /* Portocaliu auriu */
+}
+
+.confetti:nth-child(12) { 
+  left: 60%; 
+  animation-duration: 5.1s; 
+  animation-delay: 3.3s; 
+  background: linear-gradient(135deg, #00ff99, #00cc77); /* Turcoaz */
+}
+
+.confetti:nth-child(13) { 
+  left: 65%; 
+  animation-duration: 4.4s; 
+  animation-delay: 3.6s; 
+  background: linear-gradient(135deg, #ff0066, #cc0055); /* Roșu-roz */
+}
+
+.confetti:nth-child(14) { 
+  left: 70%; 
+  animation-duration: 5.6s; 
+  animation-delay: 3.9s; 
+  background: linear-gradient(135deg, #6600ff, #5500cc); /* Violet închis */
+}
+
+.confetti:nth-child(15) { 
+  left: 75%; 
+  animation-duration: 4.7s; 
+  animation-delay: 3.2s; 
+  background: linear-gradient(135deg, #ffcc00, #ccaa00); /* Auriu */
+}
+
+.confetti:nth-child(16) { 
+  left: 80%; 
+  animation-duration: 5.3s; 
+  animation-delay: 1.5s; 
+  background: linear-gradient(135deg, #00ccff, #00aacc); /* Albastru deschis */
+}
+
+.confetti:nth-child(17) { 
+  left: 85%; 
+  animation-duration: 4.2s; 
+  animation-delay: 0.8s; 
+  background: linear-gradient(135deg, #ff6699, #cc5577); /* Roz pal */
+}
+
+.confetti:nth-child(18) { 
+  left: 90%; 
+  animation-duration: 5.7s; 
+  animation-delay: 3.1s; 
+  background: linear-gradient(135deg, #99ff00, #77cc00); /* Verde neon */
+}
+
+.confetti:nth-child(19) { 
+  left: 95%; 
+  animation-duration: 4.5s; 
+  animation-delay: 1.4s; 
+  background: linear-gradient(135deg, #ff00cc, #cc00aa); /* Magenta intens */
+}
+
+.confetti:nth-child(20) { 
+  left: 8%; 
+  animation-duration: 5.9s; 
+  animation-delay: 2.7s; 
+  background: linear-gradient(135deg, #00ff66, #00cc55); /* Verde mentă */
 }
