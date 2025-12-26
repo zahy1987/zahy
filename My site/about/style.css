@@ -1,3 +1,7 @@
+/* ===============================
+   MEDIA QUERY - MOBILE
+   Responsive pentru secțiunea certificări (Gallery)
+================================ */
 @media (max-width: 768px) {
   #certifications {
     flex-direction: column;
@@ -5,82 +9,117 @@
   }
 }
 
+/* ===============================
+   NAVIGAȚIE PRINCIPALĂ
+   Bara de navigare sticky cu gradient și shadow
+================================ */
 .main-nav {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      width: 100%;
-      box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  /* Shadow complex pentru efect 3D profund */
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
-
+/* ===============================
+   SECȚIUNE CV
+   Container pentru afișarea CV-ului
+================================ */
 .cv-section {
-  margin: 3rem auto;
-  text-align: center;
-  background: #2A7B9B;
+  margin: 3rem auto; /* Centrare și spațiere verticală */
+  text-align: center; /* Text centrat */
+  background: #2A7B9B; /* Culoare de fundal albastru (suprascrisă de gradient) */
   
+  /* Gradient violet - identic cu body */
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-
+/* ===============================
+   FRAME PENTRU CV
+   Container pentru iFrame-ul cu PDF
+================================ */
 .cv-frame {
   width: 100%;
-  max-width: 900px;
-  height: 600px;
-  margin: 1.5rem auto;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
+  max-width: 900px; /* Lățime maximă pentru desktop */
+  height: 600px; /* Înălțime fixă */
+  margin: 1.5rem auto; /* Centrare și spațiere */
+  border: 1px solid #ccc; /* Bordură gri deschis */
+  border-radius: 8px; /* Colțuri rotunjite */
+  overflow: hidden; /* Ascunde overflow-ul */
 }
 
+/* iFrame din cv-frame */
 .cv-frame iframe {
   width: 100%;
   height: 100%;
-  border: none;
+  border: none; /* Fără bordură */
 }
 
-
-
+/* ===============================
+   BUTON DOWNLOAD CV
+   Buton roșu stilizat cu gradient și shadow
+================================ */
 .myButton {
-	box-shadow: 5px 4px 10px 2px #8a2a21;
-	background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
-	background-color:#c62d1f;
-	border-radius:18px;
-	border:1px solid #d02718;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:17px;
-	padding:6px 71px;
-	text-decoration:none;
-	text-shadow:0px 6px 6px #810e05;
-}
-.myButton:hover {
-	background:linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
-	background-color:#f24437;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
-}
-p a {
-  color: blue;
-  text-decoration: underline;
+  /* Shadow roșu pentru efect 3D */
+  box-shadow: 5px 4px 10px 2px #8a2a21;
+  
+  /* Gradient roșu */
+  background: linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+  background-color: #c62d1f;
+  
+  border-radius: 18px; /* Colțuri foarte rotunjite */
+  border: 1px solid #d02718; /* Bordură roșie închis */
+  
+  display: inline-block;
+  cursor: pointer;
+  
+  color: #ffffff; /* Text alb */
+  font-family: Arial;
+  font-size: 17px;
+  padding: 6px 71px; /* Padding generos pe orizontală */
+  
+  text-decoration: none;
+  text-shadow: 0px 6px 6px #810e05; /* Shadow pentru text */
 }
 
+/* Efect hover - inversează gradientul */
+.myButton:hover {
+  background: linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
+  background-color: #f24437;
+}
+
+/* Efect active - butonul se mișcă în jos */
+.myButton:active {
+  position: relative;
+  top: 1px; /* Deplasare 1px în jos */
+}
+
+/* ===============================
+   LINK-URI DIN PARAGRAFE
+   Stiluri pentru link-urile din tag-urile <p>
+================================ */
+p a {
+  color: blue; /* Culoare albastră pentru link-uri */
+  text-decoration: underline; /* Subliniat */
+}
+
+/* ===============================
+   TEXT CV - TITLU
+   Stiluri pentru titlul "Curriculum Vitae"
+================================ */
 #text-cv h2 {
-  text-shadow: 8px 8px 4px rgba(14,14,13,0.6);
-  color: #FFD700;
+  text-shadow: 8px 8px 4px rgba(14,14,13,0.6); /* Shadow masiv pentru contrast */
+  color: #FFD700; /* Galben auriu */
   padding: 0.3rem;
 }
 
+/* ===============================
+   TEXT CV - PARAGRAF
+   Stiluri pentru textul descriptiv
+================================ */
 #text-cv > p {
-  text-shadow: 8px 8px 4px rgba(14,14,13,0.6);
-  color: #FFD700;
+  text-shadow: 8px 8px 4px rgba(14,14,13,0.6); /* Shadow masiv pentru contrast */
+  color: #FFD700; /* Galben auriu */
 }
-
-    
-
