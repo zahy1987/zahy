@@ -140,6 +140,7 @@ p a {
 .download-btn:hover {  
   background: linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
   background-color: #c62d1f;
+  box-shadow: 5px 4px 10px 2px #8a2a21;
   border-radius: 18px; /* Colțuri foarte rotunjite */
   border: 1px solid #d02718; /* Bordură roșie închis */  
   display: inline-block;
@@ -159,4 +160,5 @@ p a {
 
 .download-btn:hover::before {
   content: "Download my CV";
+
 }
