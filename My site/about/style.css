@@ -23,6 +23,7 @@
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
+
 /* ===============================
    SECȚIUNE CV
    Container pentru afișarea CV-ului
@@ -139,7 +140,7 @@ p a {
 
 .download-btn:hover {  
   background: linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
-  background-color: #c62d1f;
+  background-color: #c62d1f;  
   box-shadow: 5px 4px 10px 2px #8a2a21;
   border-radius: 18px; /* Colțuri foarte rotunjite */
   border: 1px solid #d02718; /* Bordură roșie închis */  
@@ -160,5 +161,26 @@ p a {
 
 .download-btn:hover::before {
   content: "Download my CV";
+}
 
+
+/* Stilul normal */
+#text-cv > p {
+    text-shadow: 8px 8px 4px rgba(14, 14, 13, 0.6);
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+/* Tablete și telefoane mari */
+@media (max-width: 768px) {
+    #text-cv > p {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Telefoane mici */
+@media (max-width: 480px) {
+    #text-cv > p {
+        font-size: 0.85rem !important;
+    }
 }
