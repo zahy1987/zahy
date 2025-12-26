@@ -106,14 +106,18 @@ body {
 
 
 
+
 /* ===============================
    CARD CERTIFICAT (componenta)
 ================================ */
 .certificate-card {
   width: 320px;
   text-align: center;
+  margin: 1.5rem;
   
 }
+
+
 
 /* ===============================
    IMAGINE CERTIFICAT (ramă)
@@ -144,30 +148,63 @@ body {
    TITLU CERTIFICAT
 ================================ */
 .certificate-card h3 {
-  display: inline-block; /* mai sigur decât inline dacă vrei padding */
+  display: inline-block;
   font-family: "Pacifico", cursive;
   font-weight: 400;
-  font-style: normal;
-  color: rgba(35, 231, 245, 0.164);
-  font-size: 1.6rem;
+  color: rgba(237, 243, 243, 0.904);
+  font-size: 1.3rem; /* desktop */
   text-shadow: 4px 4px 2px rgba(14,14,13,0.6);
   margin-bottom: 0.3rem;
   background-color: hsl(24, 96%, 52%);
-  padding: 0.15rem 0.7rem;
-  border-radius: 30px 10px; /* valori valide */
-  white-space: nowrap; /* să nu se rupă textul pe mai multe linii */
-}
-@media (max-width: 640px) {  /* sau 768px, după nevoie */
-  .certificate-card h3 {
-    color: rgba(35, 231, 245, 1); /* culoare vizibilă pe mobil */
-  }
+  padding: 0.4rem 0.6rem;
+  border-radius: 30px 10px;
+  white-space: nowrap;
 }
 
+/* 📱 telefon */
+@media (max-width: 640px) {
+  .certificate-card h3 {
+    font-size: 1.05rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
 
 
 /* ===============================
    LINK CERTIFICAT
 ================================ */
+.certificate-frame {
+  background-image: url("./hartie.jpg"); /* poza hârtie */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 1.2rem;
+  border-style: solid;
+  border-width: 14px;
+
+  border-top-color: #444;
+  border-bottom-color: #444;
+  border-left-color: #000;
+  border-right-color: #000;
+
+  box-shadow:
+    2px 2px 6px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 2px #ddd;
+
+  border-radius: 6px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+
+  overflow: hidden;
+  max-width: 320px;
+}
+
+
+
 .certificate-card a {
   display: inline-block;
   margin-top: 0.8rem;
@@ -353,7 +390,4 @@ h2 {
 .confetti:nth-child(19) { left: 95%; animation-duration: 4.5s; animation-delay: 1.4s; background: linear-gradient(135deg, #ff00cc, #cc00aa); }
 .confetti:nth-child(20) { left: 8%; animation-duration: 5.9s; animation-delay: 2.7s; background: linear-gradient(135deg, #00ff66, #00cc55); }
 
-
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
-
