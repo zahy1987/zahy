@@ -165,7 +165,6 @@
 /* =====================
    HEADER
 ===================== */
-/* ... codul existent rămâne neschimbat până la .header-photo ... */
 
 .header-photo {
   width: 8.75rem;
@@ -173,8 +172,6 @@
   background-size: cover;
   background-position: center;
   border-radius: 50%;
-  
-  /* Bordură tricoloră pentru Cetățenia Română */
   border: 0.33rem solid transparent;
   
   /* Gradient tricolor în cerc - roșu stânga jos, galben sus, albastru dreapta jos */
