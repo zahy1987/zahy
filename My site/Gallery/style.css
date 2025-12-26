@@ -84,7 +84,6 @@ body {
 .deco {
   text-decoration: underline;
 }
-/
 /* 📱 RESPONSIVE - Titlu Certifications pe mobil
    - Font mai mic pentru ecrane mici
    - Ajustări pentru spacing
@@ -104,7 +103,6 @@ body {
     letter-spacing: 0.5px;
   }
 }
-
 
 /* ===============================
    CONTAINER PENTRU CARDURI
@@ -583,5 +581,4 @@ body {
   animation-duration: 5.9s; 
   animation-delay: 2.7s; 
   background: linear-gradient(135deg, #00ff66, #00cc55); /* Verde mentă */
-
 }

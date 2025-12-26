@@ -29,12 +29,9 @@
    Container pentru afișarea CV-ului
 ================================ */
 .cv-section {
-  margin: 3rem auto; /* Centrare și spațiere verticală */
+  margin: 2rem auto; /* Centrare și spațiere verticală */
   text-align: center; /* Text centrat */
-  background: #2A7B9B; /* Culoare de fundal albastru (suprascrisă de gradient) */
-  
-  /* Gradient violet - identic cu body */
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    
 }
 
 /* ===============================
@@ -153,7 +150,6 @@ p a {
   content: "Download my CV";
 }
 
-
 /* Stilul normal */
 #text-cv > p {
     text-shadow: 8px 8px 4px rgba(14, 14, 13, 0.6);
@@ -166,11 +162,24 @@ p a {
     #text-cv > p {
         font-size: 0.9rem !important;
     }
+    
+    /* Săgeata mai groasă pe tablete */
+    #text-cv > p span {
+        font-weight: 900 !important;
+        font-size: 3rem !important;
+    }
 }
 
 /* Telefoane mici */
 @media (max-width: 480px) {
     #text-cv > p {
-        font-size: 0.85rem !important;
+        font-size: 1rem !important;
+    }
+    
+    /* Săgeata FOARTE groasă pe telefoane */
+    #text-cv > p span {
+        font-weight: 900 !important;
+        font-size: 1rem !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 }
