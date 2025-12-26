@@ -162,43 +162,63 @@
       font-style: italic;
       font-weight: 600;
     }
+/* =====================
+   HEADER
+===================== */
+/* ... codul existent rămâne neschimbat până la .header-photo ... */
 
-    .header-photo {
-      width: 8.75rem;
-      height: 8.75rem;
-      background-image: url("./eu.jpg");
-      background-size: cover;
-      background-position: center;
-      border-radius: 50%;
-      border: 0.25rem solid var(--white);
-      box-shadow: 0 0.625rem 1.5625rem var(--shadow-medium);
-      position: absolute;
-      opacity: 0;
-      transition: opacity var(--transition-speed) ease, 
-                  transform var(--transition-speed) ease;
-      z-index: 1;
-    }
+.header-photo {
+  width: 8.75rem;
+  height: 8.75rem;
+  background-image: url("./eu.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  
+  /* Bordură tricoloră pentru Cetățenia Română */
+  border: 0.5rem solid transparent;
+  
+  /* Gradient tricolor în cerc - roșu stânga jos, galben sus, albastru dreapta jos */
+  background-image: 
+    url("./eu.jpg"), 
+    conic-gradient(
+      from 540deg at 50% 50%,
+      #002B7F 0deg 120deg,    
+      #FCD116 120deg 240deg,  
+      #CE1126 240deg 360deg  
+    );
+  
+  background-size: cover, auto;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  
+  box-shadow: 0 0.625rem 1.5625rem var(--shadow-medium);
+  position: absolute;
+  opacity: 0;
+  transition: opacity var(--transition-speed) ease, 
+              transform var(--transition-speed) ease;
+  z-index: 1;
+}
 
-    .header:hover .header-content {
-      opacity: 0;
-    }
+/* Păstrăm efectele de hover existente */
+.header:hover .header-content {
+  opacity: 0;
+}
 
-    .header:hover .header-photo {
-      opacity: 1;
-      transform: scale(1.05);
-    }
+.header:hover .header-photo {
+  opacity: 1;
+  transform: scale(1.05);
+}
 
-    /* Accessibility: Show photo on focus */
-    .header:focus-within .header-content {
-      opacity: 0;
-    }
+/* Accessibility: Show photo on focus */
+.header:focus-within .header-content {
+  opacity: 0;
+}
 
-    .header:focus-within .header-photo {
-      opacity: 1;
-      transform: scale(1.05);
-    }
-
-    /* =====================
+.header:focus-within .header-photo {
+  opacity: 1;
+  transform: scale(1.05);
+}    /* =====================
        MAIN CONTENT
     ===================== */
     .main-content {
