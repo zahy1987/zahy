@@ -292,3 +292,18 @@ body {
     transform: translateY(-2px) scale(0.98);
     transition: transform 0.1s ease;
 }
+
+html, body {
+  display: block !important;
+  width: 100%;
+}
+
+.container-projects {
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.subscription-section,
+.footer {
+  width: 100%;
+}
