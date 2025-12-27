@@ -281,7 +281,7 @@ body {
     padding: 14px 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     display: block;
-    color: rgb(27, 10, 10);
+    color: rgb(245, 241, 241);
     text-decoration: none;
     font-size: 17px;
     transition: background-color 0.3s ease;
@@ -306,7 +306,7 @@ body {
 
 /* Style the active link (or home/logo) */
 .topnav a.active {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(244, 244, 247, 0.2);
   color: white;
 }
 
