@@ -256,35 +256,6 @@
     }
 
     /* =====================
-       FOOTER
-    ===================== */
-    .footer {
-      background-color: #a3a3a3;
-      padding: 1.5rem;
-      text-align: center;
-      font-size: 0.875rem;
-      color: var(--text-dark);
-    }
-
-    .footer p {
-      margin: 0.25rem 0;
-    }
-
-    .footer-highlight {
-      font-weight: 600;
-      color: var(--primary-purple);
-      text-decoration: none;
-      transition: color var(--transition-speed) ease,
-                  text-shadow var(--transition-speed) ease;
-      cursor: pointer;
-    }
-
-    .footer-highlight:hover {
-      color: var(--primary-pink);
-      text-shadow: 0 0 10px rgba(223, 29, 158, 0.5);
-    }
-
-    /* =====================
        RESPONSIVE DESIGN
     ===================== */
     @media (max-width: 37.5rem) {

@@ -32,38 +32,41 @@
   </head>
 
   <body>
-    <!-- =====================
-       NAVIGATION
-       - Meniu principal de navigare
-       - Link-uri către toate secțiunile site-ului
-    ====================== -->
-    <div class="nav-container">
-      <nav class="main-nav">
-        <ul>
-          <!-- Link către pagina principală -->
-          <li><a href="../zahy.html" class="nav-btn">Home</a></li>
-          
-          <!-- Link către secțiunea de proiecte -->
-          <li><a href="../Projects/Projects.html" class="nav-btn">Projects</a></li>
-          
-          <!-- Link către galerie (pagina curentă - marcată ca activă) -->
-          <li><a href="../Gallery/Gallery.html" class="nav-btn active">Gallery</a></li>
-          
-          <!-- Link către interviuri (comentat - în dezvoltare) -->
-          <!-- <li><a href="../interviews/interviews.html" class="nav-btn">Interviews</a></li> -->
-          
-          <!-- Link către pagina despre -->
-          <li><a href="../about/about.html" class="nav-btn">About</a></li>
-          
-          <!-- Link către pagina de contact -->
-          <li><a href="../contact/contact.html" class="nav-btn">Contact</a></li>
-          
-          <!-- Link către login (comentat - în dezvoltare) -->
-          <!-- <li><a href="../login/index.html" class="nav-btn">Login</a></li> -->
-        </ul>
-      </nav>
-    </div>
-    
+  <!-- =====================
+     NAVIGATION
+====================== -->
+
+<!-- Meniul normal pentru desktop -->
+<div class="nav-container">
+  <nav class="main-nav" aria-label="Main navigation">
+    <ul class="nav-links">
+      <li><a href="/zahy.html" class="nav-btn active">Home</a></li>
+      <li><a href="../Projects/Projects.html" class="nav-btn">Projects</a></li>
+      <li><a href="./Gallery.html" class="nav-btn">Gallery</a></li>
+      <li><a href="../about/about.html" class="nav-btn">About</a></li>
+      <li><a href="../contact/contact.html" class="nav-btn">Contact</a></li>
+    </ul>
+  </nav>
+</div>
+
+<!-- Meniul hamburger pentru mobile -->
+<div class="topnav">
+  <a href="./zahy.html" class="active">zahy</a>
+  <!-- Navigation links (hidden by default) -->
+  <div id="myLinks">
+    <a href="/zahy.html">Home</a>
+    <a href="../Projects/Projects.html">Projects</a>
+    <a href="./Gallery.html">Gallery</a>
+    <a href="../about/about.html">About</a>
+    <a href="../contact/contact.html">Contact</a>
+  </div>
+  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+  <hr>
+
     <!-- Linie orizontală separator -->
     <hr />
 
@@ -172,47 +175,8 @@
        - Script JavaScript pentru generarea confetti-ului
        - Creează 20 de bucăți colorate animate
     ====================== -->
-    <script>
-      // =====================
-      // GENERARE CONFETTI DINAMIC
-      // - Creează 20 de elemente animate
-      // - Forme diferite: ribbon (fâșii), square (pătrate), circle (cercuri), rectangle (dreptunghiuri)
-      // =====================
-      
-      // Array cu toate tipurile de forme disponibile
-      const shapes = [
-        'ribbon-long',      // Fâșie lungă
-        'ribbon-medium',    // Fâșie medie
-        'ribbon-short',     // Fâșie scurtă
-        'square',           // Pătrat
-        'circle',           // Cerc
-        'rectangle'         // Dreptunghi
-      ];
-      
-      // Buclă pentru a crea 20 de bucăți de confetti
-      for (let i = 0; i < 20; i++) {
-        // Creează un nou element div
-        const confetti = document.createElement('div');
-        
-        // Adaugă clasa de bază 'confetti'
-        confetti.className = 'confetti';
-        
-        // Alege o formă aleatorie din array
-        // Folosim modulo (%) pentru a cicla prin forme
-        const randomShape = shapes[i % shapes.length];
-        
-        // Adaugă clasa cu forma specifică
-        confetti.classList.add(randomShape);
-        
-        // Adaugă elementul în DOM (în body)
-        document.body.appendChild(confetti);
-      }
-      
-      // CSS-ul va gestiona:
-      // - Poziția specifică pentru fiecare confetti (nth-child)
-      // - Culorile gradient pentru fiecare bucată
-      // - Viteza de cădere (animation-duration)
-      // - Întârzierea înainte de start (animation-delay)
-    </script>
+    
+    
+  <script src="../script.js"></script>
   </body>
 </html>
