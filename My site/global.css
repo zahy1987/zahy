@@ -28,7 +28,11 @@
 /* =====================
    RESET
 ===================== */
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -67,6 +71,10 @@ body {
   padding: 0.5rem;
 }
 
+.main-nav li {
+  position: relative;
+}
+
 .main-nav a {
   display: inline-block;
   padding: var(--nav-padding);
@@ -95,10 +103,6 @@ body {
   box-shadow: 0 0.125rem 0.25rem var(--shadow-light);
 }
 
-.main-nav li {
-  position: relative;
-}
-
 .main-nav a.active {
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 0.25rem 0.5rem var(--shadow-medium);
@@ -125,6 +129,46 @@ body {
   50% {
     transform: translateX(-50%) translateY(2px);
   }
+}
+
+/* =====================
+   HAMBURGER MENU
+===================== */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  z-index: 1000;
+}
+
+.nav-toggle .bar {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animatie buton hamburger -> X */
+.nav-toggle.activate .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.nav-toggle.activate .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.activate .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
 }
 
 /* =====================
@@ -157,7 +201,7 @@ body {
 }
 
 /* =====================
-   MOȘ CRĂCIUN
+   MOS CRACIUN
 ===================== */
 .mos-craciun {
   position: fixed;
@@ -208,7 +252,6 @@ body {
   outline-offset: 2px;
 }
 
-
 /* =====================
    RESPONSIVE - NAVIGATION
 ===================== */
@@ -219,116 +262,61 @@ body {
   }
 }
 
-/* =====================
-   HAMBURGER MENU
-===================== */
-/* =====================
-   HAMBURGER MENU
-===================== */
-
-/* Buton hamburger - ascuns pe desktop */
-.nav-toggle {
-  display: none;
-}
-
-/* Buton hamburger - ascuns pe desktop */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  position: absolute;
-  right: 20px;
-  top: 15px;
-  z-index: 1000;
-  cursor: pointer;
-}
-
-.nav-toggle .bar {
-  width: 100%;
-  height: 3px;
-  background-color: white;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* Meniul mobil - versiune corectată */
-.nav-links {
-  flex-direction: column;
-  gap: 0.5rem;
-  justify-content: center;
-  list-style: none;
-  padding: 0.5rem;
-  transition: all 0.3s ease;
-}
-
 /* Pe mobil (sub 612px) */
 @media (max-width: 612px) {
-  /* Afișează butonul hamburger */
+  /* Afiseaza butonul hamburger */
   .nav-toggle {
     display: flex;
   }
   
   /* Ascunde meniul normal */
   .nav-links {
+    display: none;
     flex-direction: column;
     position: absolute;
-    align-items: start;
-    top: 43px;
+    align-items: flex-start;
+    top: 50px;
     right: 0;
-    width: 100px;
-    height: 30.vh;
+    width: 200px;
+    max-height: 80vh;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding-top: 70px;
+    padding: 1rem 0;
     z-index: 999;
     margin: 0;
     gap: 0;
     overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  /* Afișează meniul când este activ */
+  /* Afiseaza meniul cand este activ */
   .nav-links.active {
     display: flex;
   }
   
-  /* Stil pentru link-uri în meniul mobil */
+  /* Stil pentru link-uri in meniul mobil */
   .nav-links li {
-    width: 50%;
-    text-align: center;
+    width: 100%;
+    text-align: left;
   }
   
   .nav-links li a {
     display: block;
     padding: 15px 20px;
-    font-size: 18px;
+    font-size: 16px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 0;
     margin: 0;
-    text-align: center;
+    text-align: left;
   }
   
-  .nav-links li a:hover {
+  .nav-links li a:hover,
+  .nav-links li a:focus {
     background-color: rgba(255, 255, 255, 0.1);
-  }
-  .nav-links li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  } 
-  
-  /* Animație buton hamburger -> X */
-  .nav-toggle.activate .bar:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
+    transform: none;
+    outline: none;
   }
   
-  .nav-toggle.activate .bar:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .nav-toggle.activate .bar:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
+  .nav-links li a.active::after {
+    display: none;
   }
 }
