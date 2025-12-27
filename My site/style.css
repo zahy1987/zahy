@@ -62,6 +62,7 @@
       position: relative;
       overflow: hidden;
       padding: 2rem;
+      min-height: 60px;
     }
 
     .header-content {

@@ -227,27 +227,66 @@ body {
 
 /* Style the navigation menu */
 .topnav {
-  overflow: hidden;
+  position: fixed; /* Schimbat din relative în fixed */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  position: relative;
   display: none; /* Ascuns implicit */
+  height: 60px; /* Înălțime fixă pentru bara de navigare */
 }
 
-/* Hide the links inside the navigation menu (except for logo/home) */
-.topnav #myLinks {
-  display: none;
+/* Container pentru a compensa înălțimea meniului fix */
+body {
+  padding-top: 0; /* Nu mai e nevoie de padding deoarece meniul e peste conținut */
 }
 
-/* Style navigation menu links */
-.topnav a {
-  color: white;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  display: block;
-  transition: all var(--transition-speed) ease;
+/* Stiluri pentru ecrane mici rămân aceleași */
+@media (max-width: 612px) {
+  .topnav {
+    display: block;
+  }
+  
+  /* Meniul derulant se va suprapune peste conținut */
+  .topnav #myLinks {
+    position: fixed;
+    top: 60px; /* Sub bara de navigare */
+    right: 10px;
+    left: auto; /* Doar pe partea dreaptă */
+    width: fit-content;
+    min-width: 150px;
+    max-width: 250px; /* Limită lățime maximă */
+    background: rgba(102, 126, 234, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    z-index: 1001; /* Peste bara de navigare */
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 0;
+    display: none; /* Rămâne ascuns până la click */
+   
+  }
+  
+  /* Când meniul e deschis */
+  .topnav.responsive #myLinks {
+    display: block;
+  }
+  
+  /* Restul codului rămâne la fel */
+  .topnav #myLinks a {
+    text-align: left; /* ← AICI centrezi textul */
+    padding: 14px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: block;
+    color: rgb(27, 10, 10);
+    text-decoration: none;
+    font-size: 17px;
+    transition: background-color 0.3s ease;
+  }
 }
-
 /* Style the hamburger menu */
 .topnav a.icon {
   background: rgba(0, 0, 0, 0.3);
@@ -311,7 +350,7 @@ body {
   
   /* Stil pentru linkurile hamburger când sunt afișate */
   .topnav #myLinks a {
-    text-align: left;
+    text-align: right;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
   
@@ -319,3 +358,4 @@ body {
     background: rgba(0, 0, 0, 0.5);
   }
 }
+
