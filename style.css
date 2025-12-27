@@ -39,78 +39,6 @@
       min-height: 100vh;
     }
 
-    /* =====================
-       NAVIGATION
-    ===================== */
-    .nav-container {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      width: 100%;
-      box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    }
-
-    .main-nav ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      justify-content: center;
-      list-style: none;
-      padding: 0.5rem;
-    }
-
-    .main-nav a {
-      display: inline-block;
-      padding: var(--nav-padding);
-      text-decoration: none;
-      color: var(--white);
-      font-size: var(--border-radius-large);
-      background-color: transparent;
-      border-radius: var(--border-radius-large);
-      transition: background-color var(--transition-speed) ease, 
-                  transform var(--transition-speed) ease,
-                  box-shadow var(--transition-speed) ease;
-      font-weight: 500;
-    }
-
-    .main-nav a:hover,
-    .main-nav a:focus {
-      
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      transform: translateY(-0.125rem);
-      box-shadow: 0 0.25rem 0.5rem var(--shadow-medium);
-      outline: 2px solid var(--white);
-      outline-offset: 2px;
-    }
-
-    .main-nav a:active {
-      transform: translateY(0);
-      box-shadow: 0 0.125rem 0.25rem var(--shadow-light);
-    }
-
-    .main-nav li {
-  position: relative;
-}
-
-.main-nav a.active {
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0.25rem 0.5rem var(--shadow-medium);
-}
-
-/* Indicator arrow for active page */
-.main-nav a.active::after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 15px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  clip-path: polygon(50% 100%, 0 0, 100% 0);
-  animation: bounce 1s infinite;
-}
 
 
 @keyframes bounce {
@@ -134,6 +62,7 @@
       position: relative;
       overflow: hidden;
       padding: 2rem;
+      min-height: 60px;
     }
 
     .header-content {
@@ -163,42 +92,57 @@
       font-weight: 600;
     }
 
-    .header-photo {
-      width: 8.75rem;
-      height: 8.75rem;
-      background-image: url("./eu.jpg");
-      background-size: cover;
-      background-position: center;
-      border-radius: 50%;
-      border: 0.25rem solid var(--white);
-      box-shadow: 0 0.625rem 1.5625rem var(--shadow-medium);
-      position: absolute;
-      opacity: 0;
-      transition: opacity var(--transition-speed) ease, 
-                  transform var(--transition-speed) ease;
-      z-index: 1;
-    }
+    /* Header Photo */
 
-    .header:hover .header-content {
-      opacity: 0;
-    }
+.header-photo {
+  width: 8.75rem;
+  height: 8.75rem;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  border: 0.33rem solid transparent;
+  
+  /* Gradient tricolor în cerc - roșu stânga jos, galben sus, albastru dreapta jos */
+  background-image: 
+    url("./eu.jpg"), 
+    conic-gradient(
+      from 540deg at 50% 50%,
+      #3a0be4e5 0deg 120deg,    
+      #FFFF00 120deg 240deg,  
+      #CE1126 240deg 360deg  
+    );
+  
+  background-size: cover, auto;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  
+  box-shadow: 0 0.625rem 1.5625rem var(--shadow-medium);
+  position: absolute;
+  opacity: 0;
+  transition: opacity var(--transition-speed) ease, 
+              transform var(--transition-speed) ease;
+  z-index: 1;
+}
 
-    .header:hover .header-photo {
-      opacity: 1;
-      transform: scale(1.05);
-    }
+/* Păstrăm efectele de hover existente */
+.header:hover .header-content {
+  opacity: 0;
+}
 
-    /* Accessibility: Show photo on focus */
-    .header:focus-within .header-content {
-      opacity: 0;
-    }
+.header:hover .header-photo {
+  opacity: 1;
+  transform: scale(1.05);
+}
 
-    .header:focus-within .header-photo {
-      opacity: 1;
-      transform: scale(1.05);
-    }
+/* Accessibility: Show photo on focus */
+.header:focus-within .header-content {
+  opacity: 0;
+}
 
-    /* =====================
+.header:focus-within .header-photo {
+  opacity: 1;
+  transform: scale(1.05);
+}    /* =====================
        MAIN CONTENT
     ===================== */
     .main-content {
@@ -312,35 +256,6 @@
     }
 
     /* =====================
-       FOOTER
-    ===================== */
-    .footer {
-      background-color: #a3a3a3;
-      padding: 1.5rem;
-      text-align: center;
-      font-size: 0.875rem;
-      color: var(--text-dark);
-    }
-
-    .footer p {
-      margin: 0.25rem 0;
-    }
-
-    .footer-highlight {
-      font-weight: 600;
-      color: var(--primary-purple);
-      text-decoration: none;
-      transition: color var(--transition-speed) ease,
-                  text-shadow var(--transition-speed) ease;
-      cursor: pointer;
-    }
-
-    .footer-highlight:hover {
-      color: var(--primary-pink);
-      text-shadow: 0 0 10px rgba(223, 29, 158, 0.5);
-    }
-
-    /* =====================
        RESPONSIVE DESIGN
     ===================== */
     @media (max-width: 37.5rem) {
@@ -419,3 +334,4 @@
     transform: translateX(0);
   }
 }
+
