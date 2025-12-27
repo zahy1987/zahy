@@ -5,23 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>G. Zaharia</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="global.css">
   <link rel="stylesheet" href="style.css">
   <!--Snow efect-->
-<style>
-        @keyframes fall {
-            to { transform: translateY(100vh); }
-        }
-
-    </style>
-    
+  <style>
+    @keyframes fall {
+      to { transform: translateY(100vh); }
+    }
+  </style>
 </head>
 
 <body class="bg-gray-900 text-white"> <!--snow class-->
-    <!-- Conținutul site-ului dvs. -->
-    
-    <!-- Container pentru fulgi -->
-    <div id="snowflakes-container" class="fixed top-0 left-0 w-full h-full pointer-events-none z-50 overflow-hidden"></div>
+  <!-- Container pentru fulgi -->
+  <div id="snowflakes-container" class="fixed top-0 left-0 w-full h-full pointer-events-none z-50 overflow-hidden"></div>
+  
   <!-- Skip to main content for accessibility -->
   <a href="#main" class="skip-link">Skip to main content</a>
 
@@ -31,19 +30,11 @@
   <!-- =====================
      NAVIGATION
 ====================== -->
+<!-- Meniul normal pentru desktop -->
 <div class="nav-container">
   <nav class="main-nav" aria-label="Main navigation">
-    
-    <!-- Buton hamburger -->
-    <button id="navToggleBtn" class="nav-toggle" aria-label="Toggle menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
-    
-    <!-- Lista link-uri -->
-    <ul id="navLinks" class="nav-links">
-      <li><a href="./zahy.html" class="nav-btn ">Home</a></li>
+    <ul class="nav-links">
+      <li><a href="./zahy.html" class="nav-btn active">Home</a></li>
       <li><a href="./Projects/Projects.html" class="nav-btn">Projects</a></li>
       <li><a href="./Gallery/Gallery.html" class="nav-btn">Gallery</a></li>
       <li><a href="./about/about.html" class="nav-btn">About</a></li>
@@ -51,9 +42,24 @@
     </ul>
   </nav>
 </div>
-<hr>
-<img src="./pngegg.png" class="mos-craciun" alt="Mos Craciun">
 
+<!-- Meniul hamburger pentru mobile -->
+<div class="topnav">
+  <a href="./zahy.html" class="active">Home</a>
+  <!-- Navigation links (hidden by default) -->
+  <div id="myLinks">
+    <a href="./Projects/Projects.html">Projects</a>
+    <a href="./Gallery/Gallery.html">Gallery</a>
+    <a href="./about/about.html">About</a>
+    <a href="./contact/contact.html">Contact</a>
+  </div>
+  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+  <hr>
+  <img src="./pngegg.png" class="mos-craciun" alt="Mos Craciun">
 
   <!-- =====================
        HEADER
@@ -72,10 +78,9 @@
        MAIN CONTENT
   ====================== -->
   <main class="main-content" id="main">
-
     <!-- ABOUT SECTION -->
-    <section class="section about-section" >
-      <h2  class="section-title text-blue-700">About Us</h2>
+    <section class="section about-section">
+      <h2 class="section-title text-blue-700">About Us</h2>
       <p>
         This website is a simple project created to practice
         <span class="highlight">HTML</span>,
@@ -103,7 +108,6 @@
         </li>
       </ul>
     </section>
-
   </main>
 
   <!-- =====================
@@ -117,46 +121,49 @@
     </p>
   </footer>
 
-  <!--snow js-->
-<!-- Snow JS -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const container = document.getElementById('snowflakes-container');
-    const snowflakes = [
-      '❄','❅','❆','✻','✼','❉','❊','❋','✽','✾',
-      '✿','❇','❈','❃','❂','✺','✹','✷','✶','✵',
-      '❀','✲','✱','✧','✦','✪','✫','✬','✭','✮',
-      '✯','✰','✱','✲','✳','✴','✵','✶','✷','✸',
-      '✹','✺','✻','✼','✽','✾','❄','❅','❆','❉'
-    ];
-    
-    function createSnowflake() {
-      const snowflake = document.createElement('div');
-      snowflake.className = 'absolute text-white -top-4 select-none pointer-events-none';
-      snowflake.textContent = snowflakes[Math.floor(Math.random() * snowflakes.length)];
-      snowflake.style.left = Math.random() * 100 + 'vw';
-      snowflake.style.opacity = Math.random() * 1.6 + 0.4;
-      snowflake.style.animation = `fall linear ${(Math.random() * 10 + 15)}s infinite`;
-      snowflake.style.animationDelay = Math.random() * 0.1 + 's';
+  <!-- Snow JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const container = document.getElementById('snowflakes-container');
+      const snowflakes = [
+        '❄','❅','❆','✻','✼','❉','❊','❋','✽','✾',
+        '✿','❇','❈','❃','❂','✺','✹','✷','✶','✵',
+        '❀','✲','✱','✧','✦','✪','✫','✬','✭','✮',
+        '✯','✰','✱','✲','✳','✴','✵','✶','✷','✸',
+        '✹','✺','✻','✼','✽','✾','❄','❅','❆','❉'
+      ];
       
-      container.appendChild(snowflake);
+      function createSnowflake() {
+        const snowflake = document.createElement('div');
+        snowflake.className = 'absolute text-white -top-4 select-none pointer-events-none';
+        snowflake.textContent = snowflakes[Math.floor(Math.random() * snowflakes.length)];
+        snowflake.style.left = Math.random() * 100 + 'vw';
+        snowflake.style.opacity = Math.random() * 1.6 + 0.4;
+        snowflake.style.animation = `fall linear ${(Math.random() * 10 + 15)}s infinite`;
+        snowflake.style.animationDelay = Math.random() * 0.1 + 's';
+        
+        container.appendChild(snowflake);
+        
+        setTimeout(() => {
+          snowflake.remove();
+        }, parseFloat(snowflake.style.animationDuration) * 1000 || 15000);
+      }
       
-      setTimeout(() => {
-        snowflake.remove();
-      }, parseFloat(snowflake.style.animationDuration) * 1000 || 15000);
-    }
-    
-    setInterval(createSnowflake, 500);
-  });
-</script>
-<script>
-  const navLinks = document.querySelector('#navLinks');
-  const navToggleBtn = document.querySelector('#navToggleBtn');
+      setInterval(createSnowflake, 500);
+    });
+  </script>
 
-  navToggleBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('activate');
-    navToggleBtn.classList.toggle('activate'); // <- ADAUGĂ și pe buton pentru animația X
-  }); 
-</script>
+  <!-- Hamburger Menu JS -->
+  <script>
+    /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+    function myFunction() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
+    }
+  </script>
 </body>
 </html>

@@ -39,54 +39,6 @@
       min-height: 100vh;
     }
 
-    /* =====================
-       NAVIGATION
-    ===================== */
-    .nav-container {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      width: 100%;
-      box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    }
-
-    .main-nav ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      justify-content: center;
-      list-style: none;
-      padding: 0.5rem;
-    }
-
-    .main-nav a {
-      display: inline-block;
-      padding: var(--nav-padding);
-      text-decoration: none;
-      color: var(--white);
-      font-size: var(--border-radius-large);
-      background-color: transparent;
-      border-radius: var(--border-radius-large);
-      transition: background-color var(--transition-speed) ease, 
-                  transform var(--transition-speed) ease,
-                  box-shadow var(--transition-speed) ease;
-      font-weight: 500;
-    }
-
-    .main-nav a:hover,
-    .main-nav a:focus {
-      
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      transform: translateY(-0.125rem);
-      box-shadow: 0 0.25rem 0.5rem var(--shadow-medium);
-      outline: 2px solid var(--white);
-      outline-offset: 2px;
-    }
-
-    .main-nav li {
-  position: relative;
-}
 
 
 @keyframes bounce {
@@ -138,9 +90,8 @@
       font-style: italic;
       font-weight: 600;
     }
-/* =====================
-   HEADER
-===================== */
+
+    /* Header Photo */
 
 .header-photo {
   width: 8.75rem;
@@ -410,4 +361,46 @@
   100% {
     transform: translateX(0);
   }
+}
+
+/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active link (or home/logo) */
+.active {
+  background-color: #04AA6D;
+  color: white;
 }
