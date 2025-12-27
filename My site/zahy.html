@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>G. Zaharia</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="global.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
   <!--Snow efect-->
 <style>
         @keyframes fall {
             to { transform: translateY(100vh); }
         }
+
     </style>
+    
 </head>
 
 <body class="bg-gray-900 text-white"> <!--snow class-->
@@ -25,19 +28,29 @@
   <!-- =====================
        NAVIGATION
   ====================== -->
-  <div class="nav-container">
-    <nav class="main-nav active" aria-label="Main navigation">
-      <ul>
-        <li><a href="./zahy.html" class="nav-btn active">Home</a></li>
-        <li><a href="./Projects/Projects.html" class="nav-btn">Projects</a></li>
-        <li><a href="./Gallery/Gallery.html" class="nav-btn">Gallery</a></li>
-        <!-- <li><a href="./interviews/interviews.html" class="nav-btn">Interviews</a></li> -->
-        <li><a href="./about/about.html" class="nav-btn">About</a></li>
-        <li><a href="./contact/contact.html" class="nav-btn">Contact</a></li>
-        <!-- <li><a href="./login/index.html" class="nav-btn">Login</a></li> -->
-  </ul>
-    </nav>
-  </div>
+  <!-- =====================
+     NAVIGATION
+====================== -->
+<div class="nav-container">
+  <nav class="main-nav" aria-label="Main navigation">
+    
+    <!-- Buton hamburger -->
+    <button id="navToggleBtn" class="nav-toggle" aria-label="Toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    
+    <!-- Lista link-uri -->
+    <ul id="navLinks" class="nav-links">
+      <li><a href="./zahy.html" class="nav-btn active">Home</a></li>
+      <li><a href="./Projects/Projects.html" class="nav-btn">Projects</a></li>
+      <li><a href="./Gallery/Gallery.html" class="nav-btn">Gallery</a></li>
+      <li><a href="./about/about.html" class="nav-btn">About</a></li>
+      <li><a href="./contact/contact.html" class="nav-btn">Contact</a></li>
+    </ul>
+  </nav>
+</div>
 <hr>
 <img src="./pngegg.png" class="mos-craciun" alt="Mos Craciun">
 
@@ -105,36 +118,63 @@
   </footer>
 
   <!--snow js-->
+<!-- Snow JS -->
 <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const container = document.getElementById('snowflakes-container');
-            const snowflakes = [
-  '❄','❅','❆','✻','✼','❉','❊','❋','✽','✾',
-  '✿','❇','❈','❃','❂','✺','✹','✷','✶','✵',
-  '❀','✲','✱','✧','✦','✪','✫','✬','✭','✮',
-  '✯','✰','✱','✲','✳','✴','✵','✶','✷','✸',
-  '✹','✺','✻','✼','✽','✾','❄','❅','❆','❉'
-];
+  document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('snowflakes-container');
+    const snowflakes = [
+      '❄','❅','❆','✻','✼','❉','❊','❋','✽','✾',
+      '✿','❇','❈','❃','❂','✺','✹','✷','✶','✵',
+      '❀','✲','✱','✧','✦','✪','✫','✬','✭','✮',
+      '✯','✰','✱','✲','✳','✴','✵','✶','✷','✸',
+      '✹','✺','✻','✼','✽','✾','❄','❅','❆','❉'
+    ];
+    
+    function createSnowflake() {
+      const snowflake = document.createElement('div');
+      snowflake.className = 'absolute text-white -top-4 select-none pointer-events-none';
+      snowflake.textContent = snowflakes[Math.floor(Math.random() * snowflakes.length)];
+      snowflake.style.left = Math.random() * 100 + 'vw';
+      snowflake.style.opacity = Math.random() * 1.6 + 0.4;
+      snowflake.style.animation = `fall linear ${(Math.random() * 10 + 15)}s infinite`;
+      snowflake.style.animationDelay = Math.random() * 0.1 + 's';
+      
+      container.appendChild(snowflake);
+      
+      setTimeout(() => {
+        snowflake.remove();
+      }, parseFloat(snowflake.style.animationDuration) * 1000 || 15000);
+    }
+    
+    setInterval(createSnowflake, 500);
+  });
+</script>
 
-            
-            function createSnowflake() {
-                const snowflake = document.createElement('div');
-                snowflake.className = 'absolute text-white -top-4 select-none pointer-events-none';
-                snowflake.textContent = snowflakes[Math.floor(Math.random() * snowflakes.length)];
-                snowflake.style.left = Math.random() * 100 + 'vw';
-                snowflake.style.opacity = Math.random() * 1.6 + 0.4;
-                snowflake.style.animation = `fall linear ${(Math.random() * 10 + 15)}s infinite`;
-                snowflake.style.animationDelay = Math.random() * 0.1 + 's';
-                
-                container.appendChild(snowflake);
-                
-                setTimeout(() => {
-                    snowflake.remove();
-                }, parseFloat(snowflake.style.animationDuration) * 1000 || 15000);
-            }
-            
-            setInterval(createSnowflake, 500);
+<!-- Hamburger Menu JS -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.getElementById('navLinks');
+    const navToggleBtn = document.getElementById('navToggleBtn');
+    
+    if (navToggleBtn && navLinks) {
+      navToggleBtn.addEventListener('click', function() {
+        // Toggle meniul
+        navLinks.classList.toggle('active');
+        // Toggle animația butonului
+        this.classList.toggle('active');
+      });
+      
+      // Închide meniul la click pe link (doar pe mobil)
+      if (window.innerWidth <= 612) {
+        document.querySelectorAll('.nav-links a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            navLinks.classList.remove('active');
+            navToggleBtn.classList.remove('active');
+          });
         });
-    </script>
+      }
+    }
+  });
+</script>
 </body>
 </html>

@@ -208,6 +208,7 @@ body {
   outline-offset: 2px;
 }
 
+
 /* =====================
    RESPONSIVE - NAVIGATION
 ===================== */
@@ -215,5 +216,111 @@ body {
   .main-nav a {
     padding: 0.4rem 0.7rem;
     font-size: 0.9rem;
+  }
+}
+
+/* =====================
+   HAMBURGER MENU
+===================== */
+/* =====================
+   HAMBURGER MENU FIX
+===================== */
+
+/* Buton hamburger - ascuns pe desktop */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  z-index: 1000;
+}
+
+.nav-toggle .bar {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Meniul mobil - versiune corectată */
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  list-style: none;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Pe mobil (sub 612px) */
+@media (max-width: 612px) {
+  /* Afișează butonul hamburger */
+  .nav-toggle {
+    display: flex;
+  }
+  
+  /* Ascunde meniul normal */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding-top: 70px;
+    z-index: 999;
+    margin: 0;
+    gap: 0;
+    overflow-y: auto;
+  }
+  
+  /* Afișează meniul când este activ */
+  .nav-links.active {
+    display: flex;
+  }
+  
+  /* Stil pentru link-uri în meniul mobil */
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nav-links li a {
+    display: block;
+    padding: 15px 20px;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .nav-links li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Animație buton hamburger -> X */
+  .nav-toggle.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  
+  .nav-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .nav-toggle.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
   }
 }
