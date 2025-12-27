@@ -6,7 +6,7 @@
   <title>G. Zaharia</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="global.css">
-  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="style.css">
   <!--Snow efect-->
 <style>
         @keyframes fall {
@@ -149,32 +149,14 @@
     setInterval(createSnowflake, 500);
   });
 </script>
-
-<!-- Hamburger Menu JS -->
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.getElementById('navLinks');
-    const navToggleBtn = document.getElementById('navToggleBtn');
-    
-    if (navToggleBtn && navLinks) {
-      navToggleBtn.addEventListener('click', function() {
-        // Toggle meniul
-        navLinks.classList.toggle('active');
-        // Toggle animația butonului
-        this.classList.toggle('active');
-      });
-      
-      // Închide meniul la click pe link (doar pe mobil)
-      if (window.innerWidth <= 612) {
-        document.querySelectorAll('.nav-links a').forEach(function(link) {
-          link.addEventListener('click', function() {
-            navLinks.classList.remove('active');
-            navToggleBtn.classList.remove('active');
-          });
-        });
-      }
-    }
-  });
+  const navLinks = document.querySelector('#navLinks');
+  const navToggleBtn = document.querySelector('#navToggleBtn');
+
+  navToggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('activate');
+    navToggleBtn.classList.toggle('activate'); // <- ADAUGĂ și pe buton pentru animația X
+  }); 
 </script>
 </body>
 </html>

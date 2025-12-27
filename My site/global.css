@@ -223,25 +223,31 @@ body {
    HAMBURGER MENU
 ===================== */
 /* =====================
-   HAMBURGER MENU FIX
+   HAMBURGER MENU
 ===================== */
 
 /* Buton hamburger - ascuns pe desktop */
 .nav-toggle {
-    flex-direction: column;
-    position: absolute;
-    align-items: start;
-    top: 43px;
-    right: 0;
-    width: 100px;
-    height: 30.vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding-top: 70px;
-    z-index: 999;
-    margin: 0;
-    gap: 0;
-    overflow-y: auto;
-  }
+  display: none;
+}
+
+/* Buton hamburger - ascuns pe desktop */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  z-index: 1000;
+  cursor: pointer;
+}
 
 .nav-toggle .bar {
   width: 100%;
@@ -253,8 +259,7 @@ body {
 
 /* Meniul mobil - versiune corectată */
 .nav-links {
-  display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 0.5rem;
   justify-content: center;
   list-style: none;
@@ -271,13 +276,13 @@ body {
   
   /* Ascunde meniul normal */
   .nav-links {
-    display: none;
     flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
+    position: absolute;
+    align-items: start;
+    top: 43px;
+    right: 0;
+    width: 100px;
+    height: 30.vh;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding-top: 70px;
     z-index: 999;
@@ -293,7 +298,7 @@ body {
   
   /* Stil pentru link-uri în meniul mobil */
   .nav-links li {
-    width: 100%;
+    width: 50%;
     text-align: center;
   }
   
@@ -310,18 +315,20 @@ body {
   .nav-links li a:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
+  .nav-links li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  } 
   
   /* Animație buton hamburger -> X */
-  .nav-toggle.active .bar:nth-child(1) {
+  .nav-toggle.activate .bar:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
   }
   
-  .nav-toggle.active .bar:nth-child(2) {
+  .nav-toggle.activate .bar:nth-child(2) {
     opacity: 0;
   }
   
-  .nav-toggle.active .bar:nth-child(3) {
+  .nav-toggle.activate .bar:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
   }
-
 }
