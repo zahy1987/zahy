@@ -9,7 +9,7 @@
     }
 
 
-    /* snow */
+    /* snow home */
 
       document.addEventListener('DOMContentLoaded', function() {
       const container = document.getElementById('snowflakes-container');
@@ -40,3 +40,47 @@
       setInterval(createSnowflake, 500);
     });
   
+
+    /* Forneti pe pagina Gallery */
+
+    
+      // =====================
+      // GENERARE CONFETTI DINAMIC
+      // - Creează 20 de elemente animate
+      // - Forme diferite: ribbon (fâșii), square (pătrate), circle (cercuri), rectangle (dreptunghiuri)
+      // =====================
+      
+      // Array cu toate tipurile de forme disponibile
+      const shapes = [
+        'ribbon-long',      // Fâșie lungă
+        'ribbon-medium',    // Fâșie medie
+        'ribbon-short',     // Fâșie scurtă
+        'square',           // Pătrat
+        'circle',           // Cerc
+        'rectangle'         // Dreptunghi
+      ];
+      
+      // Buclă pentru a crea 20 de bucăți de confetti
+      for (let i = 0; i < 20; i++) {
+        // Creează un nou element div
+        const confetti = document.createElement('div');
+        
+        // Adaugă clasa de bază 'confetti'
+        confetti.className = 'confetti';
+        
+        // Alege o formă aleatorie din array
+        // Folosim modulo (%) pentru a cicla prin forme
+        const randomShape = shapes[i % shapes.length];
+        
+        // Adaugă clasa cu forma specifică
+        confetti.classList.add(randomShape);
+        
+        // Adaugă elementul în DOM (în body)
+        document.body.appendChild(confetti);
+      }
+      
+      // CSS-ul va gestiona:
+      // - Poziția specifică pentru fiecare confetti (nth-child)
+      // - Culorile gradient pentru fiecare bucată
+      // - Viteza de cădere (animation-duration)
+      // - Întârzierea înainte de start (animation-delay)
