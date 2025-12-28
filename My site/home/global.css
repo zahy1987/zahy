@@ -103,13 +103,13 @@ body {
   box-shadow: 0 0.125rem 0.25rem var(--shadow-light);
 }
 
-.main-nav a.active {
+.main-nav a.active-indicator {
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 0.25rem 0.5rem var(--shadow-medium);
 }
 
 /* Indicator arrow for active page */
-.main-nav a.active::after {
+.main-nav a.active-indicator::after {
   content: '';
   position: absolute;
   bottom: -15px;
@@ -158,35 +158,6 @@ body {
 .footer-highlight:hover {
   color: var(--primary-pink);
   text-shadow: 0 0 10px rgba(223, 29, 158, 0.5);
-}
-
-/* =====================
-   MOS CRACIUN
-===================== */
-.mos-craciun {
-  position: fixed;
-  right: -220px;
-  bottom: 10px;
-  width: 200px;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 1;
-  animation: mos-cycle 10s linear infinite;
-}
-
-@keyframes mos-cycle {
-  0%, 45% {
-    transform: translateX(0);
-  }
-  60% {
-    transform: translateX(-220px);
-  }
-  95% {
-    transform: translateX(-220px);
-  }
-  100% {
-    transform: translateX(0);
-  }
 }
 
 /* =====================
