@@ -136,7 +136,7 @@ p a {
     display: inline-block;
     color: #55f50b;
     margin: 0 6px;
-    font-size: 1.8em;
+    font-size: 1.2rem;
     font-weight: bold;
   }
 
@@ -181,6 +181,7 @@ p a {
 .download-btn:hover::before {
   content: "Download my CV";
 }
+
 
 
 
