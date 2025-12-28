@@ -51,7 +51,7 @@ body {
 
 /* =====================
    NAVIGATION DESKTOP
-   Afișat DOAR pe ecrane > 612px
+   Afișat DOAR pe ecrane > 800px
 ===================== */
 .nav-container {
   position: sticky;
@@ -118,6 +118,7 @@ body {
 }
 
 /* Stiluri linkuri desktop */
+/* Adaugă position relative la linkuri pentru ca săgeata să se poziționeze corect */
 .main-nav a {
   display: inline-block;
   padding: var(--nav-padding);
@@ -130,6 +131,7 @@ body {
               transform var(--transition-speed) ease,
               box-shadow var(--transition-speed) ease;
   font-weight: 500;
+  position: relative; /* ADAUGĂ ACEASTA LINIE */
 }
 
 .main-nav a:hover,
@@ -176,7 +178,7 @@ body {
 
 /* =====================
    HAMBURGER MENU MOBILE
-   Afișat DOAR pe ecrane <= 612px
+   Afișat DOAR pe ecrane <= 800px
 ===================== */
 .topnav {
   position: fixed;
@@ -308,8 +310,8 @@ body {
    MEDIA QUERIES
 ===================== */
 
-/* MOBILE - sub 612px */
-@media (max-width: 612px) {
+/* MOBILE - sub 800px */
+@media (max-width: 800px) {
   /* Arată meniul hamburger cu Flexbox */
   .topnav {
     display: flex;
@@ -355,8 +357,8 @@ body {
   }
 }
 
-/* DESKTOP - peste 612px */
-@media (min-width: 613px) {
+/* DESKTOP - peste 800px */
+@media (min-width: 801px) {
   /* Arată meniul desktop */
   .nav-container {
     display: block;
@@ -375,14 +377,19 @@ body {
     display: none;
   }
   
+  /* Elimină padding-ul pentru body pe desktop */
+  body {
+    padding-top: 0;
+  }
+  
   /* HR vizibil pe desktop */
   hr {
     display: block;
   }
 }
 
-/* Responsive pentru meniu desktop mic */
-@media (max-width: 37.5rem) and (min-width: 613px) {
+/* Responsive pentru meniu desktop mic (pentru ecrane între 801px și 900px) */
+@media (max-width: 900px) and (min-width: 801px) {
   .main-nav a {
     padding: 0.4rem 0.7rem;
     font-size: 0.9rem;
