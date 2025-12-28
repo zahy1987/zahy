@@ -22,42 +22,54 @@
   
 </head>
 
-<body>
+<body>  
     
   <!-- =====================
      NAVIGATION
 ====================== -->
 
 <!-- Meniul normal pentru desktop -->
-<div class="nav-container">
-  <nav class="main-nav" aria-label="Main navigation">
-    <ul class="nav-links">
-      <li><a href="../home/zahy.html" class="nav-btn active">Home</a></li>
-      <li><a href="../Projects/Projects.html" class="nav-btn">Projects</a></li>
-      <li><a href="../Gallery/Gallery.html" class="nav-btn">Gallery</a></li>
-      <li><a href="../about/about.html" class="nav-btn active-indicator">About</a></li>
-      <li><a href="../contact/contact.html" class="nav-btn">Contact</a></li>
-      <li><a href="/index.html" class="nav-btn">Portofoliu DeekSeek</a></li>
-    </ul>
-  </nav>
-</div>
+ 
+    <!-- Meniul normal pentru desktop -->
+    <div class="nav-container">
+      <nav class="main-nav" aria-label="Main navigation">
+        <!-- Adaugă această imagine înaintea listei -->
+        <img src="./eu.jpg" class="nav-profile-img" alt="Profile Picture">
+        <ul class="nav-links">
+          <li><a href="../home/zahy.html" class="nav-btn">Home</a></li>
+          <li>
+            <a href="../Projects/Projects.html" class="nav-btn active-indicator"
+              >Projects</a
+            >
+          </li>
+          <li><a href="../Gallery/Gallery.html" class="nav-btn">Gallery</a></li>
+          <li><a href="../about/about.html" class="nav-btn">About</a></li>
+          <li><a href="../contact/contact.html" class="nav-btn">Contact</a></li>
+          <li><a href="/index.html" class="nav-btn">Portofoliu DeekSeek</a></li>
+        </ul>
+      </nav>
+    </div>
 
-<!-- Meniul hamburger pentru mobile -->
-<div class="topnav">
-  <a href="/My site/home/zahy.html" class="active">zahy</a>
-  <!-- Navigation links (hidden by default) -->
-  <div id="myLinks">
-    <a href="/My site/home/zahy.html">Home</a>
-    <a href="/My site/Projects/Projects.html">Projects</a>
-    <a href="/My site/Gallery/Gallery.html">Gallery</a>
-    <a href="/My site/about/about.html">About</a>
-    <a href="/My site/contact/contact.html">Contact</a>
-  </div>
-  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
+    <!-- Meniul hamburger pentru mobile -->
+    <div class="topnav">
+      <a href="/My site/home/zahy.html" class="active">zahy</a>
+      
+  <img src="./eu.jpg" class="nav-profile-img-mobile" alt="Profile Picture">
+
+      <!-- Navigation links (hidden by default) -->
+      <div id="myLinks">
+        <a href="/My site/home/zahy.html">Home</a>
+        <a href="/My site/Projects/Projects.html">Projects</a>
+        <a href="/My site/Gallery/Gallery.html">Gallery</a>
+        <a href="/My site/about/about.html">About</a>
+        <a href="/My site/contact/contact.html">Contact</a>
+      </div>
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
   <hr>
 
 

@@ -142,7 +142,7 @@ p a {
 
   /* MOBILE override for text */
   #text-cv > p.mobile-arrow-p {
-    font-size: .8rem;
+    font-size: .9rem;
   }
 }
 
@@ -181,7 +181,5 @@ p a {
 .download-btn:hover::before {
   content: "Download my CV";
 }
-
-
 
 
