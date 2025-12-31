@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- =====================
+       META & PAGE SETUP
+       - Configurări de bază pentru pagină
+       - Viewport pentru responsive design
+    ====================== -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Gallery - Certificările Mele</title>
+    
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../home/global.css">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body>
+  <!-- =====================
+     NAVIGATION
+====================== -->
+
+<!-- Meniul normal pentru desktop -->
+    <!-- Meniul normal pentru desktop -->
+    <!-- Meniul normal pentru desktop -->
+    <div class="nav-container">
+      <nav class="main-nav" aria-label="Main navigation">
+        <!-- Adaugă această imagine înaintea listei -->
+        <img src="./eu.jpg" class="nav-profile-img" alt="Profile Picture">
+        <ul class="nav-links">
+          <li><a href="../home/zahy.html" class="nav-btn">Home</a></li>
+          <li>
+            <a href="../Projects/Projects.html" class="nav-btn"
+              >Projects</a
+            >
+          </li>
+          <li><a href="../Gallery/Gallery.html" class="nav-btn active-indicator">Gallery</a></li>
+          <li><a href="../about/about.html" class="nav-btn">About</a></li>
+          <li><a href="../contact/contact.html" class="nav-btn">Contact</a></li>
+          <li><a href="/zahy/index.html" class="nav-btn">Portfolio
+</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Meniul hamburger pentru mobile -->
+    <div class="topnav">
+      <a href="/My site/home/zahy.html" class="active">zahy</a>
+      
+  <img src="./eu.jpg" class="nav-profile-img-mobile" alt="Profile Picture">
+
+      <!-- Navigation links (hidden by default) -->
+      <div id="myLinks">
+        <a href="/zahy/My site/home/zahy.html">Home</a>
+        <a href="/zahy/My site/Projects/Projects.html">Projects</a>
+        <a href="/zahy/My site/Gallery/Gallery.html">Gallery</a>
+        <a href="/zahy/My site/about/about.html">About</a>
+        <a href="/zahy/My site/contact/contact.html">Contact</a>
+        <a href="/zahy/index.html" class="nav-btn">Portfolio</a>
+      </div>
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+
+  <hr>
+
+    <!-- Linie orizontală separator -->
+    <hr />
+
+    <!-- =====================
+       CERTIFICATIONS SECTION
+       - Secțiunea principală cu certificatele
+       - Afișează toate certificările obținute
+    ====================== -->
+    <section class="Certifications">
+      <!-- =====================
+         TITLUL SECȚIUNII
+         - Design festiv cu emoji-uri
+         - Font Pacifico pentru aspect prietenos
+      ====================== -->
+      <h2>
+        🎉 
+        <span class="deco text-2xl sm:text-3xl md:text-4xl font-pacifico font-normal whitespace-nowrap">
+          Certifications
+        </span> 
+        🎉
+      </h2>
+      
+      <!-- =====================
+         CONTAINER PENTRU CARDURI
+         - ID important pentru layout flex
+         - Afișare în linie pe desktop, coloană pe mobil
+      ====================== -->
+      <div id="certifications">
+        
+        <!-- =====================
+           CARD CERTIFICAT HTML
+           - Primul certificat: HTML & Web Essentials
+           - Clasa "html" pentru imagine specifică
+           - Clasa "certificate-frame" pentru rama decorativă
+        ====================== -->
+        <div class="certificate-card html certificate-frame">
+          <!-- Titlul certificatului -->
+          <h3>HTML & Web Essentials</h3>
+          
+          <!-- Container pentru imaginea certificatului -->
+          <div class="certificate-image"></div>
+          
+          <!-- Link către certificatul complet -->
+          <a href="./Html.png" class="myButton" target="_blank">
+            View certificate
+          </a>
+        </div>
+
+        <!-- =====================
+           CARD CERTIFICAT CSS
+           - Al doilea certificat: CSS Essentials
+           - Clasa "css" pentru imagine specifică
+        ====================== -->
+        <div class="certificate-card css certificate-frame">
+          <!-- Titlul certificatului -->
+          <h3>CSS Essentials</h3>
+          
+          <!-- Container pentru imaginea certificatului -->
+          <div class="certificate-image"></div>
+          
+          <!-- Link către certificatul complet -->
+          <a href="./css.png" class="myButton" target="_blank">
+            View certificate
+          </a>
+        </div>
+
+        <!-- =====================
+           CARD CERTIFICAT TAILWIND
+           - Al treilea certificat: Tailwind CSS
+           - Clasa "tailwind" pentru imagine specifică
+        ====================== -->
+        <div class="certificate-card tailwind certificate-frame">
+          <!-- Titlul certificatului -->
+          <h3>Tailwind CSS</h3>
+          
+          <!-- Container pentru imaginea certificatului -->
+          <div class="certificate-image"></div>
+          
+          <!-- Link către certificatul complet -->
+          <a href="./Tailwind.png" class="myButton" target="_blank">
+            View certificate
+          </a>
+        </div>
+        
+      </div> <!-- Sfârșitul containerului de certificări -->
+    </section> <!-- Sfârșitul secțiunii Certifications -->
+
+    <!-- =====================
+       FOOTER
+       - Subsol cu informații copyright
+       - Link către pagina de contact
+    ====================== -->
+    <footer class="footer">
+      <!-- Text copyright -->
+      <p>&copy; 2025 My Website</p>
+      
+      <!-- Informații despre creator -->
+      <p>
+        Built with HTML, CSS & Tailwind by
+        <a href="../contact/contact.html" class="footer-highlight">Zaharia Gabriel</a>
+      </p>
+    </footer>
+
+    <!-- =====================
+       ANIMAȚIE CONFETTI
+       - Script JavaScript pentru generarea confetti-ului
+       - Creează 20 de bucăți colorate animate
+    ====================== -->
+    
+    
+  <script src="../home/script.js"></script>
+  </body>
+</html>

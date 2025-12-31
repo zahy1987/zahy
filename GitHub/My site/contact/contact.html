@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =====================
+       META & SETUP
+       Configurări de bază pentru pagina Contact
+  ====================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact G. Zaharia</title>
+  
+  <!-- CSS Links: stiluri globale + stiluri specifice Contact -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../Proiecte/subscribe section/style.css">
+  <link rel="stylesheet" href="../home/global.css">
+  <link rel="stylesheet" href="./style.css">
+  
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font special: Rubik Gemstones pentru titluri -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet">
+  
+  <!-- Stil inline pentru font Rubik Gemstones -->
+  <style>
+    .rubik-gemstones-regular {
+      font-family: 'Rubik Gemstones', system-ui;
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body>
+    
+  <!-- =====================
+     NAVIGATION
+====================== -->
+
+<!-- Meniul normal pentru desktop -->
+ 
+    <!-- Meniul normal pentru desktop -->
+    <div class="nav-container">
+      <nav class="main-nav" aria-label="Main navigation">
+        <!-- Adaugă această imagine înaintea listei -->
+        <img src="./eu.jpg" class="nav-profile-img" alt="Profile Picture">
+        <ul class="nav-links">
+          <li><a href="../home/zahy.html" class="nav-btn">Home</a></li>
+          <li>
+            <a href="../Projects/Projects.html" class="nav-btn "
+              >Projects</a
+            >
+          </li>
+          <li><a href="../Gallery/Gallery.html" class="nav-btn">Gallery</a></li>
+          <li><a href="../about/about.html" class="nav-btn">About</a></li>
+          <li><a href="../contact/contact.html" class="nav-btn active-indicator">Contact</a></li>
+          <li><a href="/zahy/index.html" class="nav-btn">Portfolio
+</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Meniul hamburger pentru mobile -->
+    <div class="topnav">
+      <a href="/My site/home/zahy.html" class="active">zahy</a>
+      
+  <img src="./eu.jpg" class="nav-profile-img-mobile" alt="Profile Picture">
+
+      <!-- Navigation links (hidden by default) -->
+      <div id="myLinks">
+        <a href="/zahy/My site/home/zahy.html">Home</a>
+        <a href="/zahy/My site/Projects/Projects.html">Projects</a>
+        <a href="/zahy/My site/Gallery/Gallery.html">Gallery</a>
+        <a href="/zahy/My site/about/about.html">About</a>
+        <a href="/zahy/My site/contact/contact.html">Contact</a>
+        <a href="/zahy/index.html">Portofoliu DeekSeek</a>
+      </div>
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+  <hr>
+
+<!-- Linie separator -->
+<hr> 
+    
+  <!-- =====================
+       MAIN CONTENT - CONTAINER CONTACT
+       Container principal pentru pagina de contact
+  ====================== -->
+  <main class="contact-container">
+    
+    <!-- =====================
+         INTRO SECTION
+         Titlu și descriere pentru pagina de contact
+    ====================== -->
+    <section class="contact-intro rubik-gemstones-regular">
+      <!-- Titlu principal -->
+      <h2>Contact</h2>
+      
+      <!-- Descriere cu font special Rubik Gemstones -->
+      <p class="rubik-gemstones-regular">
+        Looking for a junior web developer for a job or remote collaboration?
+        Feel free to contact me to discuss details.
+      </p>
+    </section>
+
+    <!-- =====================
+         FORM CONTAINER
+         Container pentru formular și secțiuni sociale
+    ====================== -->
+    <div class="form-container">
+
+      <!-- =====================
+           CONTACT CONTENT
+           Container pentru formular de contact
+      ====================== -->
+      <div class="contact-content">
+        
+        <!-- =====================
+             FORM SECTION
+             Secțiunea cu formularul de contact
+        ====================== -->
+        <section class="contact-form-section">
+          <!-- Titlu formular -->
+          <h3>Send me a message</h3>
+          
+          <!-- =====================
+               FORMULAR DE CONTACT
+               Câmpuri: Name, Email, Subject, Message
+          ====================== -->
+          <form class="contact-form" id="contactForm">
+            
+            <!-- Câmp: Your Name -->
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <!-- Câmp: Your Email -->
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <!-- Câmp: Subject -->
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required>
+            </div>
+            
+            <!-- Câmp: Your Message (textarea) -->
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            
+            <!-- Buton submit cu icon (FontAwesome) -->
+            <button type="submit" class="submit-btn">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+          
+          <!-- Mesaj de confirmare/eroare (afișat după submit) -->
+          <div id="formMessage" class="form-message"></div>
+        </section>
+        
+      </div>
+      <!-- Sfârșit contact-content -->
+
+      <!-- =====================
+           SOCIAL SECTION
+           Secțiune pentru link-uri social media
+      ====================== -->
+      <section class="contact-intro social-box">
+        <!-- Titlu -->
+        <h3>Online</h3>
+        
+        <!-- Descriere -->
+        <p>
+          You can also find me on social media.
+        </p>
+      </section>
+      
+    </div>
+    <!-- Sfârșit form-container -->
+    
+  </main>
+  <!-- Sfârșit contact-container -->
+
+  <!-- =====================
+       FOOTER
+       Subsol cu informații copyright și credit
+  ====================== -->
+  <footer class="footer">
+    <!-- Copyright -->
+    <p>&copy; 2025 My Website</p>
+    
+    <!-- Credit creator cu link către contact -->
+    <p>
+      Built with HTML, CSS & Tailwind by
+      <a href="./contact/contact.html" class="footer-highlight">Zaharia Gabriel</a>
+    </p>
+  </footer>
+  <script src="../home/script.js"></script>
+  
+</body>
+</html>
