@@ -230,6 +230,9 @@ body {
    IMAGINI SPECIFICE PENTRU FIECARE CERTIFICAT
    - Fiecare certificat are propria imagine de fundal
 ================================ */
+.certificate-card.bnu .certificate-image {
+  background-image: url("./bn.jpg");
+}
 .certificate-card.html .certificate-image {
   background-image: url("./Html.png");
 }
