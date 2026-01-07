@@ -387,7 +387,81 @@ body {
     rgba(0, 0, 0, 0.12) 0px -4px 6px;
 }
 
-/* ===============================
+
+    /* ===============================
+       BACKGROUND & EDUCATION SECTION
+       - Secțiunea pentru educație (jos de tot)
+       - Design minimal și profesional
+    ================================ */
+    .education-section {
+      margin: 4rem auto 2rem auto; /* Spațiu mare deasupra, centrat */
+      max-width: 1200px;
+      padding: 0 1rem;
+      
+    }
+
+    /* Titlul secțiunii "Background & Education" */
+    .education-title {
+      font-size: 0.875rem; /* Text mic, nu agresiv */
+      font-weight: 500;
+      text-transform: uppercase; /* Majuscule pentru eleganță */
+      letter-spacing: 0.1em; /* Spațiere între litere */
+      color: rgba(255, 255, 255, 0.8); /* Alb semi-transparent */
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    /* Cardul principal pentru diplomă */
+    .education-card {
+      background: rgba(255, 255, 255, 0.95); /* Alb semi-transparent */
+      border-radius: 12px; /* Colțuri rotunjite */
+      padding: 2rem; /* Spațiere internă generoasă */
+      max-width: 700px; /* Nu prea larg - centrat */
+      margin: 0 auto; /* Centrat pe pagină */
+      border: 1px solid rgba(255, 255, 255, 0.2); /* Bordură subtilă */
+      backdrop-filter: blur(10px); /* Efect glassmorphism (blur) */
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    /* Titlul diplomei - "Certificate of Higher Education..." */
+    .degree-title {
+      font-size: 1.125rem; /* Puțin mai mare decât textul normal */
+      font-weight: 600; /* Bold moderat */
+      color: #111827; /* Gri foarte închis (aproape negru) */
+      margin-bottom: 0.5rem;
+    }
+/* Linia cu universitatea - "Buckinghamshire New University · UK" */
+    .institution {
+      font-size: 0.875rem; /* Text mic */
+      color: #6b7280; /* Gri mediu */
+      margin-bottom: 0.75rem;
+    }
+
+    /* Numele universității - color accent */
+    .institution-name {
+      color: #4f46e5; /* Indigo/violet - accent color */
+      font-weight: 500; /* Semi-bold */
+      
+    }
+
+    /* Textul cu focus - partea italic "Focus: business fundamentals..." */
+    .focus-text {
+      font-size: 0.875rem; /* Text mic */
+      color: #6b7280; /* Gri mediu */
+      line-height: 1.6; /* Spațiere verticală pentru lizibilitate */
+      font-style: italic; /* Italic pentru a-l diferenția */
+    }
+
+    /* 📱 Responsive pentru mobile */
+    @media (max-width: 768px) {
+      .education-card {
+        padding: 1.5rem; /* Mai puțin padding pe mobil */
+      }
+    }
+    .Buckinghamshire {
+      text-decoration: underline;
+    }
+    /* ===============================
    ANIMAȚIE CONFETTI
    - Animație de cădere pentru confetti
    - Două variante de viteză
