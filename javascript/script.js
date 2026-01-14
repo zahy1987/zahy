@@ -1,3 +1,5 @@
+
+
 //Variables declared with var, let , and const
 var thisIsVar = "This is a var variable"; // var variable
 let letVariable = [1, 2, 3]; // let variable
@@ -11,6 +13,13 @@ FUNCȚII
 - doar când apeși numele funcției, rulează
 ------------------------------------------*/
 function learning() {  //named function
+    
+    // ia elementul cu id="learning"
+    let headingElement = document.getElementById("learning");
+
+    // schimbă textul lui
+    headingElement.textContent = "Ha ha ha ha !";
+
     console.log("This is a named function.");
 }
 
