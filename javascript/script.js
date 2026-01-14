@@ -1,5 +1,40 @@
 
 
+/* JS BASICS
+│
+├─ VARIABLES
+│   ├─ var -> veche, globală
+│   ├─ let -> bloc-scoped
+│   └─ const -> nu se reatribui, dar modifici interiorul
+│
+├─ FUNCTIONS
+│   ├─ Named Function
+│   │    learning() -> pornește când apeși butonul
+│   └─ Anonymous Function
+│        stocată într-o variabilă -> myDreamsRemote()
+│
+├─ BUILT-IN FUNCTIONS
+│   └─ parseInt() -> transformă text în număr
+│
+├─ CONDITIONS
+│   ├─ if/else -> decizii simple
+│   └─ switch -> multiple cazuri
+│
+├─ ARRAYS
+│   ├─ stringArray = ["apple","banana","cherry"]
+│   ├─ numberArray = [1,2,3,4,5]
+│   ├─ mixedArray = [1,"bla",true]
+│   ├─ array.length -> câte elemente sunt
+│ 
+├─ LOOPS
+│   └─ for (let z=0; z<array.length; z++) -> repetă elementele
+│
+└─ OBJECTS
+    ├─ proprietăți: firstName, lastName, age
+    ├─ metodă: fullName() -> returnează full name
+    └─ this -> referință la obiectul curent
+*/
+
 //Variables declared with var, let , and const
 var thisIsVar = "This is a var variable"; // var variable
 let letVariable = [1, 2, 3]; // let variable
