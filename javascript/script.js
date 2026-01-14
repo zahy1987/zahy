@@ -82,3 +82,34 @@ let person = {
 // Accessing object properties
 console.log("Person's first name:", person.firstName); // Access firstName property
 console.log("Person's full name:", person.fullName()); // Call fullName method
+
+//--------------------------------------------
+
+//Variables declared with var let, and cost
+var myvar ="This is a var variable";  //variable
+let mylet = 42; // let variable
+const mycost = [1, 2, 3]; // cost variabile
+
+//Named fuction
+function namedfunction() {
+    console.log("This is a named function.");
+}
+namedFunction();
+
+//Loop through an array
+for (let i =0; i < stringArray.length; i++) {
+    console.log("String array element:", stringArray[i]);
+}
+
+//Accessing object properties
+console.log("Person`s first name:", person.firstName); //Access firstName property
+console.log("Person`s full name:", person.fullName()); //Call fullName method
+
+
+
+//Anonymous fuction assigned to a variabile 
+let anonymousFiction = function() {
+    console.log("This is an anonymous fuction.");
+};
+anonymousFiction();
+
