@@ -1,115 +1,78 @@
-function titlenew() {
-    // Target the id of the HTML heading element
-    let headingElement = document.getElementById("title");
-    // Assign new text to the HTML heading element
-    headingElement.textContent = "New Text";
-    
-}
-console.log("Hello, this is a message logged to the console!");
+//Variables declared with var, let , and const
+var thisIsVar ="This is a var variabke"; //var variable
+let letVariable = [1, 2, 3,]; // const varable
 
-// Variables declared with var, let, and const
-var myVar = "This is a var variable"; // var variable
-let myLet = 42; // let variable
-const myConst = [1, 2, 3]; // const variable
-
-// Named function
-function namedFunction() {
+// Named fuction
+function learning() {  //named fuction
     console.log("This is a named function.");
 }
-namedFunction();
 
-// Anonymous function assigned to a variable
-let anonymousFunction = function() {
-    console.log("This is an anonymous function.");
+learning();
+
+//Anonimous fuction assigned to a variable
+let myDreamsRemote = function() {
+    console.log("This is an anonymous dream fuction.");
 };
-anonymousFunction();
 
-// Built-in function (example: parseInt)
+myDreamsRemote();
+
+// Built-in fuction  (exemple: preseInt)
 let numberString = "123";
 let parsedNumber = parseInt(numberString);
 console.log("Parsed number using parseInt:", parsedNumber);
 
-// If/else conditional statement
+// if/else conditional statement
 let condition = true;
 if (condition) {
     console.log("Condition is true.");
-} else {
-    console.log("Condition is false.");
+}
+else {
+    console.log("condition is false.");
 }
 
-// Switch conditional statement
+//Switch conditional statement
 let day = 3;
 switch (day) {
     case 1:
         console.log("Monday");
         break;
-    case 2:
+    case 1:
         console.log("Tuesday");
         break;
-    case 3:
+    case 1:
         console.log("Wednesday");
         break;
-    case 4:
+    case 1:
         console.log("Thursday");
         break;
-    case 5:
+    case 1:
         console.log("Friday");
         break;
-    default:
-        console.log("Weekend");
+        default:
+            console.log("Weekend");
 }
 
-// Arrays of different data types
-let stringArray = ["apple", "banana", "cherry"]; // array of strings
-let numberArray = [1, 2, 3, 4, 5]; // array of numbers
-let mixedArray = ["text", 42, true]; // array of mixed data types
+//Array of different data types
+let stringArray = ["apple" , "banana" , "cherry"]; //Array of strings
+let numberArray = [1, 2, 3, 4, 5, 66, 999]; //array of numbers
+let mixedArray = [ 1, 30, "bla", true];
+console.log("bla bla bla", mixedArray);
 
 // Loop through an array
-for (let i = 0; i < stringArray.length; i++) {
-    console.log("String array element:", stringArray[i]);
-}
-
-// Creating and using objects
-let person = {
-    firstName: "John",
-    lastName: "Doe",
-    age: 30,
-    fullName: function() {
-        return this.firstName + " " + this.lastName;
+for ( let i =0; i < numberArray.length; i++) {
+        console.log("String array element:", numberArray[i]);
     }
-};
 
-// Accessing object properties
-console.log("Person's first name:", person.firstName); // Access firstName property
-console.log("Person's full name:", person.fullName()); // Call fullName method
+    // Creating and using objects
+    let person = {
+        firstname: "zahy",
+        lastName: "yhaz",
+        age: 38,
+        fullname: function() {
+            return this.firstname + "" + this.lastName;
+        }
+    };
 
-//--------------------------------------------
-
-//Variables declared with var let, and cost
-var myvar ="This is a var variable";  //variable
-let mylet = 42; // let variable
-const mycost = [1, 2, 3]; // cost variabile
-
-//Named fuction
-function namedfunction() {
-    console.log("This is a named function.");
-}
-namedFunction();
-
-//Loop through an array
-for (let i =0; i < stringArray.length; i++) {
-    console.log("String array element:", stringArray[i]);
-}
-
-//Accessing object properties
-console.log("Person`s first name:", person.firstName); //Access firstName property
-console.log("Person`s full name:", person.fullName()); //Call fullName method
-
-
-
-//Anonymous fuction assigned to a variabile 
-let anonymousFiction = function() {
-    console.log("This is an anonymous fuction.");
-};
-anonymousFiction();
-
+    // Accessing object properties
+    console.log(`Person"s first name:`, person.firstname); //Access firstName property
+    console.log("Person`s full name:", person.fullname()); // call fullName method
