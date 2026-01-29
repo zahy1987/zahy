@@ -1,0 +1,455 @@
+/* =====================
+   CSS VARIABLES
+===================== */
+:root {
+  --primary-purple: #9c12f1;
+  --primary-pink: #df1d9e;
+  --header-purple: #d946ef;
+  --light-purple: #a855f7;
+  --pink-gradient-start: #f387e3;
+  --accent-blue: #1260fa;
+  --accent-green: #15e72d;
+  --text-dark: #222;
+  --text-light: #f4f4f4;
+  --bg-light: #f5f5f5;
+  --white: #ffffff;
+  --main-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.2);
+  
+  --nav-padding: 0.6rem 1.2rem;
+  --border-radius-small: 0.5rem;
+  --border-radius-medium: 0.625rem;
+  --border-radius-large: 1.25rem;
+  --section-padding: 2rem;
+  --transition-speed: 0.3s;
+}
+
+/* =====================
+   RESET GENERAL
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  display: block;
+  width: 100%;
+}
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-attachment: fixed;
+  color: var(--text-dark);
+  min-height: 100vh;
+  padding-top: 0;
+}
+
+/* =====================
+   NAVIGATION DESKTOP
+   Afișat DOAR pe ecrane > 612px
+===================== */
+.nav-container {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, 
+              rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, 
+              rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, 
+              rgba(0, 0, 0, 0.06) 0px 2px 1px, 
+              rgba(0, 0, 0, 0.09) 0px 4px 2px, 
+              rgba(0, 0, 0, 0.09) 0px 8px 4px, 
+              rgba(0, 0, 0, 0.09) 0px 16px 8px, 
+              rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  display: none; /* Ascuns pe mobile */
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  height: 60px;
+}
+
+/* Logo Desktop */
+.nav-profile-img {
+  display: none; /* Ascuns pe mobile */
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+  flex-shrink: 0;
+  border: 2px solid transparent;
+  background-image: 
+    url("./eu.jpg"),
+    conic-gradient(
+      from 540deg at 50% 50%,
+      #3a0be4e5 0deg 120deg,
+      #FFFF00 120deg 240deg,
+      #CE1126 240deg 360deg
+    );
+  background-size: cover, auto;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+/* Lista de linkuri desktop */
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  flex-grow: 1;
+}
+
+/* Stiluri linkuri desktop */
+.main-nav a {
+  display: inline-block;
+  padding: var(--nav-padding);
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1rem;
+  background-color: transparent;
+  border-radius: var(--border-radius-large);
+  transition: background-color var(--transition-speed) ease, 
+              transform var(--transition-speed) ease,
+              box-shadow var(--transition-speed) ease;
+  font-weight: 500;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.25rem 0.5rem var(--shadow-medium);
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
+.main-nav a:active {
+  transform: translateY(0);
+  box-shadow: 0 0.125rem 0.25rem var(--shadow-light);
+}
+
+.main-nav a.active-indicator {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0.25rem 0.5rem var(--shadow-medium);
+}
+
+/* Săgeată indicator pagină activă */
+.main-nav a.active-indicator::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(2px);
+  }
+}
+
+/* =====================
+   HAMBURGER MENU MOBILE
+   Afișat DOAR pe ecrane <= 612px
+===================== */
+.topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  height: 60px;
+  overflow: visible;
+  display: none;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, 
+              rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, 
+              rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, 
+              rgba(0, 0, 0, 0.06) 0px 2px 1px, 
+              rgba(0, 0, 0, 0.09) 0px 4px 2px, 
+              rgba(0, 0, 0, 0.09) 0px 8px 4px, 
+              rgba(0, 0, 0, 0.09) 0px 16px 8px, 
+              rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+/* Logo mobile */
+.nav-profile-img-mobile {
+  display: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid transparent;
+  background-image: 
+    url("./eu.jpg"),
+    conic-gradient(
+      from 540deg at 50% 50%,
+      #3a0be4e5 0deg 120deg,
+      #FFFF00 120deg 240deg,
+      #CE1126 240deg 360deg
+    );
+  background-size: cover, auto;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+}
+
+/* Brand/Logo text mobile */
+.topnav a.active {
+  background: rgba(244, 244, 247, 0.2);
+  color: white;
+  padding: 18px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.topnav a.active:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Container linkuri mobile - ASCUNS IMPLICIT */
+.topnav #myLinks {
+  display: none;
+  position: fixed;
+  top: 60px;
+  right: 10px;
+  width: auto;
+  min-width: 200px;
+  max-width: 250px;
+  background: rgba(102, 126, 234, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 0;
+}
+
+/* Stiluri pentru linkuri individuale mobile */
+.topnav #myLinks a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.topnav #myLinks a:last-child {
+  border-bottom: none;
+}
+
+.topnav #myLinks a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Butonul hamburger */
+.topnav a.icon {
+  background: rgba(0, 0, 0, 0.3);
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 18px 17px;
+  border-radius: 0;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.topnav a.icon:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Când meniul este deschis (clasa adăugată prin JavaScript) */
+.topnav.responsive #myLinks {
+  display: block;
+}
+
+/* =====================
+   MEDIA QUERIES
+===================== */
+
+/* MOBILE - sub 612px */
+@media (max-width: 612px) {
+  /* Arată meniul hamburger cu Flexbox */
+  .topnav {
+    display: flex;
+  }
+  
+  .nav-profile-img-mobile {
+    display: block;
+  }
+  
+  /* Ascunde meniul desktop */
+  .nav-container {
+    display: none;
+  }
+  
+  .nav-profile-img {
+    display: none;
+  }
+  
+  /* Compensare pentru meniul fix - EXACT 60px */
+  body {
+    padding-top: 60px;
+  }
+  
+  /* Elimină margin/padding extra */
+  .container-projects {
+    padding-top: 0;
+    margin-top: 0;
+  }
+  
+  .header {
+    margin-top: 0;
+    padding-top: 1rem;
+  }
+  
+  /* Ascunde HR-ul pe mobile */
+  hr {
+    display: none;
+  }
+  
+  /* Moș Crăciun jos pe mobile */
+  .mos-craciun {
+    bottom: 10px;
+  }
+}
+
+/* DESKTOP - peste 612px */
+@media (min-width: 613px) {
+  /* Arată meniul desktop */
+  .nav-container {
+    display: block;
+  }
+  
+  .nav-profile-img {
+    display: block;
+  }
+  
+  /* Ascunde meniul hamburger */
+  .topnav {
+    display: none;
+  }
+  
+  .nav-profile-img-mobile {
+    display: none;
+  }
+  
+  /* HR vizibil pe desktop */
+  hr {
+    display: block;
+  }
+}
+
+/* Responsive pentru meniu desktop mic */
+@media (max-width: 37.5rem) and (min-width: 613px) {
+  .main-nav a {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* =====================
+   FOOTER
+===================== */
+.footer {
+  background-color: #a3a3a3;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-dark);
+  width: 100%;
+}
+
+.footer p {
+  margin: 0.25rem 0;
+}
+
+.footer-highlight {
+  font-weight: 600;
+  color: var(--primary-purple);
+  text-decoration: none;
+  transition: color var(--transition-speed) ease,
+              text-shadow var(--transition-speed) ease;
+  cursor: pointer;
+}
+
+.footer-highlight:hover {
+  color: var(--primary-pink);
+  text-shadow: 0 0 10px rgba(223, 29, 158, 0.5);
+}
+
+/* =====================
+   ACCESSIBILITY
+===================== */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-purple);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--primary-pink);
+  outline-offset: 2px;
+}
+
+/* =====================
+   UTILITY CLASSES
+===================== */
+.container-projects {
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.subscription-section {
+  width: 100%;
+}
