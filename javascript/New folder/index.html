@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas Basics</title>
+  <style>
+    canvas { border: 1px solid black; background: #f0f0f0; }
+  </style>
+</head>
+<body>
+  <canvas id="myCanvas" width="600" height="400"></canvas>
+
+  <script>
+    let x = 300, y = 200, dy = 5;
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // ștergem frame-ul vechi
+
+  ctx.beginPath();
+  ctx.arc(x, y, 30, 0, Math.PI * 2);
+  ctx.fillStyle = 'orange';
+  ctx.fill();
+
+  y += dy;
+  if (y > canvas.height - 30 || y < 30) dy = -dy; // bounce
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+  </script>
+</body>
+</html>

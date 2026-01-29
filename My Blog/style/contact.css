@@ -1,0 +1,94 @@
+
+    .contact-social {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 2rem 0;
+  align-items: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  font-weight: 800;
+  box-shadow: 0 9px 8px rgba(0, 0, 0, 0.3);
+
+  
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 8px rgba(103, 107, 102, 0.897);
+}
+
+.social-link i {
+  margin-right: 1rem;
+  font-size: 1.3rem;
+  width: 20px;
+  text-align: center;
+}
+
+/* Culori specifice pentru fiecare platformă */
+.facebook { 
+  background: linear-gradient(135deg, #3b5998, #2d4373);
+  border: 2px solid #3b5998;
+}
+
+.instagram { 
+  background: linear-gradient(135deg, #e4405f, #c13584);
+  border: 2px solid #e4405f;
+}
+
+.linkedin { 
+  background: linear-gradient(135deg, #0077b5, #005885);
+  border: 2px solid #0077b5;
+}
+
+.github { 
+  background: linear-gradient(135deg, #333, #000);
+  border: 2px solid #333;
+}
+
+/* Stil alternativ dacă preferi cu fundal alb și text colorat */
+/*
+.social-link {
+  background: white;
+  border: 2px solid;
+  color: #333;
+}
+
+.facebook { 
+  border-color: #3b5998;
+  color: #3b5998;
+}
+
+.instagram { 
+  border-color: #e4405f;
+  color: #e4405f;
+}
+
+.linkedin { 
+  border-color: #0077b5;
+  color: #0077b5;
+}
+
+.github { 
+  border-color: #333;
+  color: #333;
+}
+
+.social-link:hover {
+  color: white;
+}
+
+.social-link.facebook:hover { background: #3b5998; }
+.social-link.instagram:hover { background: #e4405f; }
+.social-link.linkedin:hover { background: #0077b5; }
+.social-link.github:hover { background: #333; }
+*/
+  

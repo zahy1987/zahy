@@ -1,0 +1,54 @@
+.pix-container {
+  position: relative;
+  width: 60px;
+  height: 220px;
+  margin: 20px auto;
+}
+
+/* Corpul pixului (plasticul/galben) */
+.pix-body {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 180px;               /* lungimea maximă a corpului */
+  background: linear-gradient(to bottom, #ffeb3b, #fbc02d);
+  border: 2px solid #333;
+  border-radius: 8px 8px 30px 30px;
+  box-shadow: inset 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Mina (partea care se consumă) */
+.pix-mine {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 0;                    /* începe de la 0 și crește la maxim */
+  background: #333;
+  border-radius: 0 0 6px 6px;
+  transition: height 0.5s ease;
+}
+
+/* Vârf conic (ca la pixuri reale) */
+.pix-varf {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 30px solid #555;
+  z-index: 2;
+}
+/* Cursor ca pix peste tot pe pagină când miști mouse-ul */
+body {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><text x="0" y="24" font-size="24">✏</text></svg>'), auto;
+}
+
+/* Sau mai fancy: cursor care se schimbă doar când ești pe zona de scris */
+#output, .pix-container {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><path d="M12 36 L4 44 L0 48 L4 44 Z" fill="black"/><rect x="12" y="0" width="8" height="36" fill="yellow"/><polygon points="12,0 20,0 16,8" fill="gray"/></svg>'), pointer;
+}
