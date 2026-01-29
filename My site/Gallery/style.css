@@ -698,3 +698,6 @@ body {
   animation-delay: 2.7s; 
   background: linear-gradient(135deg, #00ff66, #00cc55); /* Verde mentă */
 }
+.certificate-card.content .certificate-image {
+  background-image: url("../Gallery/Content\ Marketing\ Certified.jfif");
+}
