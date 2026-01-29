@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Test DOM JS</title>
+  <style>
+    .rosu { color: red; font-weight: bold; }
+    .ascuns { display: none; }
+  </style>
+</head>
+<body>
+
+  <h1 id="titlu">Bine ai venit!</h1>
+  <p id="text">Aici e textul original.</p>
+  <button id="buton">Click aici să vezi magia</button>
+
+  <div id="container"></div> <!-- aici vom adăuga element nou -->
+
+  <script>
+    // 1. Selectăm elementele
+    const titlu = document.getElementById('titlu');
+    const paragraf = document.getElementById('text');
+    const buton = document.getElementById('buton');
+    const container = document.getElementById('container');
+
+    // 2. Manipulăm clase și stiluri
+    titlu.classList.add('rosu');                    // adaugă clasă
+    paragraf.style.fontSize = '18px';               // stil inline
+
+    // 3. Adăugăm atribut nou
+    paragraf.setAttribute('title', 'Apasa cu mouse-ul pe butonu de mai jos');
+    buton.setAttribute('title', 'Apasa cu mouse-ul peste mine');
+
+    // 4. Când apeși butonul...
+    buton.addEventListener('click', function() {
+      // Toggle clasă (arată/ascunde)
+      paragraf.classList.toggle('ascuns');
+
+      // Creează element nou și adaugă-l
+      const nouParagraf = document.createElement('p');
+      nouParagraf.textContent = 'Element nou creat cu JS la ' + new Date().toLocaleTimeString();
+      nouParagraf.classList.add('rosu');
+      nouParagraf.style.border = '2px solid green';
+
+      container.appendChild(nouParagraf);  // sau container.append(nouParagraf) – mai nou
+    });
+  </script>
+</body>
+</html>
