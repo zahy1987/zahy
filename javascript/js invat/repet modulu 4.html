@@ -1,0 +1,34 @@
+// 1. Selectăm elementele importante (fă asta primul!)
+const titlu     = document.getElementById('titlu');
+const paragraf  = document.getElementById('text');
+const buton     = document.getElementById('buton');
+const container = document.getElementById('container');
+
+// 2. Modificăm ceva imediat (la încărcare)
+titlu.classList.add('rosu');
+paragraf.style.fontSize = '20px';
+buton.title = 'Apasă-mă!';
+
+// 3. Adăugăm eveniment (cel mai important!)
+buton.addEventListener('click', function() {
+  // Ce se întâmplă când apeși butonul
+
+  paragraf.classList.toggle('ascuns');   // arată/ascunde
+
+  // Creezi element nou
+  const nou = document.createElement('p');
+  nou.textContent = 'Salut la ora ' + new Date().toLocaleTimeString();
+  nou.classList.add('verde');
+  nou.style.border = '1px solid blue';
+
+  // Îl pui în pagină
+  container.appendChild(nou);
+});
+
+Selectarea elementelor cu getElementById (cel mai simplu și cel mai des folosit la început)
+Modificarea claselor cu classList.add() și classList.toggle()
+Modificarea stilului inline cu .style.proprietate = 'valoare'
+Adăugarea de eveniment cu addEventListener('click', function() { ... })
+Crearea unui element nou cu document.createElement('tag')
+Adăugarea textului cu .textContent = 'ceva'
+Adăugarea elementului în pagină cu appendChild() (sau append() – dar appendChild e cel clasic și sigur la test)

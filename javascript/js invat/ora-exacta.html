@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplu JavaScript Simplu</title>
+
+  <style>
+    .rosu {
+      color: red;
+    }
+
+    .verde {
+      color: green;
+    }
+
+    .ascuns {
+      display: none;
+    }
+
+    #container {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px dashed gray;
+    }
+
+    button {
+      padding: 10px 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="titlu">Salut, JavaScript 👋</h1>
+
+  <p id="text">
+    Acest paragraf poate fi ascuns sau afișat.
+  </p>
+
+  <button id="buton">Apasă-mă</button>
+
+  <div id="container"></div>
+
+  <script>
+    // 1. Selectăm elementele
+    const titlu     = document.getElementById('titlu');
+    const paragraf  = document.getElementById('text');
+    const buton     = document.getElementById('buton');
+    const container = document.getElementById('container');
+
+    // 2. Modificări la încărcare
+    titlu.classList.add('rosu');
+    paragraf.style.fontSize = '20px';
+    buton.title = 'Apasă-mă!';
+
+    // 3. Evenimentul
+    buton.addEventListener('click', function () {
+
+      // arată / ascunde paragraful
+      paragraf.classList.toggle('ascuns');
+
+      // creezi un element nou
+      const nou = document.createElement('p');
+      nou.textContent = 'Salut! Ora este ' + new Date().toLocaleTimeString();
+      nou.classList.add('verde');
+      nou.style.border = '1px solid blue';
+
+      // îl adaugi în pagină
+      container.appendChild(nou);
+    });
+  </script>
+
+</body>
+</html>
