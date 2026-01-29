@@ -104,7 +104,7 @@
   
   /* Gradient tricolor în cerc - roșu stânga jos, galben sus, albastru dreapta jos */
   background-image: 
-    url("./eu.jpg"), 
+    url("./Eu-header.jpg"), 
     conic-gradient(
       from 540deg at 50% 50%,
       #3a0be4e5 0deg 120deg,    
