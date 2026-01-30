@@ -28,7 +28,8 @@ More files will be added as I progress!
 
 **Learning sources:**
 - Beau Carnes – [Learn JavaScript - Full Course for Beginners](https://www.youtube.com/watch?v=PkZNo7MFNFg) (freeCodeCamp.org)  
-- Courses from **IT Online Learning Academy**  
+- Courses from - [IT Online Learning Academy](https://www.itonlinelearning-academy.com/)
+- MDN JavaScript Guide - [Language Overview](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Language_overview)
 
 **Note:** This repo is for personal study only – no paid or copyrighted course materials included.
 
@@ -66,7 +67,8 @@ Mai multe fișiere vor apărea pe măsură ce continui cursurile!
 
 **Surse principale de învățare:**
 - Beau Carnes – [Learn JavaScript - Full Course for Beginners](https://www.youtube.com/watch?v=PkZNo7MFNFg) (freeCodeCamp.org)  
-- Cursuri de la **IT Online Learning Academy**  
+- Courses from - [IT Online Learning Academy](https://www.itonlinelearning-academy.com/)
+- MDN JavaScript Guide - [Language Overview](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Language_overview)
 
 **Notă:** Repository-ul este doar pentru studiu personal – nu conține materiale plătite sau restricționate.
 
