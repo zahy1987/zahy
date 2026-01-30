@@ -28,7 +28,7 @@ More files will be added as I progress!
 
 **Learning sources:**
 - Beau Carnes – [Learn JavaScript - Full Course for Beginners](https://www.youtube.com/watch?v=PkZNo7MFNFg) (freeCodeCamp.org)  
-- Courses from **IT Online Learning Academy**  
+- Courses from [IT Online Learning Academy  ](https://www.itonlinelearning-academy.com/)
 
 **Note:** This repo is for personal study only – no paid or copyrighted course materials included.
 
