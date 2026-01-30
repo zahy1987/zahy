@@ -1,47 +1,74 @@
-JavaScript – Learning Notebook
+# JavaScript – Learning Notebook / Caiet de Învățare JavaScript
 
-This folder contains my JavaScript practice files, written by me while learning from online tutorials and courses.
+### EN (English)
 
-The main goal of this repository is to:
+This folder is my **personal JavaScript practice notebook** – notes and exercises written manually while following online tutorials.
 
-practice coding
+**Main goals:**
+- Intensive coding practice  
+- Deep understanding of concepts  
+- Quick refresh when I forget something  
+- Building a personal “external brain” for programming  
 
-understand concepts deeply
+**What you'll find here (current main files):**
+- `FindLengthOfString.js` → Finding string length (`.length`)
+- `string-concatenation.js` → String concatenation methods (`+`, `.concat()`, template literals)
+- `bracketNotationFinCaracerString.js` → Bracket notation to access characters (`str[0]`)
+- `stringImmutability.js` → String immutability in JavaScript
+- `VariabelsStrings.js` → Basic variables and strings
+- `index.html` → (optional) Simple HTML for browser testing
 
-quickly refresh when I forget something
+More files will be added as I progress!
 
-build a personal “external brain” for programming
+**How I use this folder:**
+1. Learn a new concept → create a file  
+2. Write code manually + Romanian comments + console.log tests  
+3. When I forget → search repo and re-run/review  
+4. Update old files as my understanding improves  
 
-All code is written manually and includes comments in Romanian so I can easily understand it again later.
+**Learning sources:**
+- Beau Carnes – [Learn JavaScript - Full Course for Beginners](https://www.youtube.com/watch?v=PkZNo7MFNFg) (freeCodeCamp.org)  
+- Courses from **IT Online Learning Academy**  
 
-What you’ll find here
+**Note:** This repo is for personal study only – no paid or copyrighted course materials included.
 
-Each file represents a small lesson or exercise:
+---
 
-findLengthOfString.js – finding the length of a string
+Happy coding! 🚀  
+Mulțumesc mie de acum 30/01/2026 că am organizat totul clar! 😄
 
-stringConcatenation.js – joining strings
+### RO (Română) – Principal pentru mine
 
-bracketNotation.js – accessing characters in a string
+Acest folder este **ca un caiet personal** cu exerciții și notițe JavaScript.  
+Toate fișierele sunt scrise **manual** de mine, cu **comentarii detaliate în română** ca să înțeleg ușor peste timp.
 
-strictInequality.js – the difference between != and !==
+**Scopul principal:**
+- Practică intensivă de coding  
+- Înțelegere profundă a conceptelor  
+- Refresh rapid când uit ceva  
+- Construiesc un „creier extern” personal pentru programare  
 
-(More files will be added as I continue learning.)
+**Ce găsești aici (fișiere principale actuale):**
+- `FindLengthOfString.js` → Lungimea string-ului (`.length`)
+- `string-concatenation.js` → Concatenare string-uri (`+`, `.concat()`, template literals)
+- `bracketNotationFinCaracerString.js` → Bracket notation pentru caractere (`str[0]`)
+- `stringImmutability.js` → Imutabilitatea string-urilor în JS
+- `VariabelsStrings.js` → Variabile și string-uri de bază
+- `index.html` → (opțional) Testare în browser
 
-How I use this folder
+Mai multe fișiere vor apărea pe măsură ce continui cursurile!
 
-When I learn something new → I create a file.
+**Cum folosesc folderul:**
+1. Învăț ceva nou → creez fișier  
+2. Scriu cod + explicații în română + console.log pentru teste  
+3. Când uit → caut în repo și rulez din nou  
+4. Îmbunătățesc fișierele vechi pe măsură ce evoluez  
 
-I write the code with explanations in Romanian.
+**Surse principale de învățare:**
+- Beau Carnes – [Learn JavaScript - Full Course for Beginners](https://www.youtube.com/watch?v=PkZNo7MFNFg) (freeCodeCamp.org)  
+- Cursuri de la **IT Online Learning Academy**  
 
-When I forget → I search this repository and review.
+**Notă:** Repository-ul este doar pentru studiu personal – nu conține materiale plătite sau restricționate.
 
-I improve the code as my understanding grows.
+---
 
-Learning sources
-
-Beau Carnes – freeCodeCamp (YouTube)
-
-IT Online Learning Academy
-
-This repository is for personal study purposes only and does not contain paid course materials.
