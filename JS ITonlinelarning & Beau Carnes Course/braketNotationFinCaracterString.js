@@ -37,7 +37,7 @@ var thirdToLastLetterOfFirstName = firstName[firstName.length -3];
 console.log(firstName);
 
 //Setup
-Var = lastName = "Lovelace";
+var lastName = "Lovelace";
 
 // Only change code below this line
 var secondToLastLetterOfLastName = lastName[lastName.length -2];
