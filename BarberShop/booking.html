@@ -6,7 +6,6 @@
   <title>Book Appointment | The Grooming Rooms</title>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- EmailJS SDK -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -160,17 +159,15 @@
 </div>
 
 <script>
-  // ========== EMAILJS CONFIGURATION (completă) ==========
-  const YOUR_PUBLIC_KEY = "Wy7hK7HCqjz-SVIOe";
+  // ========== EMAILJS CONFIGURATION - VALORI CORECTE ==========
+  const YOUR_PUBLIC_KEY = "WyYhK7HCqJz-SViOe";
   const YOUR_SERVICE_ID = "service_d2jp8wj";
-  const YOUR_TEMPLATE_CLIENT = "template_hutayxa";
-  const YOUR_TEMPLATE_ADMIN = "template_g5ql1da";
-  // =====================================================
+  const YOUR_TEMPLATE_CLIENT = "template_hutoyxa";
+  const YOUR_TEMPLATE_ADMIN = "template_g5q1da";
+  // ============================================================
 
-  // Inițializare EmailJS
   emailjs.init(YOUR_PUBLIC_KEY);
 
-  // Set date today as min and default
   const today = new Date();
   const yyyy = today.getFullYear();
   const mm = String(today.getMonth() + 1).padStart(2, '0');
@@ -363,7 +360,6 @@
   showStep(1);
   updateServiceSelection();
 
-  // URL preset for service
   const urlParams = new URLSearchParams(window.location.search);
   const preset = urlParams.get('service');
   if (preset) {
