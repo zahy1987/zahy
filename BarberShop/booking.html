@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Book Appointment | The Grooming Rooms</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body style="background: #0a0a0a;">
+
+<nav style="background: #0a0a0a; border-bottom: 1px solid #1f1f1f; position: sticky; top: 0; z-index: 100;">
+  <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; max-width: 1280px; margin: 0 auto;">
+    <div style="font-size: 1.3rem; font-weight: 700; color: #fff;">
+      THE <span style="color: #f5c518;">GROOMING</span> ROOMS
+    </div>
+    <a href="/BarberShop.html" style="display: flex; align-items: center; gap: 0.5rem; color: #f5c518; text-decoration: none; font-weight: 600;">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+  </div>
+</nav>
+
+<main>
+  <div style="max-width: 1200px; margin: 0 auto; padding: 3rem 2rem;">
+    <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 2rem; background: #0f0f0f; border-radius: 24px; overflow: hidden; border: 1px solid #2a2a2a;">
+      
+      <!-- Left Panel -->
+      <div style="background: #0a0a0a; padding: 2rem;">
+        <div style="display: inline-block; background: rgba(245, 197, 24, 0.1); color: #f5c518; padding: 0.3rem 1rem; border-radius: 50px; font-size: 0.7rem; margin-bottom: 1.5rem;">Premium Grooming</div>
+        <h2 style="font-size: 1.8rem; color: #fff; margin-bottom: 1rem;">Secure Your Spot</h2>
+        <p style="color: #aaa; line-height: 1.6; margin-bottom: 2rem;">Experience London's finest barber service.</p>
+        
+        <div style="display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 2rem;">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <i class="fas fa-clock" style="width: 40px; height: 40px; background: rgba(245, 197, 24, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #f5c518;"></i>
+            <div><strong style="color: #fff;">Fast Confirmation</strong><br><span style="color: #888; font-size: 0.8rem;">Within 2 hours</span></div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <i class="fas fa-wine-glass-alt" style="width: 40px; height: 40px; background: rgba(245, 197, 24, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #f5c518;"></i>
+            <div><strong style="color: #fff;">Complimentary Drinks</strong><br><span style="color: #888; font-size: 0.8rem;">While you wait</span></div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <i class="fas fa-credit-card" style="width: 40px; height: 40px; background: rgba(245, 197, 24, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #f5c518;"></i>
+            <div><strong style="color: #fff;">Secure Booking</strong><br><span style="color: #888; font-size: 0.8rem;">No deposit required</span></div>
+          </div>
+        </div>
+
+        <div style="border-top: 1px solid #1f1f1f; padding-top: 1.5rem;">
+          <h4 style="color: #f5c518; margin-bottom: 1rem;"><i class="far fa-clock"></i> Opening Hours</h4>
+          <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; color: #ccc; border-bottom: 1px solid #1a1a1a;"><span>Mon - Fri</span><span>9:00 – 20:00</span></div>
+          <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; color: #ccc; border-bottom: 1px solid #1a1a1a;"><span>Saturday</span><span>9:00 – 19:00</span></div>
+          <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; color: #ccc;"><span>Sunday</span><span>10:00 – 17:00</span></div>
+        </div>
+      </div>
+      
+      <!-- Right Panel - Form -->
+      <div style="padding: 2rem; background: #0f0f0f;">
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+            <div id="step1Indicator" style="width: 40px; height: 40px; border-radius: 50%; background: #f5c518; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #0a0a0a;">1</div>
+            <div style="width: 50px; height: 2px; background: #f5c518; margin: 0 0.5rem;"></div>
+            <div id="step2Indicator" style="width: 40px; height: 40px; border-radius: 50%; background: #2a2a2a; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #888;">2</div>
+            <div style="width: 50px; height: 2px; background: #2a2a2a; margin: 0 0.5rem;"></div>
+            <div id="step3Indicator" style="width: 40px; height: 40px; border-radius: 50%; background: #2a2a2a; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #888;">3</div>
+          </div>
+          <h3 id="stepTitle" style="color: #fff; font-size: 1.3rem;">Your Details</h3>
+          <p id="stepDesc" style="color: #888; font-size: 0.8rem;">Tell us who you are</p>
+        </div>
+
+        <form id="bookingForm">
+          <!-- STEP 1 -->
+          <div id="step1" style="display: block;">
+            <div style="margin-bottom: 1.5rem;">
+              <label style="display: block; color: #f5c518; margin-bottom: 0.5rem; font-size: 0.8rem;"><i class="fas fa-user"></i> Full Name *</label>
+              <input type="text" id="name" style="width: 100%; padding: 0.8rem; background: #1a1a1a; border: 2px solid #2a2a2a; border-radius: 12px; color: #fff; font-size: 1rem;">
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+              <label style="display: block; color: #f5c518; margin-bottom: 0.5rem; font-size: 0.8rem;"><i class="fas fa-envelope"></i> Email Address *</label>
+              <input type="email" id="email" style="width: 100%; padding: 0.8rem; background: #1a1a1a; border: 2px solid #2a2a2a; border-radius: 12px; color: #fff; font-size: 1rem;">
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+              <label style="display: block; color: #f5c518; margin-bottom: 0.5rem; font-size: 0.8rem;"><i class="fas fa-phone"></i> Phone Number *</label>
+              <input type="tel" id="phone" style="width: 100%; padding: 0.8rem; background: #1a1a1a; border: 2px solid #2a2a2a; border-radius: 12px; color: #fff; font-size: 1rem;">
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div id="step2" style="display: none;">
+            <div id="serviceOptions">
+              <div onclick="selectService('Classic Haircut', 35)" style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #1a1a1a; border: 2px solid #2a2a2a; border-radius: 16px; margin-bottom: 0.8rem; cursor: pointer;">
+                <i class="fas fa-cut" style="width: 40px; height: 40px; background: rgba(245, 197, 24, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #f5c518;"></i>
+                <div style="flex: 1; display: flex; justify-content: space-between;"><span style="color: #fff;">Classic Haircut</span><span style="color: #f5c518;">£35</span></div>
+                <div id="check1" style="width: 22px; height: 22px; border-radius: 50%; background: #2a2a2a;"></div>
+              </div>
+              <div onclick="selectService('Beard Sculpt & Shave', 28)" style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #1a1a1a; border: 2px solid #2a2a2a; border-radius: 16px; margin-bottom: 0.8rem; cursor: pointer;">
+                <i class="fas fa-beard" style="width: 40px; height: 40px; background: rgba(245, 197, 24, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #f5c518;"></i>
+                <div style="flex: 1; display: flex; justify-content: space-between;"><span style="color: #fff;">Beard Sculpt & Shave</span><span style="color: #f5c518;">£28</span></div>
+                <div id="check2" style="width: 22px; height: 22px; border-radius: 50%; background: #2a2a2a;"></div>
+              </div>
+              <div onclick="selectService('The Royal Package', 55)" style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #1a1a1a; border: 2px solid #2a2a2a; border-radius: 16px; margin-bottom: 0.8rem; cursor: pointer;">
+                <i class="fas fa-hand-sparkles" style="width: 40px; height: 40px; background: rgba(245, 197, 24, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #f5c518;"></i>
+                <div style="flex: 1; display: flex; justify-content: space-between;"><span style="color: #fff;">The Royal Package</span><span style="color: #f5c518;">£55</span></div>
+                <div id="check3" style="width: 22px; height: 22px; border-radius: 50%; background: #2a2a2a;"></div>
+              </div>
+              <div onclick="selectService('Hot Towel Shave', 32)" style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #1a1a1a; border: 2px solid #2a2a2a; border-radius: 16px; margin-bottom: 0.8rem; cursor: pointer;">
+                <i class="fas fa-tint" style="width: 40px; height: 40px; background: rgba(245, 197, 24, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #f5c518;"></i>
+                <div style="flex: 1; display: flex; justify-content: space-between;"><span style="color: #fff;">Hot Towel Shave</span><span style="color: #f5c518;">£32</span></div>
+                <div id="check4" style="width: 22px; height: 22px; border-radius: 50%; background: #2a2a2a;"></div>
+              </div>
+            </div>
+            <input type="hidden" id="selectedService">
+          </div>
+
+          <!-- STEP 3 -->
+          <div id="step3" style="display: none;">
+            <div style="margin-bottom: 1.5rem;">
+              <label style="display: block; color: #f5c518; margin-bottom: 0.5rem; font-size: 0.8rem;"><i class="fas fa-calendar"></i> Preferred Date *</label>
+              <input type="date" id="date" style="width: 100%; padding: 0.8rem; background: #1a1a1a; border: 2px solid #2a2a2a; border-radius: 12px; color: #fff;">
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+              <label style="display: block; color: #f5c518; margin-bottom: 0.5rem; font-size: 0.8rem;"><i class="fas fa-clock"></i> Preferred Time *</label>
+              <select id="time" style="width: 100%; padding: 0.8rem; background: #1a1a1a; border: 2px solid #2a2a2a; border-radius: 12px; color: #fff;">
+                <option value="">Select time</option>
+                <option value="09:00">09:00 AM</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="13:00">13:00 PM</option>
+                <option value="14:00">14:00 PM</option>
+                <option value="15:00">15:00 PM</option>
+                <option value="16:00">16:00 PM</option>
+                <option value="17:00">17:00 PM</option>
+                <option value="18:00">18:00 PM</option>
+                <option value="19:00">19:00 PM</option>
+              </select>
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+              <label style="display: block; color: #f5c518; margin-bottom: 0.5rem; font-size: 0.8rem;"><i class="fas fa-comment"></i> Special Requests</label>
+              <textarea id="notes" rows="3" style="width: 100%; padding: 0.8rem; background: #1a1a1a; border: 2px solid #2a2a2a; border-radius: 12px; color: #fff;"></textarea>
+            </div>
+            <div id="summary" style="background: #1a1a1a; border-radius: 16px; padding: 1rem; margin-top: 1rem;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;"><span style="color: #ccc;">Service:</span><strong id="summaryService" style="color: #f5c518;">—</strong></div>
+              <div style="display: flex; justify-content: space-between; border-top: 1px solid #2a2a2a; padding-top: 0.5rem;"><span style="color: #ccc;">Total:</span><strong id="summaryPrice" style="color: #f5c518; font-size: 1.2rem;">£0</strong></div>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+            <button type="button" id="prevBtn" style="display: none; padding: 0.8rem 1.5rem; background: #2a2a2a; border: none; border-radius: 40px; color: #fff; cursor: pointer;"><i class="fas fa-arrow-left"></i> Back</button>
+            <button type="button" id="nextBtn" style="padding: 0.8rem 1.5rem; background: #f5c518; border: none; border-radius: 40px; color: #0a0a0a; font-weight: 700; cursor: pointer; margin-left: auto;">Continue <i class="fas fa-arrow-right"></i></button>
+            <button type="submit" id="submitBtn" style="display: none; padding: 0.8rem 1.5rem; background: #f5c518; border: none; border-radius: 40px; color: #0a0a0a; font-weight: 700; cursor: pointer; margin-left: auto;">Confirm <i class="fas fa-check"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Modal -->
+<div id="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; align-items: center; justify-content: center;">
+  <div style="background: #0f0f0f; border-radius: 24px; padding: 2rem; max-width: 400px; width: 90%; text-align: center; border: 1px solid #f5c518;">
+    <i class="fas fa-check-circle" style="font-size: 4rem; color: #4caf50; margin-bottom: 1rem;"></i>
+    <h3 style="color: #f5c518;">Booking Confirmed! ✨</h3>
+    <p style="color: #aaa; margin: 1rem 0;">Your appointment request has been received.</p>
+    <div id="modalDetails" style="background: #1a1a1a; border-radius: 12px; padding: 1rem; margin: 1rem 0; text-align: left;"></div>
+    <div style="display: flex; gap: 1rem;">
+  <a href="../BarberShop.html" style="flex: 1; padding: 0.8rem; background: #2a2a2a; border-radius: 40px; color: #fff; text-decoration: none; text-align: center;">Home</a>
+  <button id="newBtn" style="flex: 1; padding: 0.8rem; background: #f5c518; border: none; border-radius: 40px; color: #0a0a0a; font-weight: 700; cursor: pointer;">New Booking</button>
+</div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

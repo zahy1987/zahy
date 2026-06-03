@@ -25,7 +25,7 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+}, { threshold: 0.1 });
 
 fadeElements.forEach(el => observer.observe(el));
 
@@ -45,4 +45,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-console.log('Barber Shop website loaded - fully responsive');
+console.log('Barber Shop website loaded');
