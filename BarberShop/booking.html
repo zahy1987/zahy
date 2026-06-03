@@ -20,7 +20,6 @@
       line-height: 1.5;
     }
 
-    /* Navigation */
     .booking-nav {
       background: #0a0a0a;
       border-bottom: 1px solid #1f1f1f;
@@ -64,7 +63,6 @@
       opacity: 0.8;
     }
 
-    /* Main layout - MOBILE FIRST: stacking vertical */
     .booking-wrapper {
       max-width: 1200px;
       margin: 0 auto;
@@ -77,7 +75,6 @@
       gap: 1.5rem;
     }
 
-    /* LEFT PANEL - Secure Your Spot */
     .info-panel {
       background: #0f0f0f;
       border-radius: 24px;
@@ -173,7 +170,6 @@
       border-bottom: none;
     }
 
-    /* RIGHT PANEL - Form */
     .form-panel {
       background: #0f0f0f;
       border-radius: 24px;
@@ -181,7 +177,6 @@
       border: 1px solid #2a2a2a;
     }
 
-    /* Step indicators */
     .step-indicators {
       display: flex;
       align-items: center;
@@ -234,7 +229,6 @@
       font-size: 0.8rem;
     }
 
-    /* Form elements */
     .form-group {
       margin-bottom: 1.5rem;
     }
@@ -268,7 +262,6 @@
       border-color: #f5c518;
     }
 
-    /* Service cards */
     .service-option {
       display: flex;
       align-items: center;
@@ -340,7 +333,6 @@
       opacity: 1;
     }
 
-    /* Summary box */
     .summary-box {
       background: #1a1a1a;
       border-radius: 16px;
@@ -367,7 +359,6 @@
       font-size: 1.2rem;
     }
 
-    /* Buttons navigation */
     .form-nav {
       display: flex;
       justify-content: space-between;
@@ -407,7 +398,22 @@
       background: #3a3a3a;
     }
 
-    /* Modal */
+    /* Loading spinner */
+    .loading-spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #0a0a0a;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      margin-left: 0.5rem;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
     .modal-overlay {
       display: none;
       position: fixed;
@@ -435,6 +441,12 @@
     .modal-card i.fa-check-circle {
       font-size: 4rem;
       color: #4caf50;
+      margin-bottom: 1rem;
+    }
+
+    .modal-card i.fa-exclamation-triangle {
+      font-size: 4rem;
+      color: #e63946;
       margin-bottom: 1rem;
     }
 
@@ -478,7 +490,6 @@
       color: #0a0a0a;
     }
 
-    /* Desktop: side by side */
     @media (min-width: 768px) {
       .booking-grid {
         flex-direction: row;
@@ -519,7 +530,6 @@
   <div class="booking-wrapper">
     <div class="booking-grid">
       
-      <!-- LEFT PANEL -->
       <div class="info-panel">
         <div class="premium-badge"><i class="fas fa-scissors"></i> Premium Grooming</div>
         <h2>Secure Your Spot</h2>
@@ -528,7 +538,7 @@
         <div class="feature-list">
           <div class="feature-item">
             <div class="feature-icon"><i class="fas fa-clock"></i></div>
-            <div class="feature-text"><strong>Fast Confirmation</strong><span>Within 2 hours</span></div>
+            <div class="feature-text"><strong>Fast Confirmation</strong><span>Email within minutes</span></div>
           </div>
           <div class="feature-item">
             <div class="feature-icon"><i class="fas fa-wine-glass-alt"></i></div>
@@ -549,7 +559,6 @@
         </div>
       </div>
 
-      <!-- RIGHT PANEL: Form -->
       <div class="form-panel">
         <div class="step-indicators">
           <div class="step-circle active" id="step1Circle">1</div>
@@ -565,7 +574,6 @@
         </div>
 
         <form id="multiStepForm">
-          <!-- STEP 1 -->
           <div id="step1Content">
             <div class="form-group">
               <label><i class="fas fa-user"></i> Full Name *</label>
@@ -584,7 +592,6 @@
             </div>
           </div>
 
-          <!-- STEP 2 -->
           <div id="step2Content" style="display: none;">
             <div id="serviceList">
               <div class="service-option" data-service="Classic Haircut" data-price="35">
@@ -623,7 +630,6 @@
             <small class="error-msg" id="serviceError" style="text-align:center; display:block;"></small>
           </div>
 
-          <!-- STEP 3 -->
           <div id="step3Content" style="display: none;">
             <div class="form-group">
               <label><i class="fas fa-calendar"></i> Preferred Date *</label>
@@ -656,7 +662,7 @@
           <div class="form-nav">
             <button type="button" class="nav-btn prev" id="prevBtn" style="display: none;"><i class="fas fa-arrow-left"></i> Back</button>
             <button type="button" class="nav-btn next" id="nextBtn">Continue <i class="fas fa-arrow-right"></i></button>
-            <button type="button" class="nav-btn submit" id="submitBtn" style="display: none;">Confirm <i class="fas fa-check"></i></button>
+            <button type="button" class="nav-btn submit" id="submitBtn" style="display: none;">Confirm Booking <i class="fas fa-check"></i></button>
           </div>
         </form>
       </div>
@@ -666,9 +672,9 @@
 
 <div id="confirmationModal" class="modal-overlay">
   <div class="modal-card">
-    <i class="fas fa-check-circle"></i>
-    <h3>Booking Confirmed! ✨</h3>
-    <p style="color: #aaa;">Your appointment request has been received.</p>
+    <div id="modalIcon"><i class="fas fa-check-circle"></i></div>
+    <h3 id="modalTitle">Booking Confirmed! ✨</h3>
+    <p id="modalMessage" style="color: #aaa;">Your appointment request has been received.</p>
     <div class="modal-details" id="modalDetails"></div>
     <div class="modal-buttons">
       <a href="BarberShop.html" class="modal-btn modal-home">Home</a>
@@ -678,7 +684,19 @@
 </div>
 
 <script>
-  // Booking logic (self-contained)
+  // Set today's date as min and default
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const dd = String(today.getDate()).padStart(2, '0');
+  const todayFormatted = `${yyyy}-${mm}-${dd}`;
+  
+  const dateInput = document.getElementById('appointmentDate');
+  if (dateInput) {
+    dateInput.setAttribute('min', todayFormatted);
+    dateInput.value = todayFormatted;
+  }
+
   let currentStep = 1;
   let selectedServiceObj = { name: '', price: 0 };
 
@@ -801,33 +819,76 @@
 
   function onPrev() { if (currentStep > 1) { currentStep--; showStep(currentStep); } }
 
-  function onSubmit() {
+  async function onSubmit() {
     if (!validateStep3()) return;
-    const name = document.getElementById('fullName').value.trim();
-    const email = document.getElementById('emailAddr').value.trim();
-    const phone = document.getElementById('phoneNum').value.trim();
-    const date = document.getElementById('appointmentDate').value;
-    const time = document.getElementById('appointmentTime').value;
-    const notes = document.getElementById('specialRequests').value;
-    const modalDetailsHtml = `
-      <p><strong>👤 Name:</strong> ${name}</p>
-      <p><strong>📧 Email:</strong> ${email}</p>
-      <p><strong>📞 Phone:</strong> ${phone}</p>
-      <p><strong>✂️ Service:</strong> ${selectedServiceObj.name}</p>
-      <p><strong>📅 Date:</strong> ${date}</p>
-      <p><strong>⏰ Time:</strong> ${time}</p>
-      ${notes ? `<p><strong>📝 Notes:</strong> ${notes}</p>` : ''}
-      <p><strong>💰 Total:</strong> £${selectedServiceObj.price}</p>
-    `;
-    document.getElementById('modalDetails').innerHTML = modalDetailsHtml;
-    document.getElementById('confirmationModal').style.display = 'flex';
+
+    // Show loading on button
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = 'Sending... <span class="loading-spinner"></span>';
+    submitBtn.disabled = true;
+
+    const formData = new FormData();
+    formData.append('fullName', document.getElementById('fullName').value.trim());
+    formData.append('email', document.getElementById('emailAddr').value.trim());
+    formData.append('phone', document.getElementById('phoneNum').value.trim());
+    formData.append('service', selectedServiceObj.name);
+    formData.append('servicePrice', selectedServiceObj.price);
+    formData.append('date', document.getElementById('appointmentDate').value);
+    formData.append('time', document.getElementById('appointmentTime').value);
+    formData.append('notes', document.getElementById('specialRequests').value);
+
+    try {
+      const response = await fetch('send_booking.php', {
+        method: 'POST',
+        body: formData
+      });
+      
+      const result = await response.json();
+      
+      if (result.status === 'success') {
+        // Show success modal with booking details
+        const name = document.getElementById('fullName').value.trim();
+        const email = document.getElementById('emailAddr').value.trim();
+        const phone = document.getElementById('phoneNum').value.trim();
+        const date = document.getElementById('appointmentDate').value;
+        const time = document.getElementById('appointmentTime').value;
+        const notes = document.getElementById('specialRequests').value;
+        
+        const modalDetailsHtml = `
+          <p><strong>👤 Name:</strong> ${name}</p>
+          <p><strong>📧 Email:</strong> ${email}</p>
+          <p><strong>📞 Phone:</strong> ${phone}</p>
+          <p><strong>✂️ Service:</strong> ${selectedServiceObj.name} (£${selectedServiceObj.price})</p>
+          <p><strong>📅 Date:</strong> ${date}</p>
+          <p><strong>⏰ Time:</strong> ${time}</p>
+          ${notes ? `<p><strong>📝 Notes:</strong> ${notes}</p>` : ''}
+        `;
+        
+        document.getElementById('modalIcon').innerHTML = '<i class="fas fa-check-circle"></i>';
+        document.getElementById('modalTitle').innerHTML = 'Booking Confirmed! ✨';
+        document.getElementById('modalMessage').innerHTML = 'A confirmation email has been sent to your inbox.';
+        document.getElementById('modalDetails').innerHTML = modalDetailsHtml;
+        document.getElementById('confirmationModal').style.display = 'flex';
+      } else {
+        throw new Error(result.message || 'Something went wrong');
+      }
+    } catch (error) {
+      document.getElementById('modalIcon').innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
+      document.getElementById('modalTitle').innerHTML = 'Booking Failed';
+      document.getElementById('modalMessage').innerHTML = 'Please try again or call us directly.';
+      document.getElementById('modalDetails').innerHTML = `<p>Error: ${error.message}</p>`;
+      document.getElementById('confirmationModal').style.display = 'flex';
+    } finally {
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    }
   }
 
   function resetForm() {
     document.getElementById('fullName').value = '';
     document.getElementById('emailAddr').value = '';
     document.getElementById('phoneNum').value = '';
-    document.getElementById('appointmentDate').value = '';
+    if (dateInput) dateInput.value = todayFormatted;
     document.getElementById('appointmentTime').value = '';
     document.getElementById('specialRequests').value = '';
     serviceOptions.forEach(opt => opt.classList.remove('selected-service'));
@@ -846,13 +907,15 @@
     resetForm();
   });
   document.getElementById('confirmationModal').addEventListener('click', (e) => {
-    if (e.target === document.getElementById('confirmationModal')) document.getElementById('confirmationModal').style.display = 'none';
+    if (e.target === document.getElementById('confirmationModal')) {
+      document.getElementById('confirmationModal').style.display = 'none';
+    }
   });
 
   showStep(1);
   updateServiceSelection();
 
-  // URL preset
+  // URL preset for service
   const urlParams = new URLSearchParams(window.location.search);
   const preset = urlParams.get('service');
   if (preset) {
