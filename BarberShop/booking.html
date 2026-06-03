@@ -6,515 +6,79 @@
   <title>Book Appointment | The Grooming Rooms</title>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Lato', sans-serif;
-      background-color: #0a0a0a;
-      color: #e0e0e0;
-      line-height: 1.5;
-    }
-
-    .booking-nav {
-      background: #0a0a0a;
-      border-bottom: 1px solid #1f1f1f;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 1.5rem;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .logo {
-      font-size: 1.3rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: #fff;
-    }
-
-    .logo span {
-      color: #f5c518;
-    }
-
-    .back-link {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: #f5c518;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: 0.2s;
-    }
-
-    .back-link:hover {
-      opacity: 0.8;
-    }
-
-    .booking-wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1.5rem;
-    }
-
-    .booking-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .info-panel {
-      background: #0f0f0f;
-      border-radius: 24px;
-      padding: 1.8rem;
-      border: 1px solid #2a2a2a;
-    }
-
-    .premium-badge {
-      display: inline-block;
-      background: rgba(245, 197, 24, 0.1);
-      color: #f5c518;
-      padding: 0.3rem 1rem;
-      border-radius: 50px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      margin-bottom: 1.2rem;
-      letter-spacing: 1px;
-    }
-
-    .info-panel h2 {
-      font-size: 1.6rem;
-      color: #fff;
-      margin-bottom: 0.8rem;
-    }
-
-    .info-panel p {
-      color: #aaa;
-      line-height: 1.5;
-      margin-bottom: 1.8rem;
-      font-size: 0.9rem;
-    }
-
-    .feature-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-      margin-bottom: 2rem;
-    }
-
-    .feature-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .feature-icon {
-      width: 40px;
-      height: 40px;
-      background: rgba(245, 197, 24, 0.1);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #f5c518;
-      font-size: 1.2rem;
-    }
-
-    .feature-text strong {
-      color: #fff;
-      display: block;
-      font-size: 0.9rem;
-    }
-
-    .feature-text span {
-      color: #888;
-      font-size: 0.75rem;
-    }
-
-    .hours-block {
-      border-top: 1px solid #1f1f1f;
-      padding-top: 1.5rem;
-    }
-
-    .hours-block h4 {
-      color: #f5c518;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .hour-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 0.6rem 0;
-      color: #ccc;
-      border-bottom: 1px solid #1a1a1a;
-      font-size: 0.85rem;
-    }
-
-    .hour-row:last-child {
-      border-bottom: none;
-    }
-
-    .form-panel {
-      background: #0f0f0f;
-      border-radius: 24px;
-      padding: 1.8rem;
-      border: 1px solid #2a2a2a;
-    }
-
-    .step-indicators {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .step-circle {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: #2a2a2a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      color: #888;
-      transition: all 0.2s;
-    }
-
-    .step-circle.active {
-      background: #f5c518;
-      color: #0a0a0a;
-    }
-
-    .step-line {
-      width: 45px;
-      height: 2px;
-      background: #2a2a2a;
-      margin: 0 0.5rem;
-    }
-
-    .step-line.active-line {
-      background: #f5c518;
-    }
-
-    .step-title {
-      text-align: center;
-      margin-bottom: 1.8rem;
-    }
-
-    .step-title h3 {
-      color: #fff;
-      font-size: 1.3rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .step-title p {
-      color: #888;
-      font-size: 0.8rem;
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group label {
-      display: block;
-      color: #f5c518;
-      margin-bottom: 0.5rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-
-    .form-group label i {
-      margin-right: 0.4rem;
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 0.8rem;
-      background: #1a1a1a;
-      border: 2px solid #2a2a2a;
-      border-radius: 12px;
-      color: #fff;
-      font-size: 1rem;
-      font-family: 'Lato', sans-serif;
-      transition: 0.2s;
-    }
-
-    input:focus, select:focus, textarea:focus {
-      outline: none;
-      border-color: #f5c518;
-    }
-
-    .service-option {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem;
-      background: #1a1a1a;
-      border: 2px solid #2a2a2a;
-      border-radius: 16px;
-      margin-bottom: 0.8rem;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .service-option.selected-service {
-      border-color: #f5c518;
-      background: #222;
-    }
-
-    .service-icon {
-      width: 48px;
-      height: 48px;
-      background: rgba(245, 197, 24, 0.1);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #f5c518;
-      font-size: 1.3rem;
-    }
-
-    .service-info {
-      flex: 1;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .service-name {
-      color: #fff;
-      font-weight: 600;
-    }
-
-    .service-price {
-      color: #f5c518;
-      font-weight: 700;
-    }
-
-    .radio-check {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: #2a2a2a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .radio-check i {
-      color: #0a0a0a;
-      font-size: 0.8rem;
-      opacity: 0;
-    }
-
-    .service-option.selected-service .radio-check {
-      background: #f5c518;
-    }
-
-    .service-option.selected-service .radio-check i {
-      opacity: 1;
-    }
-
-    .summary-box {
-      background: #1a1a1a;
-      border-radius: 16px;
-      padding: 1rem;
-      margin-top: 1rem;
-    }
-
-    .summary-row {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 0.5rem;
-      color: #ccc;
-    }
-
-    .summary-total {
-      border-top: 1px solid #2a2a2a;
-      padding-top: 0.7rem;
-      margin-top: 0.3rem;
-      font-size: 1.1rem;
-    }
-
-    .summary-total strong {
-      color: #f5c518;
-      font-size: 1.2rem;
-    }
-
-    .form-nav {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 2rem;
-    }
-
-    .nav-btn {
-      padding: 0.8rem 1.5rem;
-      border-radius: 40px;
-      font-weight: 700;
-      cursor: pointer;
-      border: none;
-      transition: 0.2s;
-      font-size: 0.9rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .nav-btn.prev {
-      background: #2a2a2a;
-      color: #fff;
-    }
-
-    .nav-btn.next, .nav-btn.submit {
-      background: #f5c518;
-      color: #0a0a0a;
-      margin-left: auto;
-    }
-
-    .nav-btn.next:hover, .nav-btn.submit:hover {
-      background: #e0b015;
-      transform: translateY(-2px);
-    }
-
-    .nav-btn.prev:hover {
-      background: #3a3a3a;
-    }
-
-    /* Loading spinner */
-    .loading-spinner {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border: 2px solid #0a0a0a;
-      border-top-color: transparent;
-      border-radius: 50%;
-      animation: spin 0.6s linear infinite;
-      margin-left: 0.5rem;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.95);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-      backdrop-filter: blur(4px);
-    }
-
-    .modal-card {
-      background: #0f0f0f;
-      border-radius: 28px;
-      padding: 2rem;
-      max-width: 400px;
-      width: 90%;
-      text-align: center;
-      border: 1px solid #f5c518;
-    }
-
-    .modal-card i.fa-check-circle {
-      font-size: 4rem;
-      color: #4caf50;
-      margin-bottom: 1rem;
-    }
-
-    .modal-card i.fa-exclamation-triangle {
-      font-size: 4rem;
-      color: #e63946;
-      margin-bottom: 1rem;
-    }
-
-    .modal-card h3 {
-      color: #f5c518;
-      margin-bottom: 0.8rem;
-    }
-
-    .modal-details {
-      background: #1a1a1a;
-      border-radius: 16px;
-      padding: 1rem;
-      margin: 1.2rem 0;
-      text-align: left;
-      font-size: 0.85rem;
-    }
-
-    .modal-buttons {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .modal-btn {
-      flex: 1;
-      padding: 0.8rem;
-      border-radius: 40px;
-      text-decoration: none;
-      text-align: center;
-      font-weight: 700;
-      cursor: pointer;
-      border: none;
-    }
-
-    .modal-home {
-      background: #2a2a2a;
-      color: #fff;
-    }
-
-    .modal-new {
-      background: #f5c518;
-      color: #0a0a0a;
-    }
-
-    @media (min-width: 768px) {
-      .booking-grid {
-        flex-direction: row;
-        gap: 2rem;
-      }
-      .info-panel {
-        flex: 1;
-        position: sticky;
-        top: 90px;
-        align-self: flex-start;
-      }
-      .form-panel {
-        flex: 1.2;
-      }
-      .booking-wrapper {
-        padding: 2rem;
-      }
-    }
-
-    .error-msg {
-      color: #e63946;
-      font-size: 0.7rem;
-      display: block;
-      margin-top: 0.3rem;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Lato', sans-serif; background-color: #0a0a0a; color: #e0e0e0; line-height: 1.5; }
+    .booking-nav { background: #0a0a0a; border-bottom: 1px solid #1f1f1f; position: sticky; top: 0; z-index: 100; }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; max-width: 1280px; margin: 0 auto; }
+    .logo { font-size: 1.3rem; font-weight: 700; letter-spacing: 1px; color: #fff; }
+    .logo span { color: #f5c518; }
+    .back-link { display: flex; align-items: center; gap: 0.5rem; color: #f5c518; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.2s; }
+    .back-link:hover { opacity: 0.8; }
+    .booking-wrapper { max-width: 1200px; margin: 0 auto; padding: 1.5rem; }
+    .booking-grid { display: flex; flex-direction: column; gap: 1.5rem; }
+    .info-panel { background: #0f0f0f; border-radius: 24px; padding: 1.8rem; border: 1px solid #2a2a2a; }
+    .premium-badge { display: inline-block; background: rgba(245,197,24,0.1); color: #f5c518; padding: 0.3rem 1rem; border-radius: 50px; font-size: 0.7rem; font-weight: 700; margin-bottom: 1.2rem; }
+    .info-panel h2 { font-size: 1.6rem; color: #fff; margin-bottom: 0.8rem; }
+    .info-panel p { color: #aaa; line-height: 1.5; margin-bottom: 1.8rem; font-size: 0.9rem; }
+    .feature-list { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 2rem; }
+    .feature-item { display: flex; align-items: center; gap: 1rem; }
+    .feature-icon { width: 40px; height: 40px; background: rgba(245,197,24,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #f5c518; font-size: 1.2rem; }
+    .feature-text strong { color: #fff; display: block; font-size: 0.9rem; }
+    .feature-text span { color: #888; font-size: 0.75rem; }
+    .hours-block { border-top: 1px solid #1f1f1f; padding-top: 1.5rem; }
+    .hours-block h4 { color: #f5c518; margin-bottom: 1rem; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .hour-row { display: flex; justify-content: space-between; padding: 0.6rem 0; color: #ccc; border-bottom: 1px solid #1a1a1a; font-size: 0.85rem; }
+    .hour-row:last-child { border-bottom: none; }
+    .form-panel { background: #0f0f0f; border-radius: 24px; padding: 1.8rem; border: 1px solid #2a2a2a; }
+    .step-indicators { display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
+    .step-circle { width: 40px; height: 40px; border-radius: 50%; background: #2a2a2a; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #888; transition: all 0.2s; }
+    .step-circle.active { background: #f5c518; color: #0a0a0a; }
+    .step-line { width: 45px; height: 2px; background: #2a2a2a; margin: 0 0.5rem; }
+    .step-line.active-line { background: #f5c518; }
+    .step-title { text-align: center; margin-bottom: 1.8rem; }
+    .step-title h3 { color: #fff; font-size: 1.3rem; margin-bottom: 0.3rem; }
+    .step-title p { color: #888; font-size: 0.8rem; }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label { display: block; color: #f5c518; margin-bottom: 0.5rem; font-size: 0.8rem; font-weight: 600; }
+    .form-group label i { margin-right: 0.4rem; }
+    input, select, textarea { width: 100%; padding: 0.8rem; background: #1a1a1a; border: 2px solid #2a2a2a; border-radius: 12px; color: #fff; font-size: 1rem; font-family: 'Lato', sans-serif; }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: #f5c518; }
+    .service-option { display: flex; align-items: center; gap: 1rem; padding: 1rem; background: #1a1a1a; border: 2px solid #2a2a2a; border-radius: 16px; margin-bottom: 0.8rem; cursor: pointer; transition: 0.2s; }
+    .service-option.selected-service { border-color: #f5c518; background: #222; }
+    .service-icon { width: 48px; height: 48px; background: rgba(245,197,24,0.1); border-radius: 14px; display: flex; align-items: center; justify-content: center; color: #f5c518; font-size: 1.3rem; }
+    .service-info { flex: 1; display: flex; justify-content: space-between; align-items: center; }
+    .service-name { color: #fff; font-weight: 600; }
+    .service-price { color: #f5c518; font-weight: 700; }
+    .radio-check { width: 24px; height: 24px; border-radius: 50%; background: #2a2a2a; display: flex; align-items: center; justify-content: center; }
+    .radio-check i { color: #0a0a0a; font-size: 0.8rem; opacity: 0; }
+    .service-option.selected-service .radio-check { background: #f5c518; }
+    .service-option.selected-service .radio-check i { opacity: 1; }
+    .summary-box { background: #1a1a1a; border-radius: 16px; padding: 1rem; margin-top: 1rem; }
+    .summary-row { display: flex; justify-content: space-between; margin-bottom: 0.5rem; color: #ccc; }
+    .summary-total { border-top: 1px solid #2a2a2a; padding-top: 0.7rem; margin-top: 0.3rem; font-size: 1.1rem; }
+    .summary-total strong { color: #f5c518; font-size: 1.2rem; }
+    .form-nav { display: flex; justify-content: space-between; margin-top: 2rem; }
+    .nav-btn { padding: 0.8rem 1.5rem; border-radius: 40px; font-weight: 700; cursor: pointer; border: none; transition: 0.2s; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; }
+    .nav-btn.prev { background: #2a2a2a; color: #fff; }
+    .nav-btn.next, .nav-btn.submit { background: #f5c518; color: #0a0a0a; margin-left: auto; }
+    .nav-btn.next:hover, .nav-btn.submit:hover { background: #e0b015; transform: translateY(-2px); }
+    .loading-spinner { display: inline-block; width: 20px; height: 20px; border: 2px solid #0a0a0a; border-top-color: transparent; border-radius: 50%; animation: spin 0.6s linear infinite; margin-left: 0.5rem; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
+    .modal-card { background: #0f0f0f; border-radius: 28px; padding: 2rem; max-width: 400px; width: 90%; text-align: center; border: 1px solid #f5c518; }
+    .modal-card i.fa-check-circle { font-size: 4rem; color: #4caf50; margin-bottom: 1rem; }
+    .modal-card i.fa-exclamation-triangle { font-size: 4rem; color: #e63946; margin-bottom: 1rem; }
+    .modal-card h3 { color: #f5c518; margin-bottom: 0.8rem; }
+    .modal-details { background: #1a1a1a; border-radius: 16px; padding: 1rem; margin: 1.2rem 0; text-align: left; font-size: 0.85rem; }
+    .modal-buttons { display: flex; gap: 1rem; }
+    .modal-btn { flex: 1; padding: 0.8rem; border-radius: 40px; text-decoration: none; text-align: center; font-weight: 700; cursor: pointer; border: none; }
+    .modal-home { background: #2a2a2a; color: #fff; }
+    .modal-new { background: #f5c518; color: #0a0a0a; }
+    @media (min-width: 768px) { .booking-grid { flex-direction: row; gap: 2rem; } .info-panel { flex: 1; position: sticky; top: 90px; align-self: flex-start; } .form-panel { flex: 1.2; } .booking-wrapper { padding: 2rem; } }
+    .error-msg { color: #e63946; font-size: 0.7rem; display: block; margin-top: 0.3rem; }
   </style>
 </head>
 <body>
@@ -529,29 +93,16 @@
 <main>
   <div class="booking-wrapper">
     <div class="booking-grid">
-      
       <div class="info-panel">
         <div class="premium-badge"><i class="fas fa-scissors"></i> Premium Grooming</div>
         <h2>Secure Your Spot</h2>
         <p>Experience London's finest barber service. Walk-ins welcome, but booking ahead guarantees your preferred time.</p>
-        
         <div class="feature-list">
-          <div class="feature-item">
-            <div class="feature-icon"><i class="fas fa-clock"></i></div>
-            <div class="feature-text"><strong>Fast Confirmation</strong><span>Email within minutes</span></div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon"><i class="fas fa-wine-glass-alt"></i></div>
-            <div class="feature-text"><strong>Complimentary Drinks</strong><span>While you wait</span></div>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon"><i class="fas fa-credit-card"></i></div>
-            <div class="feature-text"><strong>Secure Booking</strong><span>No deposit required</span></div>
-          </div>
+          <div class="feature-item"><div class="feature-icon"><i class="fas fa-clock"></i></div><div class="feature-text"><strong>Fast Confirmation</strong><span>Email within minutes</span></div></div>
+          <div class="feature-item"><div class="feature-icon"><i class="fas fa-wine-glass-alt"></i></div><div class="feature-text"><strong>Complimentary Drinks</strong><span>While you wait</span></div></div>
+          <div class="feature-item"><div class="feature-icon"><i class="fas fa-credit-card"></i></div><div class="feature-text"><strong>Secure Booking</strong><span>No deposit required</span></div></div>
         </div>
-
-        <div class="hours-block">
-          <h4><i class="far fa-clock"></i> Opening Hours</h4>
+        <div class="hours-block"><h4><i class="far fa-clock"></i> Opening Hours</h4>
           <div class="hour-row"><span>Monday - Friday</span><span>9:00 – 20:00</span></div>
           <div class="hour-row"><span>Saturday</span><span>9:00 – 19:00</span></div>
           <div class="hour-row"><span>Sunday</span><span>10:00 – 17:00</span></div>
@@ -561,104 +112,32 @@
 
       <div class="form-panel">
         <div class="step-indicators">
-          <div class="step-circle active" id="step1Circle">1</div>
-          <div class="step-line" id="line12"></div>
-          <div class="step-circle" id="step2Circle">2</div>
-          <div class="step-line" id="line23"></div>
+          <div class="step-circle active" id="step1Circle">1</div><div class="step-line" id="line12"></div>
+          <div class="step-circle" id="step2Circle">2</div><div class="step-line" id="line23"></div>
           <div class="step-circle" id="step3Circle">3</div>
         </div>
-
-        <div class="step-title" id="stepTitle">
-          <h3>Your Details</h3>
-          <p>Tell us who you are</p>
-        </div>
-
+        <div class="step-title" id="stepTitle"><h3>Your Details</h3><p>Tell us who you are</p></div>
         <form id="multiStepForm">
           <div id="step1Content">
-            <div class="form-group">
-              <label><i class="fas fa-user"></i> Full Name *</label>
-              <input type="text" id="fullName" placeholder="John Smith">
-              <small class="error-msg" id="nameError"></small>
-            </div>
-            <div class="form-group">
-              <label><i class="fas fa-envelope"></i> Email Address *</label>
-              <input type="email" id="emailAddr" placeholder="hello@example.com">
-              <small class="error-msg" id="emailError"></small>
-            </div>
-            <div class="form-group">
-              <label><i class="fas fa-phone"></i> Phone Number *</label>
-              <input type="tel" id="phoneNum" placeholder="020 7123 4567">
-              <small class="error-msg" id="phoneError"></small>
-            </div>
+            <div class="form-group"><label><i class="fas fa-user"></i> Full Name *</label><input type="text" id="fullName" placeholder="John Smith"><small class="error-msg" id="nameError"></small></div>
+            <div class="form-group"><label><i class="fas fa-envelope"></i> Email Address *</label><input type="email" id="emailAddr" placeholder="hello@example.com"><small class="error-msg" id="emailError"></small></div>
+            <div class="form-group"><label><i class="fas fa-phone"></i> Phone Number *</label><input type="tel" id="phoneNum" placeholder="020 7123 4567"><small class="error-msg" id="phoneError"></small></div>
           </div>
-
           <div id="step2Content" style="display: none;">
             <div id="serviceList">
-              <div class="service-option" data-service="Classic Haircut" data-price="35">
-                <div class="service-icon"><i class="fas fa-cut"></i></div>
-                <div class="service-info">
-                  <span class="service-name">Classic Haircut</span>
-                  <span class="service-price">£35</span>
-                </div>
-                <div class="radio-check"><i class="fas fa-check"></i></div>
-              </div>
-              <div class="service-option" data-service="Beard Sculpt & Shave" data-price="28">
-                <div class="service-icon"><i class="fas fa-beard"></i></div>
-                <div class="service-info">
-                  <span class="service-name">Beard Sculpt & Shave</span>
-                  <span class="service-price">£28</span>
-                </div>
-                <div class="radio-check"><i class="fas fa-check"></i></div>
-              </div>
-              <div class="service-option" data-service="The Royal Package" data-price="55">
-                <div class="service-icon"><i class="fas fa-hand-sparkles"></i></div>
-                <div class="service-info">
-                  <span class="service-name">The Royal Package</span>
-                  <span class="service-price">£55</span>
-                </div>
-                <div class="radio-check"><i class="fas fa-check"></i></div>
-              </div>
-              <div class="service-option" data-service="Hot Towel Shave" data-price="32">
-                <div class="service-icon"><i class="fas fa-tint"></i></div>
-                <div class="service-info">
-                  <span class="service-name">Hot Towel Shave</span>
-                  <span class="service-price">£32</span>
-                </div>
-                <div class="radio-check"><i class="fas fa-check"></i></div>
-              </div>
+              <div class="service-option" data-service="Classic Haircut" data-price="35"><div class="service-icon"><i class="fas fa-cut"></i></div><div class="service-info"><span class="service-name">Classic Haircut</span><span class="service-price">£35</span></div><div class="radio-check"><i class="fas fa-check"></i></div></div>
+              <div class="service-option" data-service="Beard Sculpt & Shave" data-price="28"><div class="service-icon"><i class="fas fa-beard"></i></div><div class="service-info"><span class="service-name">Beard Sculpt & Shave</span><span class="service-price">£28</span></div><div class="radio-check"><i class="fas fa-check"></i></div></div>
+              <div class="service-option" data-service="The Royal Package" data-price="55"><div class="service-icon"><i class="fas fa-hand-sparkles"></i></div><div class="service-info"><span class="service-name">The Royal Package</span><span class="service-price">£55</span></div><div class="radio-check"><i class="fas fa-check"></i></div></div>
+              <div class="service-option" data-service="Hot Towel Shave" data-price="32"><div class="service-icon"><i class="fas fa-tint"></i></div><div class="service-info"><span class="service-name">Hot Towel Shave</span><span class="service-price">£32</span></div><div class="radio-check"><i class="fas fa-check"></i></div></div>
             </div>
             <small class="error-msg" id="serviceError" style="text-align:center; display:block;"></small>
           </div>
-
           <div id="step3Content" style="display: none;">
-            <div class="form-group">
-              <label><i class="fas fa-calendar"></i> Preferred Date *</label>
-              <input type="date" id="appointmentDate">
-              <small class="error-msg" id="dateError"></small>
-            </div>
-            <div class="form-group">
-              <label><i class="fas fa-clock"></i> Preferred Time *</label>
-              <select id="appointmentTime">
-                <option value="">Select time</option>
-                <option value="09:00">09:00 AM</option><option value="10:00">10:00 AM</option>
-                <option value="11:00">11:00 AM</option><option value="12:00">12:00 PM</option>
-                <option value="13:00">13:00 PM</option><option value="14:00">14:00 PM</option>
-                <option value="15:00">15:00 PM</option><option value="16:00">16:00 PM</option>
-                <option value="17:00">17:00 PM</option><option value="18:00">18:00 PM</option>
-                <option value="19:00">19:00 PM</option>
-              </select>
-              <small class="error-msg" id="timeError"></small>
-            </div>
-            <div class="form-group">
-              <label><i class="fas fa-comment"></i> Special Requests</label>
-              <textarea id="specialRequests" rows="2" placeholder="Any notes for the barber..."></textarea>
-            </div>
-            <div class="summary-box">
-              <div class="summary-row"><span>Service:</span><strong id="summaryServiceVal">—</strong></div>
-              <div class="summary-row summary-total"><span>Total:</span><strong id="summaryTotalPrice">£0</strong></div>
-            </div>
+            <div class="form-group"><label><i class="fas fa-calendar"></i> Preferred Date *</label><input type="date" id="appointmentDate"><small class="error-msg" id="dateError"></small></div>
+            <div class="form-group"><label><i class="fas fa-clock"></i> Preferred Time *</label><select id="appointmentTime"><option value="">Select time</option><option value="09:00">09:00 AM</option><option value="10:00">10:00 AM</option><option value="11:00">11:00 AM</option><option value="12:00">12:00 PM</option><option value="13:00">13:00 PM</option><option value="14:00">14:00 PM</option><option value="15:00">15:00 PM</option><option value="16:00">16:00 PM</option><option value="17:00">17:00 PM</option><option value="18:00">18:00 PM</option><option value="19:00">19:00 PM</option></select><small class="error-msg" id="timeError"></small></div>
+            <div class="form-group"><label><i class="fas fa-comment"></i> Special Requests</label><textarea id="specialRequests" rows="2" placeholder="Any notes for the barber..."></textarea></div>
+            <div class="summary-box"><div class="summary-row"><span>Service:</span><strong id="summaryServiceVal">—</strong></div><div class="summary-row summary-total"><span>Total:</span><strong id="summaryTotalPrice">£0</strong></div></div>
           </div>
-
           <div class="form-nav">
             <button type="button" class="nav-btn prev" id="prevBtn" style="display: none;"><i class="fas fa-arrow-left"></i> Back</button>
             <button type="button" class="nav-btn next" id="nextBtn">Continue <i class="fas fa-arrow-right"></i></button>
@@ -676,26 +155,29 @@
     <h3 id="modalTitle">Booking Confirmed! ✨</h3>
     <p id="modalMessage" style="color: #aaa;">Your appointment request has been received.</p>
     <div class="modal-details" id="modalDetails"></div>
-    <div class="modal-buttons">
-      <a href="BarberShop.html" class="modal-btn modal-home">Home</a>
-      <button id="newBookingBtn" class="modal-btn modal-new">New Booking</button>
-    </div>
+    <div class="modal-buttons"><a href="BarberShop.html" class="modal-btn modal-home">Home</a><button id="newBookingBtn" class="modal-btn modal-new">New Booking</button></div>
   </div>
 </div>
 
 <script>
-  // Set today's date as min and default
+  // ========== EMAILJS CONFIGURATION (completă) ==========
+  const YOUR_PUBLIC_KEY = "Wy7hK7HCqjz-SVIOe";
+  const YOUR_SERVICE_ID = "service_d2jp8wj";
+  const YOUR_TEMPLATE_CLIENT = "template_hutayxa";
+  const YOUR_TEMPLATE_ADMIN = "template_g5ql1da";
+  // =====================================================
+
+  // Inițializare EmailJS
+  emailjs.init(YOUR_PUBLIC_KEY);
+
+  // Set date today as min and default
   const today = new Date();
   const yyyy = today.getFullYear();
   const mm = String(today.getMonth() + 1).padStart(2, '0');
   const dd = String(today.getDate()).padStart(2, '0');
   const todayFormatted = `${yyyy}-${mm}-${dd}`;
-  
   const dateInput = document.getElementById('appointmentDate');
-  if (dateInput) {
-    dateInput.setAttribute('min', todayFormatted);
-    dateInput.value = todayFormatted;
-  }
+  if (dateInput) { dateInput.setAttribute('min', todayFormatted); dateInput.value = todayFormatted; }
 
   let currentStep = 1;
   let selectedServiceObj = { name: '', price: 0 };
@@ -720,9 +202,7 @@
 
   function updateServiceSelection() {
     let found = null;
-    serviceOptions.forEach(opt => {
-      if (opt.classList.contains('selected-service')) found = opt;
-    });
+    serviceOptions.forEach(opt => { if (opt.classList.contains('selected-service')) found = opt; });
     if (found) {
       selectedServiceObj = { name: found.getAttribute('data-service'), price: parseInt(found.getAttribute('data-price')) };
       summaryServiceVal.innerText = selectedServiceObj.name;
@@ -744,38 +224,18 @@
   });
 
   function showStep(step) {
-    step1.style.display = 'none';
-    step2.style.display = 'none';
-    step3.style.display = 'none';
+    step1.style.display = 'none'; step2.style.display = 'none'; step3.style.display = 'none';
     if (step === 1) step1.style.display = 'block';
     if (step === 2) step2.style.display = 'block';
     if (step === 3) step3.style.display = 'block';
-
-    step1Circle.classList.remove('active');
-    step2Circle.classList.remove('active');
-    step3Circle.classList.remove('active');
-    line12.classList.remove('active-line');
-    line23.classList.remove('active-line');
+    step1Circle.classList.remove('active'); step2Circle.classList.remove('active'); step3Circle.classList.remove('active');
+    line12.classList.remove('active-line'); line23.classList.remove('active-line');
     if (step >= 1) step1Circle.classList.add('active');
     if (step >= 2) { step2Circle.classList.add('active'); line12.classList.add('active-line'); }
     if (step >= 3) { step3Circle.classList.add('active'); line23.classList.add('active-line'); }
-
-    if (step === 1) {
-      stepTitleDiv.innerHTML = '<h3>Your Details</h3><p>Tell us who you are</p>';
-      prevBtn.style.display = 'none';
-      nextBtn.style.display = 'inline-flex';
-      submitBtn.style.display = 'none';
-    } else if (step === 2) {
-      stepTitleDiv.innerHTML = '<h3>Choose Service</h3><p>Select your grooming experience</p>';
-      prevBtn.style.display = 'inline-flex';
-      nextBtn.style.display = 'inline-flex';
-      submitBtn.style.display = 'none';
-    } else {
-      stepTitleDiv.innerHTML = '<h3>Finalize Appointment</h3><p>Pick date & time</p>';
-      prevBtn.style.display = 'inline-flex';
-      nextBtn.style.display = 'none';
-      submitBtn.style.display = 'inline-flex';
-    }
+    if (step === 1) { stepTitleDiv.innerHTML = '<h3>Your Details</h3><p>Tell us who you are</p>'; prevBtn.style.display = 'none'; nextBtn.style.display = 'inline-flex'; submitBtn.style.display = 'none'; }
+    else if (step === 2) { stepTitleDiv.innerHTML = '<h3>Choose Service</h3><p>Select your grooming experience</p>'; prevBtn.style.display = 'inline-flex'; nextBtn.style.display = 'inline-flex'; submitBtn.style.display = 'none'; }
+    else { stepTitleDiv.innerHTML = '<h3>Finalize Appointment</h3><p>Pick date & time</p>'; prevBtn.style.display = 'inline-flex'; nextBtn.style.display = 'none'; submitBtn.style.display = 'inline-flex'; }
   }
 
   function validateStep1() {
@@ -793,12 +253,8 @@
   }
 
   function validateStep2() {
-    if (!selectedServiceObj.name) {
-      serviceErrorSpan.innerText = 'Please select a service';
-      return false;
-    }
-    serviceErrorSpan.innerText = '';
-    return true;
+    if (!selectedServiceObj.name) { serviceErrorSpan.innerText = 'Please select a service'; return false; }
+    serviceErrorSpan.innerText = ''; return true;
   }
 
   function validateStep3() {
@@ -821,62 +277,56 @@
 
   async function onSubmit() {
     if (!validateStep3()) return;
-
-    // Show loading on button
     const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = 'Sending... <span class="loading-spinner"></span>';
     submitBtn.disabled = true;
 
-    const formData = new FormData();
-    formData.append('fullName', document.getElementById('fullName').value.trim());
-    formData.append('email', document.getElementById('emailAddr').value.trim());
-    formData.append('phone', document.getElementById('phoneNum').value.trim());
-    formData.append('service', selectedServiceObj.name);
-    formData.append('servicePrice', selectedServiceObj.price);
-    formData.append('date', document.getElementById('appointmentDate').value);
-    formData.append('time', document.getElementById('appointmentTime').value);
-    formData.append('notes', document.getElementById('specialRequests').value);
+    const name = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('emailAddr').value.trim();
+    const phone = document.getElementById('phoneNum').value.trim();
+    const date = document.getElementById('appointmentDate').value;
+    const time = document.getElementById('appointmentTime').value;
+    const notes = document.getElementById('specialRequests').value;
+
+    const formattedDate = new Date(date).toLocaleDateString('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+    const templateParamsClient = {
+      name: name,
+      email: email,
+      phone: phone,
+      service: selectedServiceObj.name,
+      price: selectedServiceObj.price,
+      date: formattedDate,
+      time: time
+    };
+
+    const templateParamsAdmin = {
+      name: name,
+      email: email,
+      phone: phone,
+      service: selectedServiceObj.name,
+      price: selectedServiceObj.price,
+      date: formattedDate,
+      time: time,
+      notes: notes || 'No special requests'
+    };
 
     try {
-      const response = await fetch('send_booking.php', {
-        method: 'POST',
-        body: formData
-      });
-      
-      const result = await response.json();
-      
-      if (result.status === 'success') {
-        // Show success modal with booking details
-        const name = document.getElementById('fullName').value.trim();
-        const email = document.getElementById('emailAddr').value.trim();
-        const phone = document.getElementById('phoneNum').value.trim();
-        const date = document.getElementById('appointmentDate').value;
-        const time = document.getElementById('appointmentTime').value;
-        const notes = document.getElementById('specialRequests').value;
-        
-        const modalDetailsHtml = `
-          <p><strong>👤 Name:</strong> ${name}</p>
-          <p><strong>📧 Email:</strong> ${email}</p>
-          <p><strong>📞 Phone:</strong> ${phone}</p>
-          <p><strong>✂️ Service:</strong> ${selectedServiceObj.name} (£${selectedServiceObj.price})</p>
-          <p><strong>📅 Date:</strong> ${date}</p>
-          <p><strong>⏰ Time:</strong> ${time}</p>
-          ${notes ? `<p><strong>📝 Notes:</strong> ${notes}</p>` : ''}
-        `;
-        
-        document.getElementById('modalIcon').innerHTML = '<i class="fas fa-check-circle"></i>';
-        document.getElementById('modalTitle').innerHTML = 'Booking Confirmed! ✨';
-        document.getElementById('modalMessage').innerHTML = 'A confirmation email has been sent to your inbox.';
-        document.getElementById('modalDetails').innerHTML = modalDetailsHtml;
-        document.getElementById('confirmationModal').style.display = 'flex';
-      } else {
-        throw new Error(result.message || 'Something went wrong');
-      }
+      await emailjs.send(YOUR_SERVICE_ID, YOUR_TEMPLATE_CLIENT, templateParamsClient);
+      await emailjs.send(YOUR_SERVICE_ID, YOUR_TEMPLATE_ADMIN, templateParamsAdmin);
+
+      const modalDetailsHtml = `<p><strong>👤 Name:</strong> ${name}</p><p><strong>📧 Email:</strong> ${email}</p><p><strong>📞 Phone:</strong> ${phone}</p><p><strong>✂️ Service:</strong> ${selectedServiceObj.name} (£${selectedServiceObj.price})</p><p><strong>📅 Date:</strong> ${formattedDate}</p><p><strong>⏰ Time:</strong> ${time}</p>${notes ? `<p><strong>📝 Notes:</strong> ${notes}</p>` : ''}`;
+      document.getElementById('modalIcon').innerHTML = '<i class="fas fa-check-circle"></i>';
+      document.getElementById('modalTitle').innerHTML = 'Booking Confirmed! ✨';
+      document.getElementById('modalMessage').innerHTML = 'A confirmation email has been sent to your inbox.';
+      document.getElementById('modalDetails').innerHTML = modalDetailsHtml;
+      document.getElementById('confirmationModal').style.display = 'flex';
     } catch (error) {
+      console.error('EmailJS error:', error);
       document.getElementById('modalIcon').innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
       document.getElementById('modalTitle').innerHTML = 'Booking Failed';
-      document.getElementById('modalMessage').innerHTML = 'Please try again or call us directly.';
-      document.getElementById('modalDetails').innerHTML = `<p>Error: ${error.message}</p>`;
+      document.getElementById('modalMessage').innerHTML = 'Please try again or call us directly at 020 7123 4567.';
+      document.getElementById('modalDetails').innerHTML = `<p>Error: ${error.text || 'Something went wrong'}</p>`;
       document.getElementById('confirmationModal').style.display = 'flex';
     } finally {
       submitBtn.innerHTML = originalText;
@@ -907,9 +357,7 @@
     resetForm();
   });
   document.getElementById('confirmationModal').addEventListener('click', (e) => {
-    if (e.target === document.getElementById('confirmationModal')) {
-      document.getElementById('confirmationModal').style.display = 'none';
-    }
+    if (e.target === document.getElementById('confirmationModal')) document.getElementById('confirmationModal').style.display = 'none';
   });
 
   showStep(1);
@@ -922,12 +370,7 @@
     setTimeout(() => {
       for (let opt of serviceOptions) {
         const srv = opt.getAttribute('data-service').toLowerCase();
-        if ((preset === 'classic' && srv.includes('classic')) ||
-            (preset === 'beard' && srv.includes('beard')) ||
-            (preset === 'royal' && srv.includes('royal')) ||
-            (preset === 'hot-towel' && srv.includes('hot towel'))) {
-          opt.click(); break;
-        }
+        if ((preset === 'classic' && srv.includes('classic')) || (preset === 'beard' && srv.includes('beard')) || (preset === 'royal' && srv.includes('royal')) || (preset === 'hot-towel' && srv.includes('hot towel'))) { opt.click(); break; }
       }
     }, 100);
   }
